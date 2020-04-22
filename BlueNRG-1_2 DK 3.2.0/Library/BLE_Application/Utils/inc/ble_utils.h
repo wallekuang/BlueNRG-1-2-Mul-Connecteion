@@ -94,4 +94,11 @@ typedef struct Multiple_Connection_s{
 /* Formula for getting the device connection parameters on Master/Slave device */
 uint8_t GET_Master_Slave_device_connection_parameters(uint8_t Num_Masters, uint8_t Num_Slaves, float Scan_Window, float Sleep_Time, Multiple_Connection_type *Device_Connection_Params);
 
+
+void init_multiple_connection_parameters(void);
+
+
+const Multiple_Connection_type* get_multiple_connection_parameters(void);
+
+
 #endif /* __BLE_CONST_H__ */

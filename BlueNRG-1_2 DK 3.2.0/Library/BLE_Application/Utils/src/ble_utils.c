@@ -28,14 +28,16 @@
 #include <math.h>
 #include "ble_utils.h"
 #include "bluenrg1_stack.h"
+#include "app_common.h"
+
 
 #ifndef DEBUG_FORMULA
 #define DEBUG_FORMULA 0
 #endif
 
-#if DEBUG_FORMULA
+#if DEBUG
 #include <stdio.h>
-#define PRINTF(...) printf(__VA_ARGS__)
+#define PRINTF(...) COMPrintf(__VA_ARGS__)
 #else
 #define PRINTF(...)
 #endif
@@ -72,7 +74,8 @@
 /**
  * @brief Connection event length
  */
-#define CE_LENGTH_MS (float)(1.25*PACKETS_PER_CI)
+// 
+static Multiple_Connection_type MS_Connection_Parameters; 
 
 /**
   * @brief Utility function for rounding a val to a specific round_value
@@ -168,7 +171,44 @@ uint8_t GET_Master_Slave_device_connection_parameters(uint8_t Num_Masters, uint8
 #endif  
 
    return (status);
-} /* end GET_Master_Slave_device_connection_parameters() */
+} 
+/* end GET_Master_Slave_device_connection_parameters() */
+
+
+void init_multiple_connection_parameters(void)
+{
+	tBleStatus status;
+	/* **********************  Call Multiple connections parameters formula ***********************/
+	status = GET_Master_Slave_device_connection_parameters(MASTER_SLAVE_NUM_MASTERS,
+																											MASTER_SLAVE_NUM_SLAVES,
+																											MASTER_SLAVE_SCAN_WINDOW,
+																											MASTER_SLAVE_SLEEP_TIME,
+																											&MS_Connection_Parameters);
+	if (status !=0)
+	{
+		PRINTF("GET_Master_Slave_device_connection_parameters() failure: %d\r\n", status);	
+		return;
+	}
+
+	PRINTF("Scan Window: %d (%d.%d ms)\r\n", MS_Connection_Parameters.Scan_Window, PRINT_INT(MS_Connection_Parameters.Scan_Window *0.625),PRINT_FLOAT(MS_Connection_Parameters.Scan_Window *0.625) );
+	PRINTF("Connection Interval: %d (%d.%d ms)\r\n", MS_Connection_Parameters.Connection_Interval,PRINT_INT(MS_Connection_Parameters.Connection_Interval * 1.25),PRINT_FLOAT(MS_Connection_Parameters.Connection_Interval * 1.25));
+	PRINTF("Scan Interval: %d (%d.%d ms)\r\n", MS_Connection_Parameters.Scan_Interval, PRINT_INT(MS_Connection_Parameters.Scan_Interval * 0.625), PRINT_FLOAT(MS_Connection_Parameters.Scan_Interval * 0.625));
+	PRINTF("Advertising Interval: %d (%d.%d ms)\r\n", MS_Connection_Parameters.Advertising_Interval, PRINT_INT(MS_Connection_Parameters.Advertising_Interval * 0.625),PRINT_FLOAT(MS_Connection_Parameters.Advertising_Interval * 0.625) );
+	PRINTF("CE Event Length: %d (%d.%d ms)\r\n", MS_Connection_Parameters.CE_Length, PRINT_INT(MS_Connection_Parameters.CE_Length * 0.625),PRINT_FLOAT(MS_Connection_Parameters.CE_Length * 0.625) );
+
+	PRINTF("****** Output Connection Parameters ******************************\r\n");
+	PRINTF("\r\n");
+	PRINTF("Anchor Period Length: %d.%d ms\r\n", PRINT_INT(MS_Connection_Parameters.AnchorPeriodLength), PRINT_FLOAT(MS_Connection_Parameters.AnchorPeriodLength));
+	PRINTF("\r\n");
+	PRINTF("****** BLE APIs Connection Parameters: BLE time units/(ms)********\r\n");
+	PRINTF("\r\n");
+}
+
+
+const Multiple_Connection_type* get_multiple_connection_parameters(void)
+{
+		return &MS_Connection_Parameters;
+}
 
 /* Multiple connection parameters formula API call example:
 

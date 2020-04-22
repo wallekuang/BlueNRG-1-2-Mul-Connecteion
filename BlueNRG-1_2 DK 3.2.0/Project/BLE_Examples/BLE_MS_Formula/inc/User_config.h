@@ -20,7 +20,7 @@ These constants and variables are used from the BlueNRG-1 stack to reserve RAM a
 #define NUM_APP_GATT_SERVICES	(1)
 
 /* Number of attributes requests from the User demo */
-#define NUM_APP_GATT_ATTRIBUTES	(3)
+#define NUM_APP_GATT_ATTRIBUTES	(5)
 
 #define MAX_CHAR_LEN(a,b) ((a) > (b) )? (a) : (b)
 
@@ -55,7 +55,7 @@ These constants and variables are used from the BlueNRG-1 stack to reserve RAM a
 
 #if (MASTER_SLAVE == 1) || (SLAVE == 1)
 /* GATT default Service Changed characteristic indication property: + 2 * NUM_LINKS */
-#define ATT_VALUE_ARRAY_SIZE	(41 + 2 * NUM_LINKS + APP_MAX_ATT_SIZE + 5 +  2 * NUM_LINKS) //characteristic: CHAR_MAX_LEN bytes, UUID16 (5 bytes), notify: 16 bytes (client configuration descriptor: 2 x 8) 
+#define ATT_VALUE_ARRAY_SIZE	(41 + 2 * NUM_LINKS + APP_MAX_ATT_SIZE*2+ 19*2 + 5 +  2 * NUM_LINKS) //characteristic: CHAR_MAX_LEN bytes, UUID16 (5 bytes), notify: 16 bytes (client configuration descriptor: 2 x 8) 
 #else
 /* Master doesn't add any characteristic: only default ones. GATT default Service Changed characteristic indication property: 2 * NUM_LINKS */
 #define ATT_VALUE_ARRAY_SIZE	(43 + 2 * NUM_LINKS) //Master device BlueNRGxA --> device name lenght = 9

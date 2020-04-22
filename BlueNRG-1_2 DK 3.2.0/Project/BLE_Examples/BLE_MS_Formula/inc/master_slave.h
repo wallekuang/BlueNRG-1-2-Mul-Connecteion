@@ -46,17 +46,6 @@
 /** 
   * @brief  Variable which contains some flags useful for application
   */ 
-extern volatile int app_flags;
-
-/**
- * @}
- */
-
-/* Exported macros -----------------------------------------------------------*/
-#define APP_FLAG(flag) (app_flags & flag)
-
-#define APP_FLAG_SET(flag) (app_flags |= flag)
-#define APP_FLAG_CLEAR(flag) (app_flags &= ~flag)
 
 /**
   * @brief  This function initializes the BLE GATT & GAP layers and it sets the TX power level 
@@ -79,7 +68,7 @@ void set_database(void);
   * @param  None
   * @retval None
   */
-void set_device_discoverable(void);
+uint8_t set_device_discoverable(void);
 
 
 /**

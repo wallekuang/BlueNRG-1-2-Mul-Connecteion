@@ -29,7 +29,7 @@
 
 
 #if DEBUG
-#define PRINTF(...) printf(__VA_ARGS__)
+#define PRINTF(...) COMPrintf(__VA_ARGS__)
 #else
 #define PRINTF(...)
 #endif

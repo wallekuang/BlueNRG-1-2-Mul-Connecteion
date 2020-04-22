@@ -1171,6 +1171,8 @@ tBleStatus aci_gatt_proc_timeout_event_process(uint8_t *buffer_in)
 
   return status;
 }
+
+#if 0
 /* aci_att_exchange_mtu_resp_event */
 /* Event len: 2 + 2 */
 /**
@@ -1191,6 +1193,7 @@ tBleStatus aci_att_exchange_mtu_resp_event_process(uint8_t *buffer_in)
 
   return status;
 }
+#endif
 /* aci_att_find_info_resp_event */
 /* Event len: 2 + 1 + 1 + rp0->Event_Data_Length * (sizeof(uint8_t)) */
 /**

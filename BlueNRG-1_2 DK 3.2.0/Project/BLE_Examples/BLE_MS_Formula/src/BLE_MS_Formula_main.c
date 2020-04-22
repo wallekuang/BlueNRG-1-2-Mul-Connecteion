@@ -304,7 +304,7 @@ How to use an Smartphone as second master ? (if Num_Masters = 2), (i.e. Android 
 
 #if DEBUG
 #include <stdio.h>
-#define PRINTF(...) printf(__VA_ARGS__)
+#define PRINTF(...) COMPrintf(__VA_ARGS__)
 #else
 #define PRINTF(...)
 #endif
@@ -355,7 +355,7 @@ int main(void)
 #if BLE_STACK_V_1_X ==1
     BlueNRG_Sleep(APP_SLEEP_MODE, 0, 0,0);
 #else
-   BlueNRG_Sleep(APP_SLEEP_MODE, 0, 0); 
+   //BlueNRG_Sleep(APP_SLEEP_MODE, 0, 0); 
 #endif
 
 
