@@ -84,8 +84,6 @@ struct slave_t{
 };
 
 
-
-
 //server UUID
 #define SPS_UUID   { 0x79, 0x41, 0xDC, 0x24, 0x0E, 0xE5, 0xA9, 0xE0, 0x93, 0xF3, 0xA3, 0xB5, 0x01, 0x00, 0x40, 0x6E }
 //server RX UUID
@@ -96,12 +94,15 @@ struct slave_t{
 
 #define CE_LENGTH_MS               (10)
 
+#define APP_MAX_ATT_SIZE					 (DEFAULT_MAX_ATT_MTU - 3)
+
+
 
 /* ifdef MASK_SECURITY  , The security will be mask */
 #define MASK_SECURITY	
 
 // 如果使能这个宏 则比较慢连接  ，如果不使能 则可以同时连接多个
-//#define STATBLE_CONNECT_PRO_CFG
+#define STATBLE_CONNECT_PRO_CFG
 
 #define COPY_UUID_16(uuid_struct, uuid_1, uuid_0) \
 do {\

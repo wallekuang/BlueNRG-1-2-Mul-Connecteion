@@ -97,7 +97,7 @@ void set_database(void)
   }else{
     PRINTF("aci_gatt_add_char --> SUCCESS\r\n");
   }
- 
+ #ifdef BLUENRG2_DEVICE
     status = hci_le_write_suggested_default_data_length(TX_OCTECTS,  TX_TIME);
     if (status != BLE_STATUS_SUCCESS) 
     {
@@ -107,7 +107,7 @@ void set_database(void)
     {
       PRINTF("hci_le_write_suggested_default_data_length --> SUCCESS\r\n");
     }
-
+#endif
 
 	uint8_t uuid2[16] = RX_UUID;
 	Osal_MemCpy(&rx_uuid.Char_UUID_128, uuid2, 16);
@@ -211,11 +211,21 @@ void device_initialization(void)
 	pChip_id = (uint32_t*)0x100007F8;
 	memcpy(chip_id+sizeof(uint32_t),pChip_id,sizeof(uint32_t));
 
+
+
+	// check If it is all 0xff
+	uint8_t none[8] = {0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF};
+	if(memcmp(none,chip_id,sizeof(none)) == 0){
+			hci_le_rand(chip_id);
+	}
+
 	for(int i=0;i<sizeof(chip_id);i++)
 	{
 			PRINTF(" %x ",chip_id[i]);
 	}
 	PRINTF("\n");
+	
+
   //status = aci_hal_write_config_data(0x2E,0x06,slave_address[SLAVE_INDEX-1]);
   status = aci_hal_write_config_data(CONFIG_DATA_PUBADDR_OFFSET,0x06,chip_id);
   if (status != BLE_STATUS_SUCCESS) {
@@ -292,6 +302,7 @@ void APP_Tick(void)
 			return;
 	}
 
+#if 0
 	if( (s_ins.slave.con_para_update.sta == TASK_STATE_NONE)){
 		  //  
 		  PRINTF("aci_l2cap_connection_parameter_update_req \n");
@@ -300,10 +311,11 @@ void APP_Tick(void)
 			s_ins.slave.con_para_update.retry_times++;
 			PRINTF("status:%x \n", status);
 	}
+#endif
 
-//	if( s_ins.slave.ccc && s_ins.slave.con_para_update.sta == TASK_STATE_DONE){
-//			test_notify_tick(s_ins.connection_handle, s_ins.svc_handle , s_ins.tx_handle);
-//	}
+	if( s_ins.slave.ccc){
+			test_notify_tick(s_ins.connection_handle, s_ins.svc_handle , s_ins.tx_handle);
+	}
 
 #ifndef MASK_SECURITY
 	if(s_ins.slave.pair.sta == TASK_STATE_NONE && (s_ins.slave.con_para_update.sta == TASK_STATE_DONE)){

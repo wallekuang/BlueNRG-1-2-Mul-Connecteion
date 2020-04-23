@@ -45,8 +45,6 @@ BOOL device_slaves_is_full(void);
 
 BOOL device_masters_is_full(void);
 
-void device_init_connection_parameters(void);
-
 
 
 #endif

@@ -108,31 +108,8 @@ static Service_UUID_t service_uuid;
 static Char_UUID_t tx_uuid;
 static Char_UUID_t rx_uuid;
 
-  
-static discoveryContext_t discovery[MAX_SLAVES_NUMBER];
-
-static uint8_t discovery_counter = 0; 
-//static uint8_t actual_discovered_slave_devices = 0; 
-
-//static uint8_t slave_notification_length; 
-//static uint8_t slave_index; 
-//static uint16_t slave_value;
-
-//static uint8_t disc_procedure_is_ongoing = FALSE;
-//static uint8_t connection_slaves_counter = 0;
-//static uint8_t disc_to_be_checked = FALSE;
-static uint16_t master_connection_handle[MASTER_SLAVE_MAX_NUM_MASTERS]; /* master_slave could be slave up of 2 devices */
-static uint8_t connection_masters_counter = 0;
-
-//volatile int app_flags = 0; 
-
 /* Slaves local names */
 static uint8_t slaves_local_name[] = {AD_TYPE_COMPLETE_LOCAL_NAME,'s','l','a','v','e','m'}; 
-
-/**
- * @brief Multiple connection parameters variable
- */
-//static Multiple_Connection_type MS_Connection_Parameters; 
 
 /**
 * @brief Input parameters x Multiple connection formula:
@@ -143,14 +120,14 @@ uint8_t num_slaves = MASTER_SLAVE_NUM_SLAVES;
 float scan_window = MASTER_SLAVE_SCAN_WINDOW;
 float sleep_time = MASTER_SLAVE_SLEEP_TIME;
 
-static uint16_t Rx_Mtu[2] = {DEFAULT_ATT_MTU,DEFAULT_ATT_MTU};
-
-static uint16_t Max_Tx_Octets[2] = {DEFAULT_ATT_MTU + 4, DEFAULT_ATT_MTU + 4};
-
-static uint8_t master_char_value[CHAR_LEN]; 
-
 
 static struct master_slave_t s_state;
+
+static void master_slave_init(void)
+{
+		s_state.adv = TASK_STATE_NONE;
+		s_state.scan = TASK_STATE_NONE;
+}
 
 
 /******************************************************************************
@@ -195,7 +172,6 @@ void device_initialization(void)
   PRINTF("************** Master_Slave device \r\n");
   
   //aci_hal_write_config_data
-  //status = aci_hal_write_config_data(offset,length,value);
   status = aci_hal_write_config_data(CONFIG_DATA_PUBADDR_OFFSET, CONFIG_DATA_PUBADDR_LEN,master_slave_address);
   if (status != BLE_STATUS_SUCCESS) {
     PRINTF("aci_hal_write_config_data() failed:0x%02x\r\n", status);
@@ -205,7 +181,7 @@ void device_initialization(void)
     PRINTF("aci_hal_write_config_data --> SUCCESS\r\n");
   }
 
-  //aci_hal_set_tx_power_level
+  // aci_hal_set_tx_power_level
   //status = aci_hal_set_tx_power_level(en_high_power,pa_level);
   status = aci_hal_set_tx_power_level(0x01,0x04);
   if (status != BLE_STATUS_SUCCESS) {
@@ -215,8 +191,7 @@ void device_initialization(void)
     PRINTF("aci_hal_set_tx_power_level --> SUCCESS\r\n");
   }
 
-  //aci_gatt_init
-  //status = aci_gatt_init();
+  // aci_gatt_init
   status = aci_gatt_init();
   if (status != BLE_STATUS_SUCCESS) {
     PRINTF("aci_gatt_init() failed:0x%02x\r\n", status);
@@ -225,7 +200,7 @@ void device_initialization(void)
     PRINTF("aci_gatt_init --> SUCCESS\r\n");
   }
 
-  //aci_gap_init
+  // aci_gap_init
   status = aci_gap_init(GAP_PERIPHERAL_ROLE|GAP_CENTRAL_ROLE,0x00,0x07, &gap_service_handle, &dev_name_char_handle, &appearance_char_handle);
   if (status != BLE_STATUS_SUCCESS) {
     PRINTF("aci_gap_init() failed:0x%02x\r\n", status);
@@ -270,7 +245,8 @@ if (num_masters >0)
 
 	device_init(tx_handle,rx_handle,service_handle);
 	
-  
+  master_slave_init();
+	
 #if DEBUG ==1 
   
   PRINTF("****** Input Connection Parameters *******************************\r\n");
@@ -362,9 +338,7 @@ uint8_t set_device_discoverable(void)
 	const Multiple_Connection_type*  pMulCon = get_multiple_connection_parameters();
 
   Print_Anchor_Period(); 
-  //aci_gap_set_discoverable
-  //status = aci_gap_set_discoverable(advertising_type,advertising_interval_min,advertising_interval_max,own_address_type,advertising_filter_policy,local_name_length,local_name,service_uuid_length,service_uuid_length,slave_conn_interval_min,slave_conn_interval_max);
-  status = aci_gap_set_discoverable(ADV_IND,
+	status = aci_gap_set_discoverable(ADV_IND,
                                     pMulCon->Advertising_Interval,
                                     pMulCon->Advertising_Interval,
                                     0x00,
@@ -375,12 +349,6 @@ uint8_t set_device_discoverable(void)
                                     NULL,
                                     0x0000,
                                     0x0000);
-  if (status != BLE_STATUS_SUCCESS) {
-    PRINTF("aci_gap_set_discoverable() failed:0x%02x\r\n", status);
-  }else{
-    PRINTF("aci_gap_set_discoverable --> SUCCESS\r\n");
-  }
-
 	return status;
 }
 
@@ -397,9 +365,7 @@ uint8_t device_scanning(void)
   uint8_t status;
 
 	const Multiple_Connection_type*  pMulCon = get_multiple_connection_parameters();
-  //aci_gap_start_general_discovery_proc
-  //status = aci_gap_start_general_discovery_proc(le_scan_interval,le_scan_window,own_address_type,filter_duplicates);
-  status = aci_gap_start_general_discovery_proc(pMulCon->Scan_Interval,
+	status = aci_gap_start_general_discovery_proc(pMulCon->Scan_Interval,
                                                 pMulCon->Scan_Window,
                                                 0x00,
                                                 0x00);
@@ -412,72 +378,12 @@ uint8_t device_scanning(void)
 }
 
 
-/******************************************************************************
- * Function Name  : write_characteristic_.
- * Description    : Write Characteristics.
- * Input          : Connection Handle.
- * Output         : None.
- * Return         : None.
-******************************************************************************/
-void write_characteristic_descriptor(uint16_t Connection_Handle)
-{
-  uint8_t status;
-
-  uint8_t attribute_val_133[] = {0x01,0x00};
-
-  //aci_gatt_write_char_desc
-  //status = aci_gatt_write_char_desc(connection_handle,attr_handle,attribute_val_length,attribute_val);
-  status = aci_gatt_write_char_desc(Connection_Handle,
-                                    0x000F,
-                                    0x02,
-                                    attribute_val_133);
-  if (status != BLE_STATUS_SUCCESS) {
-    PRINTF("aci_gatt_write_char_desc() failed:0x%02x\r\n", status);
-  }else{
-    PRINTF("aci_gatt_write_char_desc --> SUCCESS\r\n");
-  }
-  
-}
-
-
-/******************************************************************************
- * Function Name  : update_characterists.
- * Description    : Update Characteristics 
- * Input          : index:  slave index.
-                  : char_len: received slave characteristic notification length. 
- * Output         : None.
- * Return         : None.
-******************************************************************************/
-void update_characterists(uint8_t index, uint8_t char_len)
-{
-  uint8_t status;
-  uint8_t update_len;
-	
-  for (uint8_t i =0; i<connection_masters_counter; i++)
-  {
-      /* Master_Slave sends notification with length = Max Number of bytes covered from increased ATT_MTU size and which also fits on an single LL PDU packet*/
-            update_len = MIN(char_len, Rx_Mtu[i]); 
-      update_len = MIN(update_len, Max_Tx_Octets[i]); 
-		
-      status=aci_gatt_update_char_value_ext(master_connection_handle[i], service_handle,tx_handle,1,update_len,0x00,update_len,&(master_char_value[0])); 
-      if (status == BLE_STATUS_BUSY)
-      {
-        PRINTF("aci_gatt_update_char_value_ext() FAILED due to BLE_STATUS_BUSY status (0x%02x), (0x%02x, 0x%02x) !!!\r\n", status , service_handle, tx_handle); 
-        //APP_FLAG_SET(APP_ERROR);
-      }
-      else if (status == BLE_STATUS_SUCCESS)
-      {
-              PRINTF("aci_gatt_update_char_value_ext() of %d bytes\r\n", update_len); 
-      }
-  }
-}
-
 static void APP_master_slave_adv_scan_control(ENUM_TASK_STATE target_adv,ENUM_TASK_STATE target_scan)
 {
 		tBleStatus status;
 		if(target_adv != s_state.adv){
 				if(target_adv == TASK_STATE_NONE){
-						status = hci_le_set_advertise_enable(FALSE);
+						status = aci_gap_set_non_discoverable();
 						PRINTF("stop adv status:%x \n", status);
 						s_state.adv = TASK_STATE_NONE;
 				}
@@ -490,8 +396,7 @@ static void APP_master_slave_adv_scan_control(ENUM_TASK_STATE target_adv,ENUM_TA
 
 		if(target_scan != s_state.scan){
 				if( (target_scan == TASK_STATE_NONE)){
-						//status = aci_gap_terminate_proc(0x01);
-						status = hci_le_set_scan_enable(FALSE, FALSE);
+						status = aci_gap_terminate_gap_proc(0x02);
 						PRINTF("stop scan status:%x \n", status);
 						s_state.scan = TASK_STATE_NONE;
 				}
@@ -583,20 +488,6 @@ static uint8_t Find_DeviceName(uint8_t data_length, uint8_t *data_value)
 }
 
 
-static uint8_t Is_New_Device(uint8_t *bdaddr)
-{
-  uint8_t i; 
-  
-  for (i=0; i < discovery_counter; i++)
-  {
-    if (memcmp(bdaddr, &discovery[i].device_found_address, 6) == 0)
-      return (FALSE);
-  }
-  
-  return (TRUE);
-  
-}
-
 /******************************************************************************
  * Function Name  : hci_le_advertising_report_event.
  * Description    : The LE Advertising Report event indicates that a Bluetooth device or multiple
@@ -619,7 +510,7 @@ void hci_le_advertising_report_event(uint8_t num_reports,Advertising_Report_t ad
   Osal_MemCpy(bdaddr, advertising_report[0].Address,6);
       
   /*  check current found device */
-  if ((evt_type == ADV_IND) && Is_New_Device(bdaddr) && Find_DeviceName(data_length, advertising_report[0].Data) )
+  if ((evt_type == ADV_IND) && Find_DeviceName(data_length, advertising_report[0].Data) )
   {
      device_slaves_update(advertising_report[0].Address,advertising_report[0].Address_Type);	
   }
@@ -681,18 +572,8 @@ void hci_le_connection_complete_event(uint8_t status,uint16_t connection_handle,
 ******************************************************************************/
 void aci_gatt_notification_event(uint16_t connection_handle,uint16_t attribute_handle,uint8_t attribute_value_length,uint8_t attribute_value[])
 {	
-  /* Receive Notifications from Slaves and send them to the Master */
-
-  /* value = 0x<slave_index><slave_value> */
-//  slave_index = attribute_value[2]; 
-//  slave_value  = (uint16_t)(((uint16_t) attribute_value[0])  | (((uint16_t) attribute_value[1])  << 8)); 
-  
-  if (num_masters>0)
-  {
-    //slave_notification_length = attribute_value_length;
-    Osal_MemCpy(&(master_char_value[0]), attribute_value, attribute_value_length);
-  }
-  
+	PRINTF("connection_handle:%x attribute_handle:%x attribute_value_length:%x \n", connection_handle,attribute_handle,attribute_value_length);
+	print_arr_short(attribute_value, attribute_value_length);
 }
 
 /******************************************************************************
@@ -732,24 +613,7 @@ void hci_le_connection_update_complete_event(uint8_t Status,
                                              uint16_t Supervision_Timeout)
 {
   
-#if (ENABLE_CONNECTION_UPDATE == 1) 
-  if (Status == 0)
-  {
-    PRINTF("hci_le_connection_update_complete_event() OK \r\n");
-       
-    /* Enter in discovery mode again */
-    /* Master-Slave is expected to connect to 2 Master devices */
-    if ((connection_masters_counter == 1) && (num_masters == 2)) 
-    {
-        PRINTF("-- ENTER In DISCOVERY MODE AGAIN for second Master\r\n ");
-        set_device_discoverable();
-    }
-  }
-  else 
-  {
-    PRINTF("hci_le_connection_update_complete_event() issue, Status: 0x%02x\r\n", Status);
-  }
-#endif
+
 }
 
 /**
@@ -759,24 +623,7 @@ void hci_le_connection_update_complete_event(uint8_t Status,
 */
 void hci_le_data_length_change_event(uint16_t connection_handle,uint16_t maxtxoctets,uint16_t maxtxtime,uint16_t maxrxoctets,uint16_t maxrxtime)
 {
-  uint8_t ret; 
-  //USER ACTION IS NEEDED
-  PRINTF("hci_le_data_length_change_event() coming from connection to Master device--> EVENT: TX: %d, TXTime: %d, RX: %d , RXTime: %d \r\n",maxtxoctets,maxtxtime,maxrxoctets,maxrxtime);
-	
-  /* If HCI_LE_DATA_LENGTH_CHANGE_EVENT is raised on Master_Slave device (DLE is supported): 
-     do ACI_GATT_EXCHANGE_CONFIG for increasing ATT_MTU size for communciation between Master_Slave and Master device */
-  if (connection_masters_counter > 0) 
-  {
-    Max_Tx_Octets[connection_masters_counter - 1] = maxtxoctets;
-    ret = aci_gatt_exchange_config(master_connection_handle[connection_masters_counter - 1]);
-    if (ret !=0)
-    {
-      PRINTF("aci_gatt_exchange_config() error: 0x%02x",ret);
-    }
-    else
-    {
-    }        
-  }
+
 }
 
 /*******************************************************************************

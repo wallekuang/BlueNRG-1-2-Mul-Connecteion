@@ -64,7 +64,7 @@ static uint16_t s_svc_handle;
 /**
  * @brief Multiple connection parameters variable
  */
-static Multiple_Connection_type MS_Connection_Parameters; 
+const static Multiple_Connection_type *pMS_ConPara; 
 
 
 BOOL device_slaves_is_full(void)
@@ -173,7 +173,8 @@ void device_slaves_update(uint8_t peer_address[6],uint8_t Address_Type)
 				}
 		}
 
-		PRINTF("add new device:");
+		PRINTF("add new device: Address_Type:%x \n",Address_Type);
+		print_arr(peer_address, 6);
 
 		
 		/* new device , apply a node to add to list */
@@ -203,7 +204,7 @@ void device_init(uint16_t tx_handle,uint16_t rx_handle,uint16_t svc_handle)
     }
 
 
-		
+		pMS_ConPara = get_multiple_connection_parameters();
 }
 
 void aci_gatt_disc_read_char_by_uuid_resp_event(uint16_t Connection_Handle,
@@ -231,11 +232,13 @@ void aci_gatt_disc_read_char_by_uuid_resp_event(uint16_t Connection_Handle,
 						if(memcmp(tx_uuid,Attribute_Value+3,sizeof(tx_uuid)) == 0){
 								pm->ds_TX.sta = TASK_STATE_DONE;
 								pm->TX_handle = Attribute_Handle;
+								PRINTF("pm->ds_TX.sta = TASK_STATE_DONE\n");
 						}
 
 						if(memcmp(rx_uuid,Attribute_Value+3,sizeof(tx_uuid)) == 0){
 								pm->ds_RX.sta = TASK_STATE_DONE;
 								pm->RX_handle = Attribute_Handle;
+								PRINTF("pm->ds_RX.sta = TASK_STATE_DONE\n");
 						}
 				}
 		}
@@ -535,6 +538,7 @@ static void device_master_Tick(APP_ENVI_CLEAR_CALLBACK app_envi_cb)
 		struct device_connected_t *item = NULL;
 		struct master_t *pm;
 		tBleStatus status;
+
 		
 		dl_list_for_each(item, &s_salve_list, struct device_connected_t, node) {
 				pm = &item->role.master;
@@ -543,7 +547,7 @@ static void device_master_Tick(APP_ENVI_CLEAR_CALLBACK app_envi_cb)
 					break;
 
 #ifdef STATBLE_CONNECT_PRO_CFG
-				if( (pm->state == MASTER_STATE_CONNECTED) && ((pm->do_exchange_cfg.sta != TASK_STATE_DONE) || (pm->con_req.sta != TASK_STATE_DONE)))
+				if( (pm->state == MASTER_STATE_CONNECTED) && ((pm->do_exchange_cfg.sta != TASK_STATE_DONE)))
 					break;
 #endif
 				
@@ -551,20 +555,17 @@ static void device_master_Tick(APP_ENVI_CLEAR_CALLBACK app_envi_cb)
 						// clear the environment incase BLE EVEN conflict when connecting
 						app_envi_cb(BLE_STATUS_SUCCESS,NULL);
 
-						//device_delay(5);
-					  //aci_gap_create_connection
-					  //status = aci_gap_create_connection(LE_1M_PHY,item->address_type,item->mac);
-						status = aci_gap_create_connection(MS_Connection_Parameters.Scan_Interval,
-                                     MS_Connection_Parameters.Scan_Window,
+						status = aci_gap_create_connection(pMS_ConPara->Scan_Interval,
+                                     pMS_ConPara->Scan_Window,
                                      item->address_type,
                                      item->mac,
                                      0x00,
-                                     MS_Connection_Parameters.Connection_Interval,
-                                     MS_Connection_Parameters.Connection_Interval,
+                                     pMS_ConPara->Connection_Interval,
+                                     pMS_ConPara->Connection_Interval,
                                      0x0000,
-                                     (int) (MS_Connection_Parameters.Connection_Interval * 1.25), //SUPERVISION_TIMEOUT,
-                                     MS_Connection_Parameters.CE_Length,
-                                     MS_Connection_Parameters.CE_Length);
+                                     400,//(int) (pMS_ConPara->Connection_Interval * 1.25*100), //SUPERVISION_TIMEOUT,
+                                     pMS_ConPara->CE_Length,
+                                     pMS_ConPara->CE_Length);
 				
 						PRINTF("aci_gap_create_connection %x  type:%x  \n", status, item->address_type);
 						pm->state = (status == BLE_STATUS_SUCCESS)?MASTER_STATE_CONNECTING:MASTER_STATE_INIT;
@@ -621,34 +622,6 @@ uint16_t device_get_handle(uint8_t llID)
 	return ret;
 }
 
-void device_init_connection_parameters(void)
-{
-	tBleStatus status;
-	/* **********************  Call Multiple connections parameters formula ***********************/
-  status = GET_Master_Slave_device_connection_parameters(MASTER_SLAVE_NUM_MASTERS,
-                                                      MASTER_SLAVE_NUM_SLAVES,
-                                                      MASTER_SLAVE_SCAN_WINDOW,
-                                                      MASTER_SLAVE_SLEEP_TIME,
-                                                      &MS_Connection_Parameters);
-  if (status !=0)
-  {
-    PRINTF("GET_Master_Slave_device_connection_parameters() failure: %d\r\n", status);  
-    return;
-  }
-
-	PRINTF("Scan Window: %d (%d.%d ms)\r\n", MS_Connection_Parameters.Scan_Window, PRINT_INT(MS_Connection_Parameters.Scan_Window *0.625),PRINT_FLOAT(MS_Connection_Parameters.Scan_Window *0.625) );
-  PRINTF("Connection Interval: %d (%d.%d ms)\r\n", MS_Connection_Parameters.Connection_Interval,PRINT_INT(MS_Connection_Parameters.Connection_Interval * 1.25),PRINT_FLOAT(MS_Connection_Parameters.Connection_Interval * 1.25));
-  PRINTF("Scan Interval: %d (%d.%d ms)\r\n", MS_Connection_Parameters.Scan_Interval, PRINT_INT(MS_Connection_Parameters.Scan_Interval * 0.625), PRINT_FLOAT(MS_Connection_Parameters.Scan_Interval * 0.625));
-  PRINTF("Advertising Interval: %d (%d.%d ms)\r\n", MS_Connection_Parameters.Advertising_Interval, PRINT_INT(MS_Connection_Parameters.Advertising_Interval * 0.625),PRINT_FLOAT(MS_Connection_Parameters.Advertising_Interval * 0.625) );
-  PRINTF("CE Event Length: %d (%d.%d ms)\r\n", MS_Connection_Parameters.CE_Length, PRINT_INT(MS_Connection_Parameters.CE_Length * 0.625),PRINT_FLOAT(MS_Connection_Parameters.CE_Length * 0.625) );
-
-	PRINTF("****** Output Connection Parameters ******************************\r\n");
-  PRINTF("\r\n");
-  PRINTF("Anchor Period Length: %d.%d ms\r\n", PRINT_INT(MS_Connection_Parameters.AnchorPeriodLength), PRINT_FLOAT(MS_Connection_Parameters.AnchorPeriodLength));
-  PRINTF("\r\n");
-  PRINTF("****** BLE APIs Connection Parameters: BLE time units/(ms)********\r\n");
-  PRINTF("\r\n");
-}
 
 #if 0
 static void device_slave_test_notify(void)
@@ -682,39 +655,53 @@ static void device_slave_test_notify(void)
 	}
 }
 
+#endif
+
 static void device_master_test_write(void)
 {
-	#include "bluenrg_lp_hal_vtimer.h"
-	#include "user_config.h"
-	struct device_connected_t *item = NULL;
-	struct master_t *ps;
+	static struct device_connected_t *item = NULL;
+	uint8_t i = 0;
+	
 
 	static uint32_t last_time;
 	static uint16_t count = 0;
 	uint32_t cur_time = HAL_VTimerGetCurrentTime_sysT32();
 	uint32_t ms = abs(cur_time-last_time)*2.4414/1000;
-	if(ms > 2000){
+	if(ms > 1000){
 			last_time = cur_time;
 
 			uint8_t temp[APP_MAX_ATT_SIZE];
 			memset(temp,0,sizeof(temp));
 			
 			count++;
+			
 			temp[0] = (count>>8)&0xff;
 			temp[1] = (count>>0)&0xff;
 
-			dl_list_for_each(item, &s_salve_list, struct device_connected_t, node) {
-					ps = &item->role.master;
-					if(ps->ccc.sta == TASK_STATE_DONE){
-						//test_write_data_tick(item->connection_handle,ps->TX_handle+1);
-						tBleStatus status = aci_gatt_write_without_resp(item->connection_handle,ps->TX_handle+1,APP_MAX_ATT_SIZE,temp);
-						//PRINTF("aci_gatt_write_char_value: status:%x	\n", status);
+			struct device_connected_t *first = dl_list_first(&s_salve_list, struct device_connected_t, node);
+			
+			if(first != NULL){
+					struct master_t *ps = NULL;
+					if(item == NULL){
+							item = first;
 					}
+					else{
+							item = dl_list_next(&s_salve_list, item, struct device_connected_t, node);
+					}
+					
+
+					uint16_t handle = item->role.master.TX_handle;
+					if(item != NULL && handle != 0){
+							tBleStatus status = aci_gatt_write_without_resp(item->connection_handle, handle+1, 20, temp);
+							PRINTF("aci_gatt_write_char_value: status:%x	connection_handle:%X \n", status, item->connection_handle);
+
+					}
+					
 			}
 	}
 }
 
-#endif
+
 
 static void device_slave_Tick(APP_ENVI_CLEAR_CALLBACK app_envi_cb)
 {
@@ -753,7 +740,8 @@ void device_Tick(APP_ENVI_CLEAR_CALLBACK app_envi_cb)
 		device_slave_Tick(app_envi_cb);
 
 //		device_slave_test_notify();
-//		device_master_test_write();
+		device_master_test_write();
+
 }
 
 

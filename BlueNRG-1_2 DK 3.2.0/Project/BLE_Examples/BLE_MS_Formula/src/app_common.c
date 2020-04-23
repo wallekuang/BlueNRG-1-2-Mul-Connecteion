@@ -48,7 +48,7 @@ void app_alive_tick(void)
 	}
 }
 
-#if 0
+
 /**
 	* @brief This function use to test the write  characteristic for clien role to call
 	* @param[in] connection_handle: peer device connection handle
@@ -77,6 +77,7 @@ void test_write_data_tick(uint16_t connection_handle,uint16_t handle)
 	}
 }
 
+
 /**
 * @brief This function use to test the notify  characteristic for server role to call
 * @param[in] service_handle: the server handle 
@@ -90,10 +91,10 @@ void test_notify_tick(uint16_t connection_handle,uint16_t service_handle,uint16_
 	static uint16_t count = 0;
 	uint32_t cur_time = HAL_VTimerGetCurrentTime_sysT32();
 	uint32_t ms = (uint32_t)(abs(cur_time-last_time)*2.4414/1000);
-	if(ms > 1000){
+	if(ms > 2000){
 			last_time = cur_time;
-			uint16_t updata_len = APP_MAX_ATT_SIZE;
-			uint8_t temp[APP_MAX_ATT_SIZE];
+			uint16_t updata_len = (DEFAULT_MAX_ATT_MTU - 3);
+			uint8_t temp[(DEFAULT_MAX_ATT_MTU - 3)];
 			memset(temp,0,sizeof(temp));
 			
 			count++;
@@ -101,12 +102,12 @@ void test_notify_tick(uint16_t connection_handle,uint16_t service_handle,uint16_
 			temp[1] = (count>>0)&0xff;
 			
 			//PRINTF("connection_handle:%x service_handle:%x char_handle:%x ",connection_handle, service_handle, char_handle);
-			tBleStatus status  = aci_gatt_update_char_value_ext(connection_handle,service_handle,char_handle,0x01,APP_MAX_ATT_SIZE ,0x0000,updata_len,temp);
-			//PRINTF("notify status:%x  count:%x \n", status, count);
+			tBleStatus status  = aci_gatt_update_char_value_ext(connection_handle,service_handle,char_handle,0x01,(DEFAULT_MAX_ATT_MTU - 3) ,0x0000,updata_len,temp);
+			PRINTF("notify status:%x  count:%x \n", status, count);
 	}
 		
 }
-#endif
+
 
 void print_arr(uint8_t *pdata,uint16_t length)
 {
