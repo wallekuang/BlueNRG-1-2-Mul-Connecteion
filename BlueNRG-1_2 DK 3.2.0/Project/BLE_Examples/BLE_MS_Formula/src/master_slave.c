@@ -44,14 +44,6 @@
 #ifndef DEBUG
 #define DEBUG 1 //TBR
 #endif
-
-/* Enable connection update request to be dent to Master device after connection */
-#define ENABLE_CONNECTION_UPDATE 1 
-
-/* Do scan first */
-#define SCAN_FIRST  1 
-
-#define MASTER_SLAVE_MAX_NUM_MASTERS 2 
    
 #if DEBUG
 #include <stdio.h>
@@ -103,10 +95,6 @@ typedef struct discoveryContext_s {
 static uint16_t tx_handle;
 static uint16_t rx_handle;
 static uint16_t service_handle;
-
-static Service_UUID_t service_uuid;
-static Char_UUID_t tx_uuid;
-static Char_UUID_t rx_uuid;
 
 /* Slaves local names */
 static uint8_t slaves_local_name[] = {AD_TYPE_COMPLETE_LOCAL_NAME,'s','l','a','v','e','m'}; 
@@ -182,7 +170,6 @@ void device_initialization(void)
   }
 
   // aci_hal_set_tx_power_level
-  //status = aci_hal_set_tx_power_level(en_high_power,pa_level);
   status = aci_hal_set_tx_power_level(0x01,0x04);
   if (status != BLE_STATUS_SUCCESS) {
     PRINTF("aci_hal_set_tx_power_level() failed:0x%02x\r\n", status);
@@ -273,51 +260,44 @@ if (num_masters >0)
 void set_database(void)
 {
   uint8_t status = BLE_STATUS_SUCCESS;
+	Service_UUID_t service_uuid;
+	Char_UUID_t tx_uuid;
+	Char_UUID_t rx_uuid;
 
-  uint8_t uuid[2];
-  
-  COPY_UUID_16(uuid, 0xA0,0x01);
+  uint8_t server_uuid[16] = SPS_UUID;
 
-  Osal_MemCpy(&service_uuid.Service_UUID_16, uuid, 2);
-
+	Osal_MemCpy(&service_uuid.Service_UUID_128, server_uuid, 16);
   //aci_gatt_add_service
   //status = aci_gatt_add_service(service_uuid_type,service_uuid_type,service_type,max_attribute_records, &service_handle);
-  status = aci_gatt_add_service(UUID_TYPE_16,&service_uuid,PRIMARY_SERVICE,0x04, &service_handle);
+  status = aci_gatt_add_service(UUID_TYPE_128,&service_uuid,PRIMARY_SERVICE,0x06, &service_handle);
   if (status != BLE_STATUS_SUCCESS) {
     PRINTF("aci_gatt_add_service() failed:0x%02x\r\n", status);
   }else{
     PRINTF("aci_gatt_add_service --> SUCCESS\r\n");
   }
 
-  COPY_UUID_16(uuid, 0xA0,0x02);
+  uint8_t uuid1[16] = TX_UUID;
+	Osal_MemCpy(&tx_uuid.Char_UUID_128, uuid1, 16);
+  status = aci_gatt_add_char(service_handle,UUID_TYPE_128,&tx_uuid,APP_MAX_ATT_SIZE,CHAR_PROP_NOTIFY,ATTR_PERMISSION_NONE,GATT_NOTIFY_ATTRIBUTE_WRITE,
+								0x07,0x01, &tx_handle);
+	if (status != BLE_STATUS_SUCCESS) {
+    PRINTF("aci_gatt_add_char() failed:0x%02x\r\n", status);
+  }else{
+    PRINTF("aci_gatt_add_char --> SUCCESS\r\n");
+  }
 
-  Osal_MemCpy(&tx_uuid.Char_UUID_16, uuid, 2);
+	uint8_t uuid2[16] = RX_UUID;
+	Osal_MemCpy(&rx_uuid.Char_UUID_128, uuid2, 16);
+  status = aci_gatt_add_char(service_handle,UUID_TYPE_128,&rx_uuid,APP_MAX_ATT_SIZE,CHAR_PROP_WRITE_WITHOUT_RESP,ATTR_PERMISSION_NONE,GATT_NOTIFY_ATTRIBUTE_WRITE,
+								0x07,0x01, &rx_handle);
 
-  //aci_gatt_add_char
-  //status = aci_gatt_add_char(service_handle,char_uuid_type,char_uuid_type,char_value_length,char_properties,security_permissions,gatt_evt_mask,enc_key_size,is_variable, &char_handle);
-  status = aci_gatt_add_char(service_handle,UUID_TYPE_16,&tx_uuid,CHAR_LEN,CHAR_PROP_NOTIFY,ATTR_PERMISSION_NONE,GATT_NOTIFY_ATTRIBUTE_WRITE,0x07,0x01, &tx_handle);
   if (status != BLE_STATUS_SUCCESS) {
     PRINTF("aci_gatt_add_char() failed:0x%02x\r\n", status);
   }else{
     PRINTF("aci_gatt_add_char --> SUCCESS\r\n");
   }
+	
 
-	COPY_UUID_16(uuid, 0xA0,0x03);
-
-  Osal_MemCpy(&rx_uuid.Char_UUID_16, uuid, 2);
-
-	status = aci_gatt_add_char(service_handle,UUID_TYPE_16,&rx_uuid,CHAR_LEN,CHAR_PROP_WRITE_WITHOUT_RESP,ATTR_PERMISSION_NONE,GATT_NOTIFY_ATTRIBUTE_WRITE,0x07,0x01, &rx_handle);
-	if (status != BLE_STATUS_SUCCESS) {
-    PRINTF("aci_gatt_add_char() failed:0x%02x\r\n", status);
-  }else{
-    PRINTF("aci_gatt_add_char --> SUCCESS\r\n");
-  }
-
-	if (status != BLE_STATUS_SUCCESS) {
-    PRINTF("aci_gatt_add_char() failed:0x%02x\r\n", status);
-  }else{
-    PRINTF("aci_gatt_add_char --> SUCCESS\r\n");
-  }
 	
   
 }
@@ -336,7 +316,6 @@ uint8_t set_device_discoverable(void)
   uint8_t Local_Name[] = {AD_TYPE_COMPLETE_LOCAL_NAME, 0x61, 0x64, 0x76, 0x73, 0x63, 0x61,0x6e}; //advscan {0x61,0x64,0x76,0x73,0x63,0x61,0x6E};
 
 	const Multiple_Connection_type*  pMulCon = get_multiple_connection_parameters();
-
   Print_Anchor_Period(); 
 	status = aci_gap_set_discoverable(ADV_IND,
                                     pMulCon->Advertising_Interval,
@@ -369,11 +348,6 @@ uint8_t device_scanning(void)
                                                 pMulCon->Scan_Window,
                                                 0x00,
                                                 0x00);
-  if (status != BLE_STATUS_SUCCESS) {
-    PRINTF("aci_gap_start_general_discovery_proc() failed:0x%02x\r\n", status);
-  }else{
-    PRINTF("aci_gap_start_general_discovery_proc --> SUCCESS\r\n");
-  }
   return (status);
 }
 
@@ -417,7 +391,6 @@ static void APP_master_slave_auto_schedule(void)
 		
 		ENUM_TASK_STATE target_adv = TASK_STATE_NONE;
 		ENUM_TASK_STATE target_scan = TASK_STATE_NONE;
-
 		
 		if(!busy){
 				target_adv = (masters_full? TASK_STATE_NONE:TASK_STATE_DOING);
@@ -434,7 +407,6 @@ static void *app_envi_manual_schedule_even(tBleStatus sta,void* param)
 		ENUM_TASK_STATE target_adv = TASK_STATE_NONE;
 		ENUM_TASK_STATE target_scan = TASK_STATE_NONE;
 		PRINTF("%s\n",__func__);
-
 		
 		APP_master_slave_adv_scan_control(target_adv,target_scan);
 		return NULL;
@@ -529,7 +501,7 @@ been terminated by the upper layer or has completed for any other reason.
 void aci_gap_proc_complete_event(uint8_t procedure_code,uint8_t status,uint8_t data_length,uint8_t data[])
 {
   PRINTF("procedure_code:%x   status:%x \r\n", procedure_code, status);
-	print_arr(data, data_length);
+  COMPrintf_hexdump(data, data_length);
 	// 
 	if( (procedure_code|0x02) != 0 ){
 			if(s_state.scan == TASK_STATE_DOING)

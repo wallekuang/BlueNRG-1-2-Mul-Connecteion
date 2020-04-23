@@ -337,7 +337,6 @@ int main(void)
   SdkEvalLedInit(LED1); //Activity led 
   SdkEvalLedOn(LED1);
 
-  //device_initialization
   device_initialization();
   
   printf("BLE device initialized\r\n");

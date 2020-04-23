@@ -89,7 +89,7 @@ void set_database(void)
 	uint8_t uuid1[16] = TX_UUID;
 	Osal_MemCpy(&tx_uuid.Char_UUID_128, uuid1, 16);
 
-  status = aci_gatt_add_char(s_ins.svc_handle,UUID_TYPE_128,&tx_uuid,(DEFAULT_MAX_ATT_MTU - 3),CHAR_PROP_NOTIFY,ATTR_PERMISSION_NONE,GATT_NOTIFY_ATTRIBUTE_WRITE,
+  status = aci_gatt_add_char(s_ins.svc_handle,UUID_TYPE_128,&tx_uuid,APP_MAX_ATT_SIZE,CHAR_PROP_NOTIFY,ATTR_PERMISSION_NONE,GATT_NOTIFY_ATTRIBUTE_WRITE,
 								0x07,0x01, &s_ins.tx_handle);
 	
   if (status != BLE_STATUS_SUCCESS) {
@@ -111,7 +111,7 @@ void set_database(void)
 
 	uint8_t uuid2[16] = RX_UUID;
 	Osal_MemCpy(&rx_uuid.Char_UUID_128, uuid2, 16);
-  status = aci_gatt_add_char(s_ins.svc_handle,UUID_TYPE_128,&rx_uuid,(DEFAULT_MAX_ATT_MTU - 3),CHAR_PROP_WRITE_WITHOUT_RESP,ATTR_PERMISSION_NONE,GATT_NOTIFY_ATTRIBUTE_WRITE,
+  status = aci_gatt_add_char(s_ins.svc_handle,UUID_TYPE_128,&rx_uuid,APP_MAX_ATT_SIZE,CHAR_PROP_WRITE_WITHOUT_RESP,ATTR_PERMISSION_NONE,GATT_NOTIFY_ATTRIBUTE_WRITE,
 								0x07,0x01, &s_ins.rx_handle);
 
   if (status != BLE_STATUS_SUCCESS) {
@@ -201,8 +201,7 @@ void device_initialization(void)
   
   uint8_t device_name[] = {0x73,0x6C,0x61,0x76,0x65,0x6D}; //slavem
   
-   PRINTF("************** Slave: %d\r\n", SLAVE_INDEX);
-
+  PRINTF("************** Slave: %d\r\n", SLAVE_INDEX);
 
 	// read Unique device serial number
 	uint8_t chip_id[8];
@@ -213,7 +212,7 @@ void device_initialization(void)
 
 
 
-	// check If it is all 0xff
+	// checked If it is all 0xff
 	uint8_t none[8] = {0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF};
 	if(memcmp(none,chip_id,sizeof(none)) == 0){
 			hci_le_rand(chip_id);
@@ -294,24 +293,12 @@ void device_initialization(void)
 */
 void APP_Tick(void)
 {
-  uint8_t status;
 	
 	app_alive_tick();
 	
 	if(s_ble_state != SLAVE_CONNECTED){
 			return;
 	}
-
-#if 0
-	if( (s_ins.slave.con_para_update.sta == TASK_STATE_NONE)){
-		  //  
-		  PRINTF("aci_l2cap_connection_parameter_update_req \n");
-			status = aci_l2cap_connection_parameter_update_req(s_ins.connection_handle,24,24,0,500);
-			s_ins.slave.con_para_update.sta = (status == BLE_STATUS_SUCCESS)? TASK_STATE_DOING:TASK_STATE_NONE;
-			s_ins.slave.con_para_update.retry_times++;
-			PRINTF("status:%x \n", status);
-	}
-#endif
 
 	if( s_ins.slave.ccc){
 			test_notify_tick(s_ins.connection_handle, s_ins.svc_handle , s_ins.tx_handle);

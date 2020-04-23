@@ -59,7 +59,7 @@ static struct dl_list s_device_unuse;
 /* for local as server */
 static uint16_t s_tx_handle;
 static uint16_t s_rx_handle;
-static uint16_t s_svc_handle;
+//static uint16_t s_svc_handle;
 
 /**
  * @brief Multiple connection parameters variable
@@ -193,7 +193,7 @@ void device_init(uint16_t tx_handle,uint16_t rx_handle,uint16_t svc_handle)
 {
 		s_tx_handle = tx_handle;
 		s_rx_handle = rx_handle;
-		s_svc_handle = svc_handle;
+//		s_svc_handle = svc_handle;
 		
 		dl_list_init(&s_salve_list);
 		dl_list_init(&s_master_list);
@@ -622,51 +622,13 @@ uint16_t device_get_handle(uint8_t llID)
 	return ret;
 }
 
-
-#if 0
-static void device_slave_test_notify(void)
-{
-	#include "bluenrg_lp_hal_vtimer.h"
-	#include "user_config.h"
-
-	struct device_connected_t *item = NULL;
-	struct slave_t *ps;
-	static uint32_t last_time;
-	static uint16_t count = 0;
-	uint32_t cur_time = HAL_VTimerGetCurrentTime_sysT32();
-	uint32_t ms = abs(cur_time-last_time)*2.4414/1000;
-	if(ms > 2000){
-			last_time = cur_time;
-			uint16_t updata_len = APP_MAX_ATT_SIZE;
-			uint8_t temp[APP_MAX_ATT_SIZE];
-			memset(temp,0,sizeof(temp));
-			count++;
-			temp[0] = (count>>8)&0xff;
-			temp[1] = (count>>0)&0xff;
-			dl_list_for_each(item, &s_master_list, struct device_connected_t, node) {
-					ps = &item->role.slave;
-					if(ps->ccc == ENABLE){
-							
-							tBleStatus status  = aci_gatt_update_char_value_ext(item->connection_handle,s_svc_handle,s_tx_handle,0x01,APP_MAX_ATT_SIZE ,0x0000,updata_len,temp);
-							//PRINTF("notify status:%x  count:%x \n", status, count);
-					}
-			}
-			//PRINTF("connection_handle:%x service_handle:%x char_handle:%x ",connection_handle, service_handle, char_handle);
-	}
-}
-
-#endif
-
 static void device_master_test_write(void)
 {
 	static struct device_connected_t *item = NULL;
-	uint8_t i = 0;
-	
-
 	static uint32_t last_time;
 	static uint16_t count = 0;
 	uint32_t cur_time = HAL_VTimerGetCurrentTime_sysT32();
-	uint32_t ms = abs(cur_time-last_time)*2.4414/1000;
+	uint32_t ms = (uint32_t)abs(cur_time-last_time)*2.4414/1000;
 	if(ms > 1000){
 			last_time = cur_time;
 
@@ -681,7 +643,6 @@ static void device_master_test_write(void)
 			struct device_connected_t *first = dl_list_first(&s_salve_list, struct device_connected_t, node);
 			
 			if(first != NULL){
-					struct master_t *ps = NULL;
 					if(item == NULL){
 							item = first;
 					}
@@ -738,9 +699,11 @@ void device_Tick(APP_ENVI_CLEAR_CALLBACK app_envi_cb)
 {
 		device_master_Tick(app_envi_cb);
 		device_slave_Tick(app_envi_cb);
-
-//		device_slave_test_notify();
 		device_master_test_write();
+
+		
+//		device_slave_test_notify();
+		
 
 }
 
