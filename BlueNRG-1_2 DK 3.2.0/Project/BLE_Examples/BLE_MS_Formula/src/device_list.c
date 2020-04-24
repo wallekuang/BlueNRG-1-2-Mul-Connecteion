@@ -142,6 +142,7 @@ void device_disconnection_complete_event(uint16_t connection_handle)
 							/* remove bonded information */
 							aci_gap_remove_bonded_device(item->address_type,item->mac);
 							dl_list_del(&item->node);
+							//memset(&item->role,0,sizeof(item->role));
 							clean_count = sizeof(struct device_connected_t) - sizeof(struct dl_list);
 							clean_addr = (uint8_t *)item;
 							memset(clean_addr, 0, clean_count);
@@ -162,7 +163,6 @@ void device_disconnection_complete_event(uint16_t connection_handle)
 							memset(clean_addr, 0, clean_count);
 							PRINTF("remove node\n");
 							dl_list_add(&s_device_unuse, &item->node);
-							
 							return;
 				}
     }
@@ -643,7 +643,6 @@ static void device_master_test_write(void)
 	uint32_t ms = (uint32_t)abs(cur_time-last_time)*2.4414/1000;
 	if(ms > 1000){
 			last_time = cur_time;
-
 			if( dl_list_len(&s_salve_list) == 0)
 					return;
 			
@@ -653,9 +652,6 @@ static void device_master_test_write(void)
 			count++;
 			temp[0] = (count>>8)&0xff;
 			temp[1] = (count>>0)&0xff;
-
-			struct device_connected_t *first = dl_list_first(&s_salve_list, struct device_connected_t, node);
-
 			
 			uint16_t len = 0;
 			dl_list_for_each(item, &s_salve_list, struct device_connected_t, node) {
@@ -663,10 +659,9 @@ static void device_master_test_write(void)
 				task_t ds_TX = item->role.master.ds_TX;
 				if(next_item == NULL )
 					next_item = item;
-				
 			  if(item == next_item){
 					if( (item != NULL) && (handle != 0) && (ds_TX.sta == TASK_STATE_DONE) ){
-						tBleStatus status = aci_gatt_write_without_resp(item->connection_handle, handle+1, 20, temp);
+						tBleStatus status = aci_gatt_write_without_resp(item->connection_handle, handle+1, APP_MAX_ATT_SIZE, temp);
 						PRINTF("aci_gatt_write_char_value: status:%x	connection_handle:%X \n", status, item->connection_handle);
 					}
 					next_item = dl_list_next(&s_salve_list, next_item, struct device_connected_t, node);
@@ -675,7 +670,7 @@ static void device_master_test_write(void)
 				
 				len++;
 				if(len >= dl_list_len(&s_salve_list))
-					item = NULL;
+					next_item = NULL;
 			}
 	}
 }

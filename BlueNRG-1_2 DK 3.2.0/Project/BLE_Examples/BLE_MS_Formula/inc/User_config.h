@@ -67,12 +67,12 @@ These constants and variables are used from the BlueNRG-1 stack to reserve RAM a
 #define FLASH_SERVER_DB_SIZE	(0X400)
 
 /* SDK 3.0.0 or later: BlueNRG-2, BLE stack v2.1 (extended data length is supported) */
-#ifdef BLUENRG2_DEVICE 
+//#ifdef BLUENRG2_DEVICE 
 #define MAX_ATT_MTU	(DEFAULT_MAX_ATT_MTU) //247
-#else
+//#else
 /* Set supported max value for ATT_MTU enabled by the application. Allowed values in range: [23:247] [New parameter added on BLE stack v2.x] */
-#define MAX_ATT_MTU	(DEFAULT_ATT_MTU) //23
-#endif
+//#define MAX_ATT_MTU	(DEFAULT_ATT_MTU) //23
+//#endif
 
 /* Set supported max value for attribute size: it is the biggest attribute size enabled by the application. */
 #define MAX_ATT_SIZE	(APP_MAX_ATT_SIZE)
