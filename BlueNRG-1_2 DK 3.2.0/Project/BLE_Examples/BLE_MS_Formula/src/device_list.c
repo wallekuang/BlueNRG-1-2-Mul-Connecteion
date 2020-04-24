@@ -39,8 +39,8 @@ struct device_connected_t {
 	uint16_t connection_handle;
 	uint16_t update_len;
 	union{
-		struct master_t master;
-		struct slave_t slave;
+		struct master_t master;				/* local role for master */
+		struct slave_t slave;					/* local role for slave */
 	}role;
 };
 
@@ -106,6 +106,7 @@ void device_connection_complete_event(uint8_t llID, uint16_t connection_handle,
 								item->connection_handle = connection_handle;
 								item->role.master.con_timestamp = HAL_VTimerGetCurrentTime_sysT32();
 								PRINTF("item->role.master.state = MASTER_STATE_CONNECTED\n");
+								PRINTF("item: %x ",item);
 								return;
 						}
 		    }
@@ -133,12 +134,17 @@ void device_connection_complete_event(uint8_t llID, uint16_t connection_handle,
 void device_disconnection_complete_event(uint16_t connection_handle)
 {
 		struct device_connected_t *item = NULL;
+		uint16_t clean_count = 0;
+		uint8_t * clean_addr = NULL;
+		
     dl_list_for_each(item, &s_master_list, struct device_connected_t, node) {
 				if(item->connection_handle == connection_handle){
 							/* remove bonded information */
 							aci_gap_remove_bonded_device(item->address_type,item->mac);
 							dl_list_del(&item->node);
-							memset(&item->role,0,sizeof(item->role));
+							clean_count = sizeof(struct device_connected_t) - sizeof(struct dl_list);
+							clean_addr = (uint8_t *)item;
+							memset(clean_addr, 0, clean_count);
 							PRINTF("remove node\n");
 							dl_list_add(&s_device_unuse, &item->node);
 							return;
@@ -150,9 +156,13 @@ void device_disconnection_complete_event(uint16_t connection_handle)
 							/* remove bonded information */
 							aci_gap_remove_bonded_device(item->address_type,item->mac);
 							dl_list_del(&item->node);
-							memset(&item->role,0,sizeof(item->role));
+							//memset(&item->role,0,sizeof(item->role));
+							clean_count = sizeof(struct device_connected_t) - sizeof(struct dl_list);
+							clean_addr = (uint8_t *)item;
+							memset(clean_addr, 0, clean_count);
 							PRINTF("remove node\n");
 							dl_list_add(&s_device_unuse, &item->node);
+							
 							return;
 				}
     }
@@ -410,9 +420,9 @@ void aci_gatt_attribute_modified_event(uint16_t connection_handle,uint16_t attr_
 				}
 
 				if(attr_handle == s_rx_handle+1){
-						//uint16_t count = (attr_data[0]<<8) + (attr_data[1]<<0);
-						//PRINTF("connection_handle:%x  attr_data_length:%x  count:%x \n",connection_handle, attr_data_length, count);
-						//print_arr_short(attr_data, attr_data_length);
+						uint16_t count = (attr_data[0]<<8) + (attr_data[1]<<0);
+						PRINTF("connection_handle:%x  attr_data_length:%x  count:%x \n",connection_handle, attr_data_length, count);
+						print_arr_short(attr_data, attr_data_length);
 				}
 		}
 	}
@@ -624,7 +634,9 @@ uint16_t device_get_handle(uint8_t llID)
 
 static void device_master_test_write(void)
 {
-	static struct device_connected_t *item = NULL;
+	struct device_connected_t *item = NULL;
+	static struct device_connected_t *next_item = NULL;
+	
 	static uint32_t last_time;
 	static uint16_t count = 0;
 	uint32_t cur_time = HAL_VTimerGetCurrentTime_sysT32();
@@ -632,32 +644,38 @@ static void device_master_test_write(void)
 	if(ms > 1000){
 			last_time = cur_time;
 
+			if( dl_list_len(&s_salve_list) == 0)
+					return;
+			
 			uint8_t temp[APP_MAX_ATT_SIZE];
 			memset(temp,0,sizeof(temp));
 			
 			count++;
-			
 			temp[0] = (count>>8)&0xff;
 			temp[1] = (count>>0)&0xff;
 
 			struct device_connected_t *first = dl_list_first(&s_salve_list, struct device_connected_t, node);
+
 			
-			if(first != NULL){
-					if(item == NULL){
-							item = first;
+			uint16_t len = 0;
+			dl_list_for_each(item, &s_salve_list, struct device_connected_t, node) {
+				uint16_t handle = item->role.master.TX_handle;
+				task_t ds_TX = item->role.master.ds_TX;
+				if(next_item == NULL )
+					next_item = item;
+				
+			  if(item == next_item){
+					if( (item != NULL) && (handle != 0) && (ds_TX.sta == TASK_STATE_DONE) ){
+						tBleStatus status = aci_gatt_write_without_resp(item->connection_handle, handle+1, 20, temp);
+						PRINTF("aci_gatt_write_char_value: status:%x	connection_handle:%X \n", status, item->connection_handle);
 					}
-					else{
-							item = dl_list_next(&s_salve_list, item, struct device_connected_t, node);
-					}
-					
-
-					uint16_t handle = item->role.master.TX_handle;
-					if(item != NULL && handle != 0){
-							tBleStatus status = aci_gatt_write_without_resp(item->connection_handle, handle+1, 20, temp);
-							PRINTF("aci_gatt_write_char_value: status:%x	connection_handle:%X \n", status, item->connection_handle);
-
-					}
-					
+					next_item = dl_list_next(&s_salve_list, next_item, struct device_connected_t, node);
+					break;
+				}
+				
+				len++;
+				if(len >= dl_list_len(&s_salve_list))
+					item = NULL;
 			}
 	}
 }

@@ -1,0 +1,2953 @@
+###############################################################################
+#
+# IAR ELF Linker V8.40.1.212/W32 for ARM                  23/Apr/2020  12:12:15
+# Copyright 2007-2019 IAR Systems AB.
+#
+#    Output file  =
+#        D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Exe\BLE_MS_Formula_Master_Slave.out
+#    Map file     =
+#        D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\List\BLE_MS_Formula_Master_Slave.map
+#    Command line =
+#        -f C:\Users\Lucien\AppData\Local\Temp\EWB286.tmp
+#        ("D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj\app_common.o"
+#        "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj\BLE_MS_Formula_main.o"
+#        "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj\ble_utils.o"
+#        "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj\BlueNRG1_adc.o"
+#        "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj\BlueNRG1_dma.o"
+#        "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj\BlueNRG1_flash.o"
+#        "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj\BlueNRG1_gpio.o"
+#        "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj\BlueNRG1_i2c.o"
+#        "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj\BlueNRG1_it.o"
+#        "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj\BlueNRG1_mft.o"
+#        "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj\BlueNRG1_pka.o"
+#        "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj\BlueNRG1_rng.o"
+#        "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj\BlueNRG1_rtc.o"
+#        "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj\BlueNRG1_spi.o"
+#        "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj\BlueNRG1_sysCtrl.o"
+#        "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj\BlueNRG1_uart.o"
+#        "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj\BlueNRG1_wdg.o"
+#        "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj\cassert.o"
+#        "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj\clock.o"
+#        "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj\context_switch.o"
+#        "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj\gp_timer.o"
+#        "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Library\Bluetooth_LE\library\libbluenrg1_stack.a"
+#        "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Library\cryptolib\libcrypto.a" "D:\work\2020\14_IIC\BlueNRG-1_2
+#        DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj\LPS25HB.o"
+#        "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj\misc.o"
+#        "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj\miscutil.o"
+#        "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj\osal.o"
+#        "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj\SDK_EVAL_Com.o"
+#        "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj\SDK_EVAL_Config.o"
+#        "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj\SDK_EVAL_I2C.o"
+#        "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj\SDK_EVAL_Led.o"
+#        "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj\slave.o"
+#        "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj\sleep.o"
+#        "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj\stack_user_cfg.o"
+#        "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj\system_bluenrg1.o"
+#        --no_out_extension -o "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Exe\BLE_MS_Formula_Master_Slave.out"
+#        --map "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\List\BLE_MS_Formula_Master_Slave.map"
+#        --config "D:\work\2020\14_IIC\BlueNRG-1_2 DK
+#        3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\BlueNRG1.icf"
+#        --semihosting --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+define block BLOCK_STACKLIB_FLASH_DATA
+   with fixed order, alignment = 2K {
+      section .noinit.stacklib_flash_data,
+      section .noinit.stacklib_stored_device_id_data };
+"A0":  place at start of [from 0x1006'7000 to 0x1006'7fff] {
+          block BLOCK_STACKLIB_FLASH_DATA };
+define block BLUE with size = 524, alignment = 8 { section .bss.__blue_RAM };
+"A1":  place at address 0x2000'00c0 { block BLUE };
+"A3":  place at start of [from 0x1004'0000 to 0x1006'6fff] {
+          ro section .intvec };
+define block ota_sw_activation_block
+   with size = 4, alignment = 4 { section .ota_sw_activation };
+"A4":  place at address 0x2000'0004 { block ota_sw_activation_block };
+define block savedMSP_block with size = 4, alignment = 4 { section .savedMSP };
+"A5":  place at address 0x2000'0008 { block savedMSP_block };
+define block wakeupFromSleepFlag_block
+   with size = 4, alignment = 4 { section .wakeupFromSleepFlag };
+"A6":  place at address 0x2000'000c { block wakeupFromSleepFlag_block };
+define block app_base_block with size = 4, alignment = 4 { section .app_base };
+"A7":  place at address 0x2000'0010 { block app_base_block };
+define block flash_sw_lock_block
+   with size = 4, alignment = 4 { section .flash_sw_lock };
+"A8":  place at address 0x2000'0014 { block flash_sw_lock_block };
+define block rfTimeout_block
+   with size = 4, alignment = 4 { section .rfTimeout };
+"A9":  place at address 0x2000'0018 { block rfTimeout_block };
+define block BOR_config_block
+   with size = 8, alignment = 4 { section .BOR_config };
+"A10": place at address 0x2000'001c { block BOR_config_block };
+define block Blue_Flag_Ram_block
+   with size = 4, alignment = 4 { section .__blueflag_RAM };
+"A11": place at address 0x2000'0030 { block Blue_Flag_Ram_block };
+define block Crash_Info_block
+   with size = 40, alignment = 4 { section .__crash_RAM };
+"A12": place at address 0x2000'0034 { block Crash_Info_block };
+"P2":  place in [from 0x1004'0000 to 0x1006'6fff] { ro };
+"P3":  place in [from 0x2000'0000 to 0x2000'5fff] { rw };
+define block CSTACK with size = 3K, alignment = 8 { };
+"A13": place at end of [from 0x2000'0000 to 0x2000'5fff] { block CSTACK };
+initialize by copy { rw };
+keep { section .bss.__blue_RAM };
+keep { section .intvec };
+keep { section .ota_sw_activation };
+keep { section .savedMSP };
+keep { section .wakeupFromSleepFlag };
+keep { section .app_base };
+keep { section .flash_sw_lock };
+keep { section .rfTimeout };
+keep { section .BOR_config };
+keep { section .__blueflag_RAM };
+keep { section .__crash_RAM };
+
+No sections matched the following patterns:
+
+  ro section .bootloader  in "A2"
+  section .rom_info       in block ROM_INFO
+
+
+  Section                 Kind         Address      Size  Object
+  -------                 ----         -------      ----  ------
+"A3":                                               0xc0
+  .intvec                 const    0x1004'0000      0xc0  system_bluenrg1.o [1]
+                                 - 0x1004'00c0      0xc0
+
+"P2":                                           0x1'6c24
+  .text                   ro code  0x1004'00c0    0x1054  xprintffull_nomb.o [2]
+  .text                   ro code  0x1004'1114      0x12  strchr.o [6]
+  .constdata              const    0x1004'1126      0x1a  ll_isr.o [3]
+  .text                   ro code  0x1004'1140      0x48  xfail_s.o [2]
+  .text                   ro code  0x1004'1188       0xe  strlen.o [6]
+  .text                   ro code  0x1004'1196       0xa  xsprout.o [2]
+  .text                   ro code  0x1004'11a0      0x16  memchr.o [6]
+  .text                   ro code  0x1004'11b6       0x2  system_bluenrg1.o [1]
+  .text                   ro code  0x1004'11b8      0x4e  ABImemcpy.o [6]
+  .text                   ro code  0x1004'1206      0x32  DblCmpLe.o [5]
+  .text                   ro code  0x1004'1238      0x32  DblCmpGe.o [5]
+  .text                   ro code  0x1004'126a       0x2  system_bluenrg1.o [1]
+  .text                   ro code  0x1004'126c      0x52  DblToI32.o [5]
+  .text                   ro code  0x1004'12be       0x2  system_bluenrg1.o [1]
+  .text                   ro code  0x1004'12c0      0x34  IxxToDbl.o [5]
+  .text                   ro code  0x1004'12f4     0x1a8  DblAddSub.o [5]
+  .text                   ro code  0x1004'149c      0xe0  I32DivModFast.o [6]
+  .text                   ro code  0x1004'157c      0xc2  DblDiv.o [5]
+  .text                   ro code  0x1004'163e     0x184  DblMul.o [5]
+  .text                   ro code  0x1004'17c2      0x6a  I64DivMod.o [6]
+  .text                   ro code  0x1004'182c       0xa  abort.o [2]
+  .text                   ro code  0x1004'1836       0x2  system_bluenrg1.o [1]
+  .text                   ro code  0x1004'1838       0x2  IntDivZer.o [6]
+  .text                   ro code  0x1004'183a       0x2  system_bluenrg1.o [1]
+  .text                   ro code  0x1004'183c       0x2  I64DivZer.o [6]
+  .text                   ro code  0x1004'183e       0x2  system_bluenrg1.o [1]
+  .text                   ro code  0x1004'1840      0x14  exit.o [7]
+  i.isr_connect_slave_state
+                          ro code  0x1004'1854     0x7e4  ll_isr.o [3]
+  i.machine_time_trans    ro code  0x1004'2038      0x20  rom_ll_timehandling.o [3]
+  i.data_length_extension_csr_ucfg
+                          ro code  0x1004'2058       0x4  hci.o [3]
+  i.Data_Length_Update_Control_ISR_ucfg
+                          ro code  0x1004'205c       0x4  ll_isr.o [3]
+  i.unpack_update_request
+                          ro code  0x1004'2060      0x48  rom_ll_isr_routines.o [3]
+  i.unpack_channel_map    ro code  0x1004'20a8      0x2e  rom_ll_isr_routines.o [3]
+  i.char_copy             ro code  0x1004'20d6      0x12  hal.o [3]
+  i.LL_receive_data       ro code  0x1004'20e8      0x94  isr_routines.o [3]
+  i.isr_Acl_Data_TX_Cmpl_Queue_Full
+                          ro code  0x1004'217c      0x20  acl.o [3]
+  i.copy_tx_data_packet   ro code  0x1004'219c      0x84  ll_isr.o [3]
+  i.isr_postproc1         ro code  0x1004'2220     0x110  rom_ll_isr_postproc.o [3]
+  i.set_string            ro code  0x1004'2330      0x10  hal.o [3]
+  i.LL_update_proc        ro code  0x1004'2340      0x98  rom_ll_isr_routines.o [3]
+  i.modulo_37             ro code  0x1004'23d8      0x1c  rom_ll_routines_support.o [3]
+  i.cancel_current_master
+                          ro code  0x1004'23f4     0x1a8  multi_master_time.o [3]
+  i.slave_advance         ro code  0x1004'259c     0x200  routines_support.o [3]
+  i.advance_wakeup_timer  ro code  0x1004'279c     0x68c  advance_wakeup_time.o [3]
+  i.le2ByteToInt16        ro code  0x1004'2e28       0xa  rom_ll_isr_routines.o [3]
+  i.le4ByteToInt32        ro code  0x1004'2e32      0x16  rom_ll_isr_routines.o [3]
+  i.isr_Acl_Data_Indication_Queue_Full
+                          ro code  0x1004'2e48      0x20  acl.o [3]
+  i.PM_Get_Pckt           ro code  0x1004'2e68      0x44  pm.o [3]
+  i.Mem_Buff_Block_Copy   ro code  0x1004'2eac      0x48  mem_buff.o [3]
+  i.wait_for_aes_ready    ro code  0x1004'2ef4      0x24  rom_ll_isr_postproc.o [3]
+  i.copy_4_u32            ro code  0x1004'2f18      0x12  ll_isr.o [3]
+  i.isr_postproc_encrypt_data
+                          ro code  0x1004'2f2a      0x16  rom_ll_isr_postproc.o [3]
+  i.is_slave              ro code  0x1004'2f40      0x34  multi_master_time.o [3]
+  i.swap_u16              ro code  0x1004'2f74       0xa  multi_master_time.o [3]
+  .text                   ro code  0x1004'2f7e       0x2  system_bluenrg1.o [1]
+  i.LL_Sleep_Req          ro code  0x1004'2f80      0x58  bluenrg_main_func_speed.o [3]
+  i.advance_slave_timing_MultiSlave
+                          ro code  0x1004'2fd8     0x2cc  multi_master_time.o [3]
+  i.system_time_trans     ro code  0x1004'32a4      0x10  rom_ll_timehandling.o [3]
+  i.microseconds_to_machine_time
+                          ro code  0x1004'32b4       0x8  routines_support.o [3]
+  i.cancel_master         ro code  0x1004'32bc      0x7c  rom_ll_isr_routines.o [3]
+  i.Hal_Get_Random_Number
+                          ro code  0x1004'3338      0x3a  hal.o [3]
+  .text                   ro code  0x1004'3372       0x2  system_bluenrg1.o [1]
+  i.LL_Update_Advertising_Buffers
+                          ro code  0x1004'3374      0x48  rom_ll_ll_routines.o [3]
+  i.LL_Update_Scanning_Initiating_Buffers
+                          ro code  0x1004'33bc      0x48  rom_ll_ll_routines.o [3]
+  i.PM_Check_And_Set      ro code  0x1004'3404      0x50  pm.o [3]
+  i.Mem_Buff_Get          ro code  0x1004'3454      0x2e  mem_buff.o [3]
+  .text                   ro code  0x1004'3482       0x2  system_bluenrg1.o [1]
+  .text                   ro code  0x1004'3484      0x20  ABImemmove.o [6]
+  i.encrypt               ro code  0x1004'34a4      0x74  ll_isr.o [3]
+  i.set_sca               ro code  0x1004'3518      0x1c  rom_ll_timehandling.o [3]
+  i.WindowWiden1          ro code  0x1004'3534       0xa  rom_ll_timehandling.o [3]
+  i.time_offset1          ro code  0x1004'353e       0xe  rom_ll_timehandling.o [3]
+  i.swap_slaves           ro code  0x1004'354c     0x13c  routines_support.o [3]
+  i.WindowWiden2          ro code  0x1004'3688      0x10  rom_ll_timehandling.o [3]
+  i.time_offset2          ro code  0x1004'3698      0x10  rom_ll_timehandling.o [3]
+  i.cancel_slave          ro code  0x1004'36a8      0xc4  isr_routines.o [3]
+  i.system_time_trans_ext
+                          ro code  0x1004'376c      0x30  rom_ll_timehandling.o [3]
+  .text                   ro code  0x1004'379c     0x158  stack_user_cfg.o [1]
+  i.isr_event_handler     ro code  0x1004'38f4     0x5fc  ll_routines_master.o [3]
+  .text                   ro code  0x1004'3ef0      0x28  osal.o [1]
+  i.swap_u8               ro code  0x1004'3f18       0xa  routines_support.o [3]
+  i.swap_u32              ro code  0x1004'3f22       0xa  routines_support.o [3]
+  i.swap_u16              ro code  0x1004'3f2c       0xa  routines_support.o [3]
+  i.PRIV_vGeneratePrivateAddress
+                          ro code  0x1004'3f36      0x62  ll_privacy.o [3]
+  i.PRIV_u32ProcessAdvPacket
+                          ro code  0x1004'3f98     0x5ac  ll_privacy.o [3]
+  i.PRIV_u8OfflineProcessing
+                          ro code  0x1004'4544     0x118  ll_privacy.o [3]
+  i.PRIV_vGenerate_hci_le_enhanced_connection_complete_event
+                          ro code  0x1004'465c     0x1e0  ll_privacy.o [3]
+  i.PRIV_vGenerate_hci_le_direct_advertising_report_event
+                          ro code  0x1004'483c     0x17c  ll_privacy.o [3]
+  i.GAP_enable_controller_privacy
+                          ro code  0x1004'49b8      0x44  gap.o [3]
+  i.LL_Encrypt_Plain_Data
+                          ro code  0x1004'49fc      0x88  ll_routines_support.o [3]
+  i.GAP_DiscProcTimeoutcb
+                          ro code  0x1004'4a84      0x48  gap.o [3]
+  i.cancel_connect_master
+                          ro code  0x1004'4acc      0xf0  rom_ll_isr_routines.o [3]
+  i.isr_event_handler_scan_data
+                          ro code  0x1004'4bbc     0x1fc  ll_routines_master.o [3]
+  i.Reclassify_All_Channels
+                          ro code  0x1004'4db8      0xc0  ll_routines_master.o [3]
+  i.GAP_check_and_set_role
+                          ro code  0x1004'4e78       0xe  gap.o [3]
+  .text                   ro code  0x1004'4e86       0x2  system_bluenrg1.o [1]
+  i.GAP_discover_peer_name
+                          ro code  0x1004'4e88      0x44  gap.o [3]
+  i.full_state_func_call_init
+                          ro code  0x1004'4ecc      0x18  ll_isr.o [3]
+  i.smp_MI_Start_Encryption
+                          ro code  0x1004'4ee4      0x88  securitymgr.o [3]
+  i.smp_Execute_Actions_wrt_Current_State_MI_excerpt
+                          ro code  0x1004'4f6c      0x4e  securitymgr.o [3]
+  i.smp_Process_Rx_Packet_wrt_Current_State_MI_excerpt
+                          ro code  0x1004'4fba      0x52  securitymgr.o [3]
+  i.smp_Execute_Actions_wrt_Current_State_sc_MI_excerpt_phase2as2
+                          ro code  0x1004'500c      0x12  securitymgr.o [3]
+  .text                   ro code  0x1004'501e       0x2  system_bluenrg1.o [1]
+  i.PKA_Offline_Processing
+                          ro code  0x1004'5020     0x164  hci.o [3]
+  i.smp_sc_init           ro code  0x1004'5184      0x38  smp_scv42_caf.o [3]
+  i.smp_sc_continue_on_exclusive_sc_pairing
+                          ro code  0x1004'51bc      0x38  smp_scv42_caf.o [3]
+  i.smp_sc_check_for_ecc_pk_generation_request
+                          ro code  0x1004'51f4      0x30  smp_scv42_caf.o [3]
+  i.smp_sc_update_statistics_on_pairing_complete
+                          ro code  0x1004'5224      0x74  smp_scv42_caf.o [3]
+  i.smp_sc_hci_le_read_local_p256_public_key_complete_evt_hndl
+                          ro code  0x1004'5298      0x3c  smp_scv42_sap.o [3]
+  i.smp_sc_hci_le_generate_dhkey_complete_evt_hndl
+                          ro code  0x1004'52d4      0x74  smp_scv42_sap.o [3]
+  i.smp_sc_MI_PairingResponse_Receive_sc_excerpt
+                          ro code  0x1004'5348      0x34  securitymgr.o [3]
+  i.smp_sc_MI_Pairing_Phase_2AS1_Start_sc_excerpt
+                          ro code  0x1004'537c      0x2c  securitymgr.o [3]
+  i.smp_sc_SR_Pairing_Phase_2AS1_Start_sc_excerpt
+                          ro code  0x1004'53a8      0x30  securitymgr.o [3]
+  i.smp_sc_MI_PairingConfirm_Send_sc_excerpt
+                          ro code  0x1004'53d8      0x30  securitymgr.o [3]
+  i.smp_sc_MI_PairingRandom_Receive_sc_excerpt1
+                          ro code  0x1004'5408      0x44  securitymgr.o [3]
+  i.smp_sc_MI_PairingRandom_Receive_sc_excerpt2
+                          ro code  0x1004'544c      0x68  securitymgr.o [3]
+  i.smp_sc_SR_PairingConfirm_Receive_sc_excerpt
+                          ro code  0x1004'54b4      0x34  securitymgr.o [3]
+  i.smp_sc_SR_PairingRandom_Receive_sc_excerpt
+                          ro code  0x1004'54e8      0x9c  securitymgr.o [3]
+  i.smp_Execute_Actions_wrt_Current_State_sc_excerpt_phase_1_to_2
+                          ro code  0x1004'5584      0x6c  securitymgr.o [3]
+  i.smp_Execute_Actions_wrt_Current_State_sc_excerpt_phase2as2
+                          ro code  0x1004'55f0      0x58  securitymgr.o [3]
+  i.smp_Process_Rx_Packet_wrt_Current_State_sc_excerpt
+                          ro code  0x1004'5648      0x4a  securitymgr.o [3]
+  .text                   ro code  0x1004'5692       0x2  system_bluenrg1.o [1]
+  i.smp_Process_Rx_Packet_Exception_Cases_sc_excerpt
+                          ro code  0x1004'5694      0x88  securitymgr.o [3]
+  i.hci_le_connection_complete_event_push
+                          ro code  0x1004'571c      0x88  ll_routines_master.o [3]
+  i.hci_encryption_key_refresh_complete_event_push
+                          ro code  0x1004'57a4      0x58  ll_routines_master.o [3]
+  i.hci_encryption_change_event_push
+                          ro code  0x1004'57fc      0x5c  ll_routines_master.o [3]
+  i.Acl_Tx_Cmpl_Pkt_Handler
+                          ro code  0x1004'5858      0x44  acl.o [3]
+  i.aci_event_fifo_push_header
+                          ro code  0x1004'589c      0xbc  aci_events.o [3]
+  i.aci_event_fifo_push   ro code  0x1004'5958      0x28  aci_events.o [3]
+  i.hci_le_connection_update_complete_event_push
+                          ro code  0x1004'5980      0x6c  ll_routines_master.o [3]
+  i.Mem_Buff_Block_Write  ro code  0x1004'59ec      0x56  mem_buff.o [3]
+  .text                   ro code  0x1004'5a42       0x2  system_bluenrg1.o [1]
+  i.Acl_Rcv_Pkt_Handler   ro code  0x1004'5a44      0x3c  acl.o [3]
+  i.get_scan_addr         ro code  0x1004'5a80      0x14  rom_ll_isr_routines.o [3]
+  .text                   ro code  0x1004'5a94      0x52  ABImemset.o [6]
+  i.cb_hci_data_buffer_overflow_event
+                          ro code  0x1004'5ae6       0x2  aci_events.o [3]
+  .text                   ro code  0x1004'5ae8      0x1e  memcmp.o [6]
+  i.Hal_Get_Random_Number32
+                          ro code  0x1004'5b06      0x12  hal.o [3]
+  .text                   ro code  0x1004'5b18      0x16  uread4.o [6]
+  i.PRIV_SearchAddrInScratchList
+                          ro code  0x1004'5b30      0x50  ll_privacy.o [3]
+  i.PRIV_u8ResolvePrivateAddress
+                          ro code  0x1004'5b80     0x110  ll_privacy.o [3]
+  i.PRIV_SearchAddrInRPAList
+                          ro code  0x1004'5c90      0x50  ll_privacy.o [3]
+  i.PRIV_SearchAddrInWhiteList
+                          ro code  0x1004'5ce0      0x58  ll_privacy.o [3]
+  i.HAL_VTimerGetCurrentTime_sysT32
+                          ro code  0x1004'5d38      0x12  host_timer.o [3]
+  i.PRIV_u8ResolvePrivateAddressUnit
+                          ro code  0x1004'5d4c      0x34  ll_privacy.o [3]
+  i.hci_le_direct_advertising_report_event_push
+                          ro code  0x1004'5d80      0x8c  ll_privacy.o [3]
+  i.LL_LE_Set_Resolvable_Private_Address_Timeout
+                          ro code  0x1004'5e0c      0x24  ll_privacy.o [3]
+  i.hci_le_set_event_mask
+                          ro code  0x1004'5e30      0x40  hci.o [3]
+  i.LL_SetAddressResolutionEnable
+                          ro code  0x1004'5e70       0x8  routines_support.o [3]
+  i.AES128ECB_Wrapper     ro code  0x1004'5e78      0x7e  aes128cmac.o [3]
+  i.LL_Enable_Disable_Scan
+                          ro code  0x1004'5ef8     0x23c  ll_routines_master.o [3]
+  i.aci_gap_proc_complete_event_push
+                          ro code  0x1004'6134      0x74  gap.o [3]
+  i.anchor_replace        ro code  0x1004'61a8      0x4c  multi_master_time.o [3]
+  i.get_adv_addr          ro code  0x1004'61f4      0x14  rom_ll_isr_routines.o [3]
+  i.hci_le_advertising_report_event_push
+                          ro code  0x1004'6208      0x94  ll_routines_master.o [3]
+  i.Gatt_Read_Charac_By_Uuid
+                          ro code  0x1004'629c      0x80  gatt_client.o [3]
+  i.LL_Start_Encryption   ro code  0x1004'631c      0xdc  rom_ll_ll_routines_master.o [3]
+  i.HAL_Generate_Random_Bytes_To
+                          ro code  0x1004'63f8      0x20  hal.o [3]
+  i.smp____MI_PairingConfirm_Send
+                          ro code  0x1004'6418      0x66  securitymgr.o [3]
+  i.smp_keys_distribution_start
+                          ro code  0x1004'647e      0x38  smp_common.o [3]
+  i.smp____MI_PairingRandom_Receive
+                          ro code  0x1004'64b8      0xe4  securitymgr.o [3]
+  i.smp____MI_SecurityRequest_Receive
+                          ro code  0x1004'659c      0x84  securitymgr.o [3]
+  i.smp____MI_PairingResponse_Receive
+                          ro code  0x1004'6620      0x6c  securitymgr.o [3]
+  i.smp____MI_PairingConfirm_Receive
+                          ro code  0x1004'668c      0x58  securitymgr.o [3]
+  .text                   ro code  0x1004'66e4     0x174  BlueNRG1_pka.o [1]
+  i.BLEPLAT_PKA_Get_Current_Operation
+                          ro code  0x1004'6858      0x14  pka.o [3]
+  i.smp_sc_force_debug_private_key
+                          ro code  0x1004'686c      0x20  smp_scv42_caf.o [3]
+  i.smp_sc_is_another_sc_pairing_ongoing
+                          ro code  0x1004'688c      0x40  smp_scv42_caf.o [3]
+  i.hci_le_read_local_p256_public_key_api
+                          ro code  0x1004'68cc      0x3c  hci.o [3]
+  i.smp_sc_submit_ecc_pk_generation_request
+                          ro code  0x1004'6908      0x18  smp_scv42_caf.o [3]
+  i.smp_sc_is_debug_key_usage_forced
+                          ro code  0x1004'6920      0x10  smp_scv42_caf.o [3]
+  i.smp_pairing_failed_send
+                          ro code  0x1004'6930      0x2a  smp_common.o [3]
+  i.smp_sc_pairing_oob_confirm_receive_verify
+                          ro code  0x1004'695c      0x8c  smp_scv42_caf.o [3]
+  i.smp____SR_PairingConfirm_Receive
+                          ro code  0x1004'69e8      0x7a  securitymgr.o [3]
+  i.SMA_SC_Gen_f4_Confirm
+                          ro code  0x1004'6a62      0x50  smp_algo_sap.o [3]
+  i.SMA_SC_Gen_g2_NumComp_Val
+                          ro code  0x1004'6ab2      0x58  smp_algo_sap.o [3]
+  i.le4ByteToInt32        ro code  0x1004'6b0a      0x16  securitymgr.o [3]
+  i.aci_gap_numeric_comparison_value_event_push
+                          ro code  0x1004'6b20      0x58  securitymgr.o [3]
+  i.is_Buffer_All_Set_To  ro code  0x1004'6b78      0x1e  utils.o [3]
+  i.smp_sc_pairing_public_key_send
+                          ro code  0x1004'6b98      0x6c  smp_scv42_caf.o [3]
+  i.smp_sc_phase_2as2_start
+                          ro code  0x1004'6c04      0xa4  smp_scv42_caf.o [3]
+  i.smp_sc_phase_2as2_dhkey_check_receive
+                          ro code  0x1004'6ca8      0x72  smp_scv42_caf.o [3]
+  i.smp_sc_pairing_public_key_receive
+                          ro code  0x1004'6d1c      0xa8  smp_scv42_caf.o [3]
+  i.fifoBuf_getFreeHeader
+                          ro code  0x1004'6dc4      0x6c  aci_events.o [3]
+  i.addr_u32_from_u8      ro code  0x1004'6e30      0x1e  rom_ll_isr_routines.o [3]
+  i.PRIVWHIT_u8SearchAddrInList
+                          ro code  0x1004'6e50      0x84  ll_privacy.o [3]
+  i.PRIVWHIT_u8AddAddrInList
+                          ro code  0x1004'6ed4     0x1f0  ll_privacy.o [3]
+  i.PRIVWHIT_u8RemoveAddrInList
+                          ro code  0x1004'70c4     0x12c  ll_privacy.o [3]
+  i.Timer_sysTime32_convMachineTime
+                          ro code  0x1004'71f0      0x24  host_timer.o [3]
+  i.LL_LE_Set_Address_Resolution_Enable
+                          ro code  0x1004'7214      0x20  ll_privacy.o [3]
+  i.AES_keyschedule_enc   ro code  0x1004'7234      0x36  crypto.o [4]
+  i.AES_general_SW_enc    ro code  0x1004'726c     0x264  crypto.o [4]
+  i.get_scan_connection   ro code  0x1004'74d0      0x48  multi_master_time.o [3]
+  i.wait_for_prescheduled_slot_cancellation
+                          ro code  0x1004'7518      0x7c  ll_routines_master.o [3]
+  i.get_next_free_slot    ro code  0x1004'7594      0x34  multi_master_time.o [3]
+  i.request_scan_slot     ro code  0x1004'75c8      0x94  multi_master_time.o [3]
+  i.int32ToLe4Byte        ro code  0x1004'765c      0x10  ll_routines_master.o [3]
+  i.start_timebase        ro code  0x1004'766c      0xd0  multi_master_time.o [3]
+  i.Check_and_find_gatt_client
+                          ro code  0x1004'773c      0x18  gatt_client.o [3]
+  i.Att_Send_Read_By_Typ_Req_Pdu
+                          ro code  0x1004'7754      0x76  rom_att.o [3]
+  i.PM_Release_Acl_Pckt   ro code  0x1004'77cc      0x3c  pm.o [3]
+  i.GATT_Send_Packet      ro code  0x1004'7808      0x2c  gatt_server.o [3]
+  i.le4ByteToInt32        ro code  0x1004'7834      0x16  rom_ll_ll_routines_master.o [3]
+  i.get_connection_no     ro code  0x1004'784c      0x88  multi_master_time.o [3]
+  i.smp_LP_MI_Compute_c1_Confirm_Value
+                          ro code  0x1004'78d4     0x140  securitymgr.o [3]
+  i.PM_Write_Pckt_Data    ro code  0x1004'7a14      0x12  pm.o [3]
+  i.smp_send_packet       ro code  0x1004'7a28      0x38  securitymgr.o [3]
+  i.PM_Copy_Pckt_Data     ro code  0x1004'7a60      0x12  pm.o [3]
+  i.int32ToLe4Byte        ro code  0x1004'7a72      0x10  securitymgr.o [3]
+  i.SMA_LP_s1_Generate_STK
+                          ro code  0x1004'7a82      0x26  smp_algo_sap.o [3]
+  i.smp_find_remote_device_index
+                          ro code  0x1004'7aa8      0x44  smp_common.o [3]
+  i.SMP_reset_timer       ro code  0x1004'7aec      0x40  smp_common.o [3]
+  i.SMP_MI_PairingRequest_Send
+                          ro code  0x1004'7b2c     0x14c  securitymgr.o [3]
+  i.smp_Check_Incoming_Pairing_Parameters
+                          ro code  0x1004'7c78      0x34  securitymgr.o [3]
+  i.smp_Get_Pairing_Parameters_From_Peer_Packet
+                          ro code  0x1004'7cac      0x88  securitymgr.o [3]
+  i.smp_Set_Key_Association_Method
+                          ro code  0x1004'7d34      0x78  securitymgr.o [3]
+  i.BLEPLAT_PKA_Start_P256_Public_Key_Generation
+                          ro code  0x1004'7dac      0x6c  pka.o [3]
+  i.smp_pairing_2octets_packet_send
+                          ro code  0x1004'7e18      0x34  smp_common.o [3]
+  i.smp_pairing_process_abort
+                          ro code  0x1004'7e4c      0x64  smp_common.o [3]
+  i.smp_oob_check_is_remote_data_present
+                          ro code  0x1004'7eb0      0x3c  smp_common.o [3]
+  i.smp_oob_get_remote_data_reference
+                          ro code  0x1004'7eec      0x48  smp_common.o [3]
+  i.smp_LP_SR_Compute_c1_Confirm_Value
+                          ro code  0x1004'7f34     0x150  securitymgr.o [3]
+  i.copy_swap_buffer      ro code  0x1004'8084      0x20  utils.o [3]
+  i.AES_CMAC_Encrypt      ro code  0x1004'80a4      0x3a  aes128cmac.o [3]
+  i.PM_Resize_Pckt_Pdu_Size
+                          ro code  0x1004'80e0      0x6c  pm.o [3]
+  i.smp____SC_Phase_2AS2__Set_Addresses
+                          ro code  0x1004'814c      0x30  smp_scv42_caf.o [3]
+  i.SMA_SC_Gen_f5_Keys    ro code  0x1004'817c      0xe0  smp_algo_sap.o [3]
+  i.smp____SC_Phase_2AS2_Generate_DHKeyCheck
+                          ro code  0x1004'825c     0x134  smp_scv42_caf.o [3]
+  i.smp____SC_Phase_2AS2_DHKeyCheck_Send
+                          ro code  0x1004'8390      0x5c  smp_scv42_caf.o [3]
+  i.hci_le_generate_dhkey_api
+                          ro code  0x1004'83ec      0x7c  hci.o [3]
+  i.scan_connection_or_advertiser
+                          ro code  0x1004'8468      0x1a  ll_privacy.o [3]
+  i.AES_keyschedule_enc_LL
+                          ro code  0x1004'8484     0x150  crypto.o [4]
+  i.adapt_slot            ro code  0x1004'85d4     0x260  multi_master_time.o [3]
+  i.hal_radio_activity_state_callback_check
+                          ro code  0x1004'8834      0x34  hal.o [3]
+  i.Find_Gatt_Client      ro code  0x1004'8868      0x3c  gatt_client.o [3]
+  i.Mem_Buff_Get_Chain_Count
+                          ro code  0x1004'88a4      0x14  mem_buff.o [3]
+  i.Mem_Buff_Release      ro code  0x1004'88b8      0x36  mem_buff.o [3]
+  i.L2C_Send_Data         ro code  0x1004'88ee      0x4c  l2cap.o [3]
+  i.acl_list_insert_tail  ro code  0x1004'893a      0x2c  acl_list.o [3]
+  i.LL_Get_Address        ro code  0x1004'8968      0x2c  rom_ll_ll_routines.o [3]
+  i.hci_le_encrypt        ro code  0x1004'8994       0xa  hci.o [3]
+  i.Mem_Buff_Write        ro code  0x1004'899e      0x68  mem_buff.o [3]
+  i.Mem_Buff_Read         ro code  0x1004'8a06      0x62  mem_buff.o [3]
+  i.Timer_StopOneShot     ro code  0x1004'8a68      0x58  host_timer.o [3]
+  i.Timer_StartOneShot    ro code  0x1004'8ac0      0x22  host_timer.o [3]
+  i.SMP_get_remote_device_list_item
+                          ro code  0x1004'8ae4      0x4c  smp_common.o [3]
+  i.smp_search_blacklist  ro code  0x1004'8b30      0x44  smp_common.o [3]
+  i.smp_Build_AuthReq_Field
+                          ro code  0x1004'8b74      0x18  securitymgr.o [3]
+  i.smp_Build_Pairing_ReqResp_Packet
+                          ro code  0x1004'8b8c      0x38  securitymgr.o [3]
+  i.smp_Determine_Key_Association_Method
+                          ro code  0x1004'8bc4      0x9c  securitymgr.o [3]
+  i.smp_flush_rx_queues   ro code  0x1004'8c60      0x38  smp_common.o [3]
+  i.smp_update_statistics_on_pairing_complete
+                          ro code  0x1004'8c98      0x38  smp_common.o [3]
+  i.smp_repeated_attacks_protection
+                          ro code  0x1004'8cd0      0xf0  smp_common.o [3]
+  i.aci_gap_pairing_complete_event_push
+                          ro code  0x1004'8dc0      0x5c  smp_common.o [3]
+  i.AES_CMAC_Encrypt_Init
+                          ro code  0x1004'8e1c      0x34  crypto.o [4]
+  i.AES_CMAC_Encrypt_Append
+                          ro code  0x1004'8e50     0x284  crypto.o [4]
+  i.AES_CMAC_Encrypt_Finish
+                          ro code  0x1004'90d4      0x6c  crypto.o [4]
+  i.Mem_Buff_Get_Chain_Size
+                          ro code  0x1004'9140      0x14  mem_buff.o [3]
+  i.Mem_Buff_Resize       ro code  0x1004'9154      0x8e  mem_buff.o [3]
+  i.SMA_SC_Gen_f6_Check_Val
+                          ro code  0x1004'91e2      0x84  smp_algo_sap.o [3]
+  i.BLEPLAT_PKA_Start_P256_DHKey_Generation
+                          ro code  0x1004'9268      0x50  pka.o [3]
+  i.get_advertiser        ro code  0x1004'92b8      0x48  multi_master_time.o [3]
+  i.nsar_updateSlotListEntry
+                          ro code  0x1004'9300      0x6c  multi_master_time.o [3]
+  i.nsar_insertSlotListEntry
+                          ro code  0x1004'936c      0x1c  multi_master_time.o [3]
+  i.nsar_searchBestFreeSlot
+                          ro code  0x1004'9388      0xc0  multi_master_time.o [3]
+  i.hal_read_radio_activity_state
+                          ro code  0x1004'9448      0x40  hal.o [3]
+  i.aci_hal_end_of_radio_activity_event
+                          ro code  0x1004'9488       0x2  hal.o [3]
+  i.Acl_Transmit_Data     ro code  0x1004'948c      0x64  acl.o [3]
+  i.PM_Get_Mem_Buff_Count
+                          ro code  0x1004'94f0       0xa  pm.o [3]
+  i.int32ToLe4Byte        ro code  0x1004'94fa      0x10  rom_ll_ll_routines.o [3]
+  i.List_Circular_Remove_Node
+                          ro code  0x1004'950a      0x20  rom_list.o [3]
+  i.List_Circular_Insert_Tail
+                          ro code  0x1004'952a       0xe  rom_list.o [3]
+  i.HAL_VTimerAcc_sysT32_ms
+                          ro code  0x1004'9538      0x24  host_timer.o [3]
+  i.Timer_StartOneShot_sysTime32
+                          ro code  0x1004'955c      0x74  host_timer.o [3]
+  i.acl_list_first        ro code  0x1004'95d0       0x4  acl_list.o [3]
+  i.acl_list_remove       ro code  0x1004'95d4      0x44  acl_list.o [3]
+  i.AESstdInit            ro code  0x1004'9618      0xb8  crypto.o [4]
+  i.AES_general_enc       ro code  0x1004'96d0       0x8  crypto.o [4]
+  i.nsar_updateBestFreeSlot
+                          ro code  0x1004'96d8      0x22  multi_master_time.o [3]
+  i.LL_Send_ACL_Data      ro code  0x1004'96fc      0x50  rom_ll_ll_routines.o [3]
+  i.List_Circular_Node_Present
+                          ro code  0x1004'974c      0x16  rom_list.o [3]
+  i.List_Circular_Remove_Head
+                          ro code  0x1004'9762      0x1a  rom_list.o [3]
+  i.isr_connect_master_state
+                          ro code  0x1004'977c     0x6d8  ll_isr.o [3]
+  i.isr_scan_state        ro code  0x1004'9e54     0x638  ll_isr.o [3]
+  i.go_to_connect_master  ro code  0x1004'a48c     0x1c0  isr_routines.o [3]
+  i.timebase_start_connect
+                          ro code  0x1004'a64c      0x38  multi_master_time.o [3]
+  .text                   ro code  0x1004'a684     0x560  slave.o [1]
+  i.aci_gatt_add_service  ro code  0x1004'abe4      0x36  bluenrg_gatt_aci.o [3]
+  .text                   ro code  0x1004'ac1c      0x5c  cassert.o [1]
+  i.aci_gatt_add_char     ro code  0x1004'ac78      0x3e  bluenrg_gatt_aci.o [3]
+  i.hci_le_rand           ro code  0x1004'acb6       0x8  hci.o [3]
+  i.aci_hal_write_config_data
+                          ro code  0x1004'acbe       0x8  bluenrg_hal_aci.o [3]
+  i.aci_hal_set_tx_power_level
+                          ro code  0x1004'acc6       0x8  bluenrg_hal_aci.o [3]
+  i.aci_gatt_init         ro code  0x1004'acce       0x8  bluenrg_gatt_aci.o [3]
+  i.aci_gap_init          ro code  0x1004'acd6      0x30  bluenrg_gap_aci.o [3]
+  i.aci_gatt_update_char_value_ext
+                          ro code  0x1004'ad06      0x22  bluenrg_gatt_aci.o [3]
+  i.aci_gap_set_discoverable
+                          ro code  0x1004'ad28      0x42  bluenrg_gap_aci.o [3]
+  i.hci_le_set_advertising_data
+                          ro code  0x1004'ad6a      0x16  hci.o [3]
+  .text                   ro code  0x1004'ad80     0x168  app_common.o [1]
+  i.hci_le_set_advertise_enable
+                          ro code  0x1004'aee8      0x40  hci.o [3]
+  i._load_uuid            ro code  0x1004'af28      0x26  bluenrg_gatt_aci.o [3]
+  i.Gatt_Add_Service      ro code  0x1004'af50     0x160  gatt_server.o [3]
+  .text                   ro code  0x1004'b0b0     0x1b0  BlueNRG1_uart.o [1]
+  .text                   ro code  0x1004'b260      0x34  vsprintf.o [2]
+  i.Gatt_Add_Characteristic
+                          ro code  0x1004'b294     0x33c  gatt_server.o [3]
+  i.LL_Get_Random_data    ro code  0x1004'b5d0      0x1c  rom_ll_routines_support.o [3]
+  i.HAL_Write_ConfigData  ro code  0x1004'b5ec     0x11c  hal.o [3]
+  i.HAL_Set_TX_Power_Level
+                          ro code  0x1004'b708      0x44  hal.o [3]
+  i.Gatt_Server_Init      ro code  0x1004'b74c     0x194  gatt_server.o [3]
+  i.GAP_Init              ro code  0x1004'b8e0     0x1fc  gap.o [3]
+  i.Gatt_Update_Charac_Value_Ext
+                          ro code  0x1004'badc     0x390  gatt_server.o [3]
+  i._aci_gap_set_discoverable_param_check
+                          ro code  0x1004'be6c      0x5c  bluenrg_gap_aci.o [3]
+  i.GAP_Set_Discoverable_Mode
+                          ro code  0x1004'bec8      0x38  gap.o [3]
+  i.LL_Set_Adv_Data       ro code  0x1004'bf00      0x78  rom_ll_ll_routines.o [3]
+  i.Get_Random_Addr       ro code  0x1004'bf78      0x1c  hci.o [3]
+  i.Is_Address_Initialized
+                          ro code  0x1004'bf94      0x18  rom_ll_ll_routines.o [3]
+  i.LL_Enable_Disable_Adv
+                          ro code  0x1004'bfac     0x21c  rom_ll_ll_routines.o [3]
+  i.Gatt_Server_Db_Check  ro code  0x1004'c1c8      0x38  gatt_server.o [3]
+  i.List_Circular_Get_Size
+                          ro code  0x1004'c200      0x14  rom_list.o [3]
+  i.Ind_Service_Change_Charac
+                          ro code  0x1004'c214      0x48  gatt_server.o [3]
+  i.Gatt_search_service_handle
+                          ro code  0x1004'c25c      0x30  gatt_server.o [3]
+  i.Get_GAP_Handle        ro code  0x1004'c28c      0x10  rom_gap_rom.o [3]
+  i.GAP_Notify_Add_Charac
+                          ro code  0x1004'c29c      0x70  rom_gap_rom.o [3]
+  i.Check_Encry_Key_Size  ro code  0x1004'c30c      0x18  rom_gatt_server.o [3]
+  i.Gatt_Add_Charac_Desc  ro code  0x1004'c324     0x160  gatt_server.o [3]
+  i.PM_Eng_Config         ro code  0x1004'c484      0x18  pm.o [3]
+  i.SMP_sc_force_debug_key_usage
+                          ro code  0x1004'c49c      0x22  smp_scv42_sap.o [3]
+  i.ll_write_supported_data_ucfg
+                          ro code  0x1004'c4be       0x4  ll_routines.o [3]
+  i.acl_list_init         ro code  0x1004'c4c2      0x10  acl_list.o [3]
+  i.GATT_Server_Set_Flag  ro code  0x1004'c4d4      0x18  gatt_server.o [3]
+  i.Gatt_Update_Charac_Value
+                          ro code  0x1004'c4ec      0x68  gatt_server.o [3]
+  i.IDD_Initialize_Device_IDs
+                          ro code  0x1004'c554     0x128  device_id_data.o [3]
+  i.Get_StaticRandAddr    ro code  0x1004'c67c      0x14  rom_gap_rom.o [3]
+  i.Gatt_search_handle    ro code  0x1004'c690      0x1e  gatt_server.o [3]
+  i.Att_Check_Perms       ro code  0x1004'c6ae      0x50  att.o [3]
+  i.Pm_Resize_Host_Acl_Pckt
+                          ro code  0x1004'c6fe       0xe  gatt_server.o [3]
+  i.Build_Notif_Or_Ind    ro code  0x1004'c70c      0x3e  gatt_server.o [3]
+  i.Send_Notif_Or_Ind     ro code  0x1004'c74a      0x4c  gatt_server.o [3]
+  i._gap_set_discoverable_connectable
+                          ro code  0x1004'c798     0x174  gap.o [3]
+  i.LL_Set_Advertising_Buffers
+                          ro code  0x1004'c90c      0x88  rom_ll_ll_routines.o [3]
+  i.LL_Set_Adv_PDU_Format
+                          ro code  0x1004'c994      0xcc  rom_ll_ll_routines.o [3]
+  i.schedule_advertise_slot
+                          ro code  0x1004'ca60      0xb0  multi_master_time.o [3]
+  i.wait_for_prescheduled_slot_cancellation
+                          ro code  0x1004'cb10      0x7c  rom_ll_ll_routines.o [3]
+  i.PM_Get_Available_Buffer
+                          ro code  0x1004'cb8c      0x3c  pm.o [3]
+  i.GATT_Num_Charac_Present
+                          ro code  0x1004'cbc8      0x3a  rom_gatt_server.o [3]
+  i.SDB_Get_Number_Of_Valid_Records
+                          ro code  0x1004'cc04      0x44  sdb.o [3]
+  i.__ARM_common_switch8  ro code  0x1004'cc48      0x1a  rom_ll_routines_support.o [3]
+  i.Gatt_Add_Descriptor   ro code  0x1004'cc64     0x158  gatt_server.o [3]
+  i.HAL_Flash_Store_Data  ro code  0x1004'cdbc      0x54  hal.o [3]
+  .text                   ro code  0x1004'ce10      0x50  BlueNRG1_flash.o [1]
+  i.Check_Permission      ro code  0x1004'ce60      0xa0  att.o [3]
+  i.Select_Next_Notification_Client
+                          ro code  0x1004'cf00      0x50  gatt_server.o [3]
+  i.aci_gap_limited_discoverable_event_push
+                          ro code  0x1004'cf50      0x50  gap.o [3]
+  i.GAP_Privacy1v2        ro code  0x1004'cfa0     0x1e0  rom_gap.o [3]
+  i.gapClearAllModeFlags  ro code  0x1004'd180      0x14  gap.o [3]
+  i.advParamsCheckAndSet  ro code  0x1004'd194      0x88  gap.o [3]
+  i.setGapAdvData         ro code  0x1004'd21c     0x104  gap.o [3]
+  i.LL_Set_Adv_Params     ro code  0x1004'd320     0x14c  rom_ll_ll_routines.o [3]
+  i.sdb_read_record_validity
+                          ro code  0x1004'd46c      0x10  sdb.o [3]
+  i.SMP_get_link_status   ro code  0x1004'd47c      0x2e  smp_common.o [3]
+  i.SMP_check_encryption_key_size
+                          ro code  0x1004'd4aa      0x20  smp_common.o [3]
+  i.LL_Allow_Address_Setting
+                          ro code  0x1004'd4ca      0x42  rom_ll_ll_routines.o [3]
+  i.LL_Get_AdvAddress     ro code  0x1004'd50c      0x40  rom_ll_ll_routines.o [3]
+  i.LL_Get_ScanAddress    ro code  0x1004'd54c      0x40  rom_ll_ll_routines.o [3]
+  i.Generate_Non_Resolvable_Private_Address
+                          ro code  0x1004'd58c      0x88  rom_gap.o [3]
+  i.SM_Generate_Resolvable_Private_Address
+                          ro code  0x1004'd614      0x4e  smp_algo_sap.o [3]
+  i.LL_Get_Adv_Tx_Power_Level
+                          ro code  0x1004'd664      0x18  rom_ll_routines_support.o [3]
+  i.LL_Check_And_Set_Addresses
+                          ro code  0x1004'd67c     0x1fc  rom_ll_ll_routines.o [3]
+  i.SMA_Generate_IRK      ro code  0x1004'd878      0x28  smp_algo_sap.o [3]
+  i.sma_Calculate_Hash    ro code  0x1004'd8a0      0x36  smp_algo_sap.o [3]
+  i.convert_power         ro code  0x1004'd8d8      0x24  rom_ll_routines_support.o [3]
+  i.LL_Set_DirectAddress  ro code  0x1004'd8fc      0x38  rom_ll_ll_routines.o [3]
+  i.LL_Set_OwnAddress     ro code  0x1004'd934      0x24  rom_ll_ll_routines.o [3]
+  i.SMA_Diversify         ro code  0x1004'd958      0x28  smp_algo_sap.o [3]
+  i.addr_u32_from_u8      ro code  0x1004'd980      0x20  rom_ll_ll_routines.o [3]
+  i.le4ByteToInt32        ro code  0x1004'd9a0      0x16  rom_ll_ll_routines.o [3]
+  .text                   ro code  0x1004'd9b8     0x39c  system_bluenrg1.o [1]
+  .text                   ro code  0x1004'dd54      0xd4  BlueNRG1_sysCtrl.o [1]
+  .text                   ro code  0x1004'de28      0x7a  miscutil.o [1]
+  .text                   ro code  0x1004'dea4      0x9c  context_switch.o [1]
+  i.isr_advertise_state   ro code  0x1004'df40     0x398  ll_isr.o [3]
+  i.go_to_connect         ro code  0x1004'e2d8     0x298  rom_ll_isr_routines.o [3]
+  i.__ARM_common_memcpy1_6
+                          ro code  0x1004'e570      0x1a  ll_isr.o [3]
+  i.Check_For_Service_Change
+                          ro code  0x1004'e58c     0x34c  gatt_server.o [3]
+  i.SDB_read_peer_bonded_data
+                          ro code  0x1004'e8d8      0x3c  sdb.o [3]
+  i.Gatt_fetch_handle     ro code  0x1004'e914      0x3c  gatt_server.o [3]
+  i.Find_Attr_Index       ro code  0x1004'e950      0x50  gatt_server.o [3]
+  i.SDB_Find_Record       ro code  0x1004'e9a0      0xc4  sdb.o [3]
+  i.sdb_find_client_data  ro code  0x1004'ea64      0xc8  sdb.o [3]
+  i.sdb_read_record       ro code  0x1004'eb2c      0x24  sdb.o [3]
+  i.SM_Resolve_Private_Address
+                          ro code  0x1004'eb50      0x22  smp_algo_sap.o [3]
+  i.sdb_get_gatt_db_start_address
+                          ro code  0x1004'eb74      0x18  sdb.o [3]
+  i.int32ToLe4Byte        ro code  0x1004'eb8c      0x10  sdb.o [3]
+  i.Read_By_Type_Resp     ro code  0x1004'eb9c     0x2d4  att.o [3]
+  i.Accu_UuidTypes_Requiring_Auth
+                          ro code  0x1004'ee70      0xea  rom_att.o [3]
+  i.aci_gatt_read_multi_permit_req_event_push
+                          ro code  0x1004'ef5c      0x68  att.o [3]
+  i.ATT_fill_error_resp   ro code  0x1004'efc4      0x26  att.o [3]
+  i.Pm_Resize_Host_Acl_Pckt
+                          ro code  0x1004'efea       0xe  att.o [3]
+  i.Gatt_Find_Srv_Owner_Of_Handle
+                          ro code  0x1004'eff8      0x48  gatt_server.o [3]
+  i.Dynamic_allocator     ro code  0x1004'f040     0x264  mem_alloc.o [3]
+  i.Mem_assign            ro code  0x1004'f2a4      0x16  mem_alloc.o [3]
+  i.Gatt_Server_L2C_Handler
+                          ro code  0x1004'f2bc     0x21c  gatt_server.o [3]
+  i.Stop_Gatt_Timer       ro code  0x1004'f4d8      0x1c  rom_gatt_server.o [3]
+  i.aci_hal_fw_error_event_push
+                          ro code  0x1004'f4f4      0x5c  gatt_server.o [3]
+  i.Start_Gatt_Timer      ro code  0x1004'f550      0x24  rom_gatt_server.o [3]
+  i.Gatt_Find_Timed_Out_Connection_Index
+                          ro code  0x1004'f574      0x38  gatt_server.o [3]
+  i.RAL_Isr               ro code  0x1004'f5ac     0x218  ll_isr.o [3]
+  i.Timer_ExpiryCallback  ro code  0x1004'f7c4      0x14  host_timer.o [3]
+  i.Is_Flash_Write_On_Going
+                          ro code  0x1004'f7d8      0x10  nvm.o [3]
+  i.read_rssi             ro code  0x1004'f7e8      0x7c  ll_routines.o [3]
+  i.isr_postproc          ro code  0x1004'f864     0x1f4  isr_postproc.o [3]
+  i.LL_Data_Length_Change_Event_ucfg
+                          ro code  0x1004'fa58       0x4  ll_routines.o [3]
+  i.LL_Send_Length_Resp_ucfg
+                          ro code  0x1004'fa5c       0x4  ll_routines.o [3]
+  i.Process_Peer_Client_Data
+                          ro code  0x1004'fa60     0x1f8  gatt_server.o [3]
+  i.Exchg_Mtu_Resp        ro code  0x1004'fc58      0xb4  att.o [3]
+  i.Find_Info_Resp        ro code  0x1004'fd0c     0x1e8  att.o [3]
+  i.Find_By_Type_Val_Resp
+                          ro code  0x1004'fef4     0x1f0  att.o [3]
+  i.Read_Resp             ro code  0x1005'00e4     0x12a  att.o [3]
+  i.Read_Blob_Resp        ro code  0x1005'020e     0x140  att.o [3]
+  i.Read_Multi_Resp       ro code  0x1005'0350     0x194  att.o [3]
+  i.Read_By_Grp_Type_Resp
+                          ro code  0x1005'04e4     0x1e4  att.o [3]
+  i.Write_Resp            ro code  0x1005'06c8     0x13c  att.o [3]
+  i.Prepare_Write_Resp    ro code  0x1005'0804     0x178  att.o [3]
+  i.Exec_Write_Resp       ro code  0x1005'097c     0x1c0  att.o [3]
+  i.Write_Cmd             ro code  0x1005'0b3c     0x12c  att.o [3]
+  i.PM_Pckt_Cmp           ro code  0x1005'0c68       0xa  pm.o [3]
+  i.ATT_fill_type_val_entry
+                          ro code  0x1005'0c72      0x34  att.o [3]
+  i.aci_gatt_read_permit_req_event_push
+                          ro code  0x1005'0ca8      0x50  att.o [3]
+  i.Accu_Handles_Requiring_Auth
+                          ro code  0x1005'0cf8      0x6e  rom_att.o [3]
+  i.Gatt_Find_Srv_From_Handle
+                          ro code  0x1005'0d68      0x2c  gatt_server.o [3]
+  i.aci_gatt_write_permit_req_event_push
+                          ro code  0x1005'0d94      0x6c  att.o [3]
+  i.aci_gatt_attribute_modified_event_push
+                          ro code  0x1005'0e00      0x78  att.o [3]
+  i.acl_list_full_on_packt
+                          ro code  0x1005'0e78      0x26  acl_list.o [3]
+  i.PM_Clone_Pckt         ro code  0x1005'0e9e      0x22  pm.o [3]
+  i.ATT_validate_prepare_req
+                          ro code  0x1005'0ec0      0xa2  att.o [3]
+  i.SMP_validate_signed_packet
+                          ro code  0x1005'0f62      0x7a  smp_common.o [3]
+  i.CheckSecForSignedWrite
+                          ro code  0x1005'0fdc      0x2c  att.o [3]
+  i.Mem_Buff_Cmp          ro code  0x1005'1008      0x78  mem_buff.o [3]
+  i.Mem_Buff_Clone        ro code  0x1005'1080      0x32  mem_buff.o [3]
+  i.smp_get_CSRK          ro code  0x1005'10b2      0x1e  smp_common.o [3]
+  i.sma_CMAC_generate_tag
+                          ro code  0x1005'10d0      0xc6  smp_algo_sap.o [3]
+  i.sma_generate_subkeys  ro code  0x1005'1196      0x7e  smp_algo_sap.o [3]
+  i.sma_left_shift        ro code  0x1005'1214      0x2c  smp_algo_sap.o [3]
+  i.L2C_Signal_Channel_Handler
+                          ro code  0x1005'1240     0x1b0  l2cap.o [3]
+  i.L2C_Get_Connection_Info_Index
+                          ro code  0x1005'13f0      0x30  l2cap.o [3]
+  i.aci_l2cap_connection_update_req_event_push
+                          ro code  0x1005'1420      0x98  l2cap.o [3]
+  i.L2C_Build_Command_Reject_Pdu
+                          ro code  0x1005'14b8      0x7c  l2cap.o [3]
+  i.L2C_Get_Connection_Info
+                          ro code  0x1005'1534      0x34  l2cap.o [3]
+  i.Write_Client_Data     ro code  0x1005'1568     0x1b0  sdb.o [3]
+  i.sdb_invalidate_record
+                          ro code  0x1005'1718      0x20  sdb.o [3]
+  i.Flash_Write_Flagged   ro code  0x1005'1738      0x3c  nvm.o [3]
+  i.Gatt_Process_Q        ro code  0x1005'1774     0x19c  gatt_server.o [3]
+  i.Gatt_Reset_To_Closed_State
+                          ro code  0x1005'1910      0xfc  gatt_server.o [3]
+  i.SMP_forget_device_by_conn_handle
+                          ro code  0x1005'1a0c      0x1c  smp_common.o [3]
+  i.SMP_check_is_device_bonded
+                          ro code  0x1005'1a28      0x48  smp_common.o [3]
+  i.Process_Peer_Server_Data
+                          ro code  0x1005'1a70     0x16c  gatt_server.o [3]
+  i.acl_list_is_empty     ro code  0x1005'1bdc       0xe  acl_list.o [3]
+  i.acl_list_remove_head  ro code  0x1005'1bea      0x2e  acl_list.o [3]
+  i.acl_list_insert_head  ro code  0x1005'1c18      0x26  acl_list.o [3]
+  i.Gatt_Flush_Pending_AclPacket_Lists
+                          ro code  0x1005'1c3e      0x34  gatt_server.o [3]
+  i.Gatt_Store_Server_Database_And_Reset_CCCD
+                          ro code  0x1005'1c74     0x170  gatt_server.o [3]
+  i.aci_gatt_indication_event_push
+                          ro code  0x1005'1de4      0x90  gatt_server.o [3]
+  i.aci_gatt_notification_event_push
+                          ro code  0x1005'1e74      0x90  gatt_server.o [3]
+  i.store_data            ro code  0x1005'1f04      0x1e  gatt_server.o [3]
+  i.SDB_flash_write_client_data
+                          ro code  0x1005'1f24      0xb8  sdb.o [3]
+  i.sdb_delete            ro code  0x1005'1fdc     0x164  sdb.o [3]
+  i.Erase_Sector          ro code  0x1005'2140       0xe  sdb.o [3]
+  i.sdb_write_record      ro code  0x1005'2150      0x7c  sdb.o [3]
+  i.Delay_With_NOP_Cycles
+                          ro code  0x1005'21cc       0xe  utils.o [3]
+  i.SMP_Process_Q         ro code  0x1005'21dc     0x19c  securitymgr.o [3]
+  i.smp_Get_Long_Term_Key
+                          ro code  0x1005'2378      0x80  securitymgr.o [3]
+  i.hci_le_long_term_key_requested_negative_reply
+                          ro code  0x1005'23f8       0xe  hci.o [3]
+  i.hci_le_long_term_key_request_reply
+                          ro code  0x1005'2406       0xe  hci.o [3]
+  i.smp_Execute_Actions_wrt_Current_State
+                          ro code  0x1005'2414     0x18c  securitymgr.o [3]
+  i.smp_Process_Rx_Packet_wrt_Current_State
+                          ro code  0x1005'25a0     0x130  securitymgr.o [3]
+  i.smp_pairing_failed_receive
+                          ro code  0x1005'26d0      0x10  smp_common.o [3]
+  i.SMA_generate_EDIV_recovery_DIV
+                          ro code  0x1005'26e0      0x74  smp_algo_sap.o [3]
+  i.SDB_Find_Matching_LTK
+                          ro code  0x1005'2754      0xa0  sdb.o [3]
+  i.LL_Set_LTK            ro code  0x1005'27f4      0x9c  ll_routines_support.o [3]
+  i.GapIsPrivacySupported
+                          ro code  0x1005'2890      0x14  rom_gap.o [3]
+  i.SDB_get_security_data_record
+                          ro code  0x1005'28a4      0xd8  sdb.o [3]
+  i.smp_Keys_Distribution_Send
+                          ro code  0x1005'297c     0x11c  securitymgr.o [3]
+  i.smp_pairing_completed
+                          ro code  0x1005'2a98      0x78  smp_common.o [3]
+  i.smp_keys_receiving    ro code  0x1005'2b10      0xd6  smp_common.o [3]
+  i.smp____SR_PairingRequest_Receive
+                          ro code  0x1005'2be8     0x17c  securitymgr.o [3]
+  i.smp____SR_PairingRandom_Receive
+                          ro code  0x1005'2d64     0x120  securitymgr.o [3]
+  i.smp_get_local_identity_address
+                          ro code  0x1005'2e84      0x3c  smp_common.o [3]
+  i.SMA_Generate_CSRK     ro code  0x1005'2ec0      0x28  smp_algo_sap.o [3]
+  i.smp_add_pairing_record_to_bonding_database
+                          ro code  0x1005'2ee8     0x148  smp_common.o [3]
+  i.aci_gap_authorization_req_event_push
+                          ro code  0x1005'3030      0x54  smp_common.o [3]
+  i.SDB_Add_Record        ro code  0x1005'3084     0x184  sdb.o [3]
+  i.LL_Init               ro code  0x1005'3208     0x18c  rom_ll_ll_routines.o [3]
+  i.Blue_Init_Global      ro code  0x1005'3394      0x98  routines_support.o [3]
+  i.LL_LE_Clear_White_List
+                          ro code  0x1005'342c      0x28  ll_privacy.o [3]
+  i.nsar_init             ro code  0x1005'3454      0x18  multi_master_time.o [3]
+  i.Blue_Set_Radio_Config_Data
+                          ro code  0x1005'346c      0x24  rom_ll_routines_support.o [3]
+  i.Gatt_Super_Handler_Task7
+                          ro code  0x1005'3490     0x188  gatt_client.o [3]
+  i.GAP_Started_Gatt_Proc
+                          ro code  0x1005'3618      0x2c  gap.o [3]
+  i.Gatt_Check_Not_Error_Resp
+                          ro code  0x1005'3644      0x52  gatt_client.o [3]
+  i.aci_att_read_resp_event_push
+                          ro code  0x1005'3698      0x74  gatt_client.o [3]
+  i.aci_att_read_multiple_resp_event_push
+                          ro code  0x1005'370c      0x74  gatt_client.o [3]
+  i.aci_att_read_blob_resp_event_push
+                          ro code  0x1005'3780      0x74  gatt_client.o [3]
+  i.le2ByteToInt16        ro code  0x1005'37f4       0xa  gatt_client.o [3]
+  i.Att_Send_Read_Blob_Req_Pdu
+                          ro code  0x1005'37fe      0x48  rom_att.o [3]
+  i.int16ToLe2Byte        ro code  0x1005'3846       0x8  gatt_client.o [3]
+  i.GAP_Internal_Evt_Handler
+                          ro code  0x1005'3850      0x3c  gap.o [3]
+  i.aci_gatt_disc_read_char_by_uuid_resp_event_push
+                          ro code  0x1005'388c      0x84  gatt_client.o [3]
+  i.aci_gatt_proc_complete_event_push
+                          ro code  0x1005'3910      0x58  gatt_client.o [3]
+  i.aci_gatt_error_resp_event_push
+                          ro code  0x1005'3968      0x78  gatt_client.o [3]
+  i.advance_transmit      ro code  0x1005'39e0     0x158  routines_support.o [3]
+  .constdata              const    0x1005'3b38     0x128  crypto.o [4]
+  i.SMP_hci_encryption_change_evt_hndl
+                          ro code  0x1005'3c60     0x120  smp_common.o [3]
+  .constdata              const    0x1005'3d80     0x11c  aci_events.o [3]
+  i.Timer_ProcessQ        ro code  0x1005'3e9c     0x11c  host_timer.o [3]
+  i.TimerCallback         ro code  0x1005'3fb8      0x7c  host_timer.o [3]
+  i.Set_Host_Timer_value  ro code  0x1005'4034      0x50  host_timer.o [3]
+  i.GAP_LimDiscTimeoutcb  ro code  0x1005'4084      0x2c  gap.o [3]
+  i.GAP_PrivateAddrTimercb
+                          ro code  0x1005'40b0      0x48  rom_gap.o [3]
+  i.GATT_TimeOut_Handler  ro code  0x1005'40f8      0x1a  gatt_server.o [3]
+  i.L2C_SigChan_Req_TimeOut_Handler
+                          ro code  0x1005'4114      0x60  l2cap.o [3]
+  i.SMP_Protocol_Timer_cb
+                          ro code  0x1005'4174      0x44  smp_common.o [3]
+  i.SMP_repeated_attacks_timer_cb
+                          ro code  0x1005'41b8      0x78  smp_common.o [3]
+  i.HAL_VTimerTimeoutCallback
+                          ro code  0x1005'4230       0x2  host_timer.o [3]
+  i.Find_Timed_Out_Connection
+                          ro code  0x1005'4234      0x20  gatt_server.o [3]
+  .rodata                 const    0x1005'4254     0x114  slave.o [1]
+  i.Events_Process_Q      ro code  0x1005'4368     0x10c  aci_events.o [3]
+  .text                   ro code  0x1005'4474      0x98  BLE_MS_Formula_main.o [1]
+  .text                   ro code  0x1005'450c      0x14  SDK_EVAL_Config.o [1]
+  .text                   ro code  0x1005'4520      0xea  SDK_EVAL_Com.o [1]
+  i.BlueNRG_Stack_Initialization
+                          ro code  0x1005'460c      0x44  bluenrg_main_func.o [3]
+  .text                   ro code  0x1005'4650      0x28  printf.o [2]
+  .text                   ro code  0x1005'4678      0x80  SDK_EVAL_Led.o [1]
+  i.BTLE_StackTick        ro code  0x1005'46f8      0x84  bluenrg_main_func.o [3]
+  i.aci_gap_terminate     ro code  0x1005'477c       0x8  bluenrg_gap_aci.o [3]
+  .text                   ro code  0x1005'4784      0xac  BlueNRG1_gpio.o [1]
+  i.BlueNRG_Stack_Initialize_RAM_check
+                          ro code  0x1005'4830      0x7c  bluenrg_main_func.o [3]
+  i._BlueNRG_Stack_Initialization
+                          ro code  0x1005'48ac      0xe8  bluenrg_main_func.o [3]
+  i.hci_acl_Process_Q     ro code  0x1005'4994      0x6c  hci.o [3]
+  i.Controller_Process_Q  ro code  0x1005'4a00      0x1c  hci.o [3]
+  i.BlueNRG_Stack_Perform_Crystal_Check
+                          ro code  0x1005'4a1c      0xc4  bluenrg_main_func.o [3]
+  i.GAP_Process_Q         ro code  0x1005'4ae0      0x40  gap.o [3]
+  i.GAP_Terminate_Link    ro code  0x1005'4b20       0x8  rom_gap_rom.o [3]
+  i.Dynamic_allocator_noRet
+                          ro code  0x1005'4b28       0x2  mem_alloc.o [3]
+  i.mem_alloc_ctx_init    ro code  0x1005'4b2c      0xa8  mem_alloc.o [3]
+  i.BlueNRG_Stack_Initialize_ConfigData
+                          ro code  0x1005'4bd4      0x64  bluenrg_main_func.o [3]
+  i.BlueNRG_Stack_Initialize_Layers
+                          ro code  0x1005'4c38      0x84  bluenrg_main_func.o [3]
+  i.PRIVWHIT_vInit_Struct
+                          ro code  0x1005'4cbc      0xb8  ll_privacy.o [3]
+  i.Data_Len_Update_Offline_Processing_ucfg
+                          ro code  0x1005'4d74       0x2  ll_routines.o [3]
+  i.Disconnection_Offline_Processing
+                          ro code  0x1005'4d78      0x48  ll_routines.o [3]
+  i.BlueNRG_Start_Crystal_Measurement
+                          ro code  0x1005'4dc0      0x1c  bluenrg_main_func.o [3]
+  i.set_freq              ro code  0x1005'4ddc      0x88  rom_ll_timehandling.o [3]
+  i.LL_Disconnect_Link    ro code  0x1005'4e64      0x3c  ll_routines.o [3]
+  i.Timer_Init            ro code  0x1005'4ea0      0x34  host_timer.o [3]
+  i.PM_Init               ro code  0x1005'4ed4      0x68  pm.o [3]
+  i.Acl_Init              ro code  0x1005'4f3c      0x20  acl.o [3]
+  i.L2C_Init              ro code  0x1005'4f5c      0x58  l2cap.o [3]
+  i.SMP_Init              ro code  0x1005'4fb4      0x3c  smp_common.o [3]
+  i.GAP_Init_Context      ro code  0x1005'4ff0      0x14  gap.o [3]
+  i.HCI_Init              ro code  0x1005'5004      0x7c  hci.o [3]
+  i.ble_HAL_Init          ro code  0x1005'5080      0x1c  hal.o [3]
+  i.Events_Process_init   ro code  0x1005'509c      0x4c  aci_events.o [3]
+  i.LL_Send_Disconnection_Req
+                          ro code  0x1005'50e8      0xa4  ll_routines.o [3]
+  i.Mem_Buff_Init         ro code  0x1005'518c      0x6a  mem_buff.o [3]
+  i.hal_radio_activity_state_init
+                          ro code  0x1005'51f8      0x1c  hal.o [3]
+  i.fifoCtrl_init         ro code  0x1005'5214       0xa  aci_events.o [3]
+  i.SMP_acl_data_hndl     ro code  0x1005'5220      0xf8  smp_common.o [3]
+  i.smp_Keys_Distribution_Complete
+                          ro code  0x1005'5318      0x32  smp_common.o [3]
+  i.L2C_Rcv_Data          ro code  0x1005'534a      0xcc  l2cap.o [3]
+  i.PM_Extract_Pdu_MBuff  ro code  0x1005'5416       0xc  pm.o [3]
+  i.Mem_Buff_Append       ro code  0x1005'5422      0x12  mem_buff.o [3]
+  i.PM_Compact            ro code  0x1005'5434      0x54  pm.o [3]
+  i.L2C_Get_PDU_Len       ro code  0x1005'5488       0xe  l2cap.o [3]
+  i.L2C_Mux_Acl_Packet    ro code  0x1005'5496      0x58  l2cap.o [3]
+  i.L2C_discard_accumulated_acl_data
+                          ro code  0x1005'54f0      0x5c  l2cap.o [3]
+  i.Mem_Buff_Compact      ro code  0x1005'554c      0xba  mem_buff.o [3]
+  .rodata                 const    0x1005'5608      0x9c  slave.o [1]
+  .rodata                 const    0x1005'56a4      0x98  slave.o [1]
+  i.SMP_connection_complete_handler
+                          ro code  0x1005'573c      0x94  smp_common.o [3]
+  i.L2C_Reset_To_Closed_State
+                          ro code  0x1005'57d0      0x7c  l2cap.o [3]
+  .rodata                 const    0x1005'584c      0x70  slave.o [1]
+  i.hci_rx_acl_data       ro code  0x1005'58bc      0x6c  hci.o [3]
+  .rodata                 const    0x1005'5928      0x6a  xprintffull_nomb.o [2]
+  .rodata                 const    0x1005'5994      0x68  BLE_MS_Formula_main.o [1]
+  i.GAP_Connection_Complete_Handler
+                          ro code  0x1005'59fc      0x68  gap.o [3]
+  i.GAP_LL_Event_Handler_ISR
+                          ro code  0x1005'5a64      0x68  gap.o [3]
+  i._GAP_Parse_Advertising_Report
+                          ro code  0x1005'5acc      0x64  gap.o [3]
+  i.isr_test_tx_state     ro code  0x1005'5b30      0x64  ll_isr.o [3]
+  .constdata              const    0x1005'5b94      0x60  smp_scv42_caf.o [3]
+  i.L2C_Rcv_Event_Handler_ISR
+                          ro code  0x1005'5bf4      0x54  l2cap.o [3]
+  i.L2C_Connection_Complete_Handler
+                          ro code  0x1005'5c48      0x4a  l2cap.o [3]
+  i.Gatt_Server_L2C_Handler_ISR
+                          ro code  0x1005'5c94      0x4c  gatt_server.o [3]
+  i.SMP_hci_disconnection_complete_evt_hndl
+                          ro code  0x1005'5ce0      0x40  smp_common.o [3]
+  i.L2C_Signal_Channel_Handler_ISR
+                          ro code  0x1005'5d20      0x24  l2cap.o [3]
+  i.SMP_hci_le_long_term_key_request_evt_hndl
+                          ro code  0x1005'5d44      0x38  smp_common.o [3]
+  i.SMP_hci_le_connection_complete_evt_hndl
+                          ro code  0x1005'5d7c      0x2e  smp_common.o [3]
+  i.SMP_hci_le_enhanced_connection_complete_evt_hndl
+                          ro code  0x1005'5daa      0x52  smp_common.o [3]
+  i.GATT_Connection_Complete_Handler
+                          ro code  0x1005'5dfc      0x44  gatt_server.o [3]
+  i.L2C_Connection_Complete_Signal_Handler
+                          ro code  0x1005'5e40      0x2a  l2cap.o [3]
+  i.int_cb_hci_acl_data_tx_cmpl_event
+                          ro code  0x1005'5e6c      0x54  acl.o [3]
+  i.hci_tx_acl_data_done  ro code  0x1005'5ec0      0x44  hci.o [3]
+  i.L2C_Rcv_Event_Handler
+                          ro code  0x1005'5f04      0x1e  l2cap.o [3]
+  i.cb_hci_le_enhanced_connection_complete_event
+                          ro code  0x1005'5f24      0x4c  aci_events.o [3]
+  i.cb_hci_le_connection_complete_event
+                          ro code  0x1005'5f70      0x44  aci_events.o [3]
+  .constdata              const    0x1005'5fb4      0x40  pka.o [3]
+  i.int_cb_hci_acl_data_ind_event
+                          ro code  0x1005'5ff4      0x40  acl.o [3]
+  .text                   ro code  0x1005'6034      0x3c  zero_init3.o [6]
+  .text                   ro code  0x1005'6070      0x3c  packbits_init_single.o [6]
+  .rodata                 const    0x1005'60ac      0x38  slave.o [1]
+  i.cb_aci_l2cap_connection_update_req_event
+                          ro code  0x1005'60e4      0x34  aci_events.o [3]
+  i.aci_l2cap_connection_update_req_event
+                          ro code  0x1005'6118       0x2  aci_events.o [3]
+  i.isr_test_rx_state     ro code  0x1005'611c      0x34  ll_isr.o [3]
+  .rodata                 const    0x1005'6150      0x30  slave.o [1]
+  i.cb_hci_le_connection_update_complete_event
+                          ro code  0x1005'6180      0x30  aci_events.o [3]
+  i.hci_le_connection_update_complete_event
+                          ro code  0x1005'61b0       0x2  aci_events.o [3]
+  i.cb_hci_le_data_length_change_event
+                          ro code  0x1005'61b4      0x30  aci_events.o [3]
+  i.hci_le_data_length_change_event
+                          ro code  0x1005'61e4       0x2  aci_events.o [3]
+  .rodata                 const    0x1005'61e8      0x2c  slave.o [1]
+  i.cb_aci_att_prepare_write_resp_event
+                          ro code  0x1005'6214      0x2c  aci_events.o [3]
+  i.aci_att_prepare_write_resp_event
+                          ro code  0x1005'6240       0x2  aci_events.o [3]
+  i.cb_aci_gatt_attribute_modified_event
+                          ro code  0x1005'6244      0x2c  aci_events.o [3]
+  i.cb_hci_le_read_remote_used_features_complete_event
+                          ro code  0x1005'6270      0x2c  aci_events.o [3]
+  i.hci_le_read_remote_used_features_complete_event
+                          ro code  0x1005'629c       0x2  aci_events.o [3]
+  i.isr_unknown_state     ro code  0x1005'62a0      0x2c  ll_isr.o [3]
+  .rodata                 const    0x1005'62cc      0x28  slave.o [1]
+  i.cb_aci_att_find_info_resp_event
+                          ro code  0x1005'62f4      0x28  aci_events.o [3]
+  i.aci_att_find_info_resp_event
+                          ro code  0x1005'631c       0x2  aci_events.o [3]
+  i.cb_aci_att_read_by_group_type_resp_event
+                          ro code  0x1005'6320      0x28  aci_events.o [3]
+  i.aci_att_read_by_group_type_resp_event
+                          ro code  0x1005'6348       0x2  aci_events.o [3]
+  i.cb_aci_att_read_by_type_resp_event
+                          ro code  0x1005'634c      0x28  aci_events.o [3]
+  i.aci_att_read_by_type_resp_event
+                          ro code  0x1005'6374       0x2  aci_events.o [3]
+  i.cb_aci_gap_proc_complete_event
+                          ro code  0x1005'6378      0x28  aci_events.o [3]
+  i.aci_gap_proc_complete_event
+                          ro code  0x1005'63a0       0x2  aci_events.o [3]
+  i.cb_aci_gatt_disc_read_char_by_uuid_resp_event
+                          ro code  0x1005'63a4      0x28  aci_events.o [3]
+  i.aci_gatt_disc_read_char_by_uuid_resp_event
+                          ro code  0x1005'63cc       0x2  aci_events.o [3]
+  i.cb_aci_gatt_error_resp_event
+                          ro code  0x1005'63d0      0x28  aci_events.o [3]
+  i.aci_gatt_error_resp_event
+                          ro code  0x1005'63f8       0x2  aci_events.o [3]
+  i.cb_aci_gatt_indication_event
+                          ro code  0x1005'63fc      0x28  aci_events.o [3]
+  i.aci_gatt_indication_event
+                          ro code  0x1005'6424       0x2  aci_events.o [3]
+  i.cb_aci_gatt_notification_event
+                          ro code  0x1005'6428      0x28  aci_events.o [3]
+  i.aci_gatt_notification_event
+                          ro code  0x1005'6450       0x2  aci_events.o [3]
+  i.cb_aci_hal_scan_req_report_event
+                          ro code  0x1005'6454      0x28  aci_events.o [3]
+  i.aci_hal_scan_req_report_event
+                          ro code  0x1005'647c       0x2  aci_events.o [3]
+  i.cb_hci_le_generate_dhkey_complete_event
+                          ro code  0x1005'6480      0x28  aci_events.o [3]
+  i.hci_le_generate_dhkey_complete_event
+                          ro code  0x1005'64a8       0x2  aci_events.o [3]
+  i.cb_hci_le_long_term_key_request_event
+                          ro code  0x1005'64ac      0x28  aci_events.o [3]
+  i.hci_le_long_term_key_request_event
+                          ro code  0x1005'64d4       0x2  aci_events.o [3]
+  i.cb_hci_le_read_local_p256_public_key_complete_event
+                          ro code  0x1005'64d8      0x28  aci_events.o [3]
+  i.hci_le_read_local_p256_public_key_complete_event
+                          ro code  0x1005'6500       0x2  aci_events.o [3]
+  i.cb_hci_read_remote_version_information_complete_event
+                          ro code  0x1005'6504      0x28  aci_events.o [3]
+  i.hci_read_remote_version_information_complete_event
+                          ro code  0x1005'652c       0x2  aci_events.o [3]
+  .text                   ro code  0x1005'6530      0x28  data_init.o [6]
+  i.int_cb_hci_disconnection_complete_event
+                          ro code  0x1005'6558      0x26  aci_events.o [3]
+  i.int_cb_hci_le_connection_complete_event
+                          ro code  0x1005'657e      0x26  aci_events.o [3]
+  i.int_cb_hci_le_enhanced_connection_complete_event
+                          ro code  0x1005'65a4      0x26  aci_events.o [3]
+  i.cb_aci_att_exchange_mtu_resp_event
+                          ro code  0x1005'65cc      0x24  aci_events.o [3]
+  i.cb_aci_att_find_by_type_value_resp_event
+                          ro code  0x1005'65f0      0x24  aci_events.o [3]
+  i.aci_att_find_by_type_value_resp_event
+                          ro code  0x1005'6614       0x2  aci_events.o [3]
+  i.cb_aci_att_read_blob_resp_event
+                          ro code  0x1005'6618      0x24  aci_events.o [3]
+  i.aci_att_read_blob_resp_event
+                          ro code  0x1005'663c       0x2  aci_events.o [3]
+  i.cb_aci_att_read_multiple_resp_event
+                          ro code  0x1005'6640      0x24  aci_events.o [3]
+  i.aci_att_read_multiple_resp_event
+                          ro code  0x1005'6664       0x2  aci_events.o [3]
+  i.cb_aci_att_read_resp_event
+                          ro code  0x1005'6668      0x24  aci_events.o [3]
+  i.aci_att_read_resp_event
+                          ro code  0x1005'668c       0x2  aci_events.o [3]
+  i.cb_aci_att_write_resp_event
+                          ro code  0x1005'6690      0x24  aci_events.o [3]
+  i.aci_att_write_resp_event
+                          ro code  0x1005'66b4       0x2  aci_events.o [3]
+  i.cb_aci_gap_keypress_notification_event
+                          ro code  0x1005'66b8      0x24  aci_events.o [3]
+  i.aci_gap_keypress_notification_event
+                          ro code  0x1005'66dc       0x2  aci_events.o [3]
+  i.cb_aci_gap_numeric_comparison_value_event
+                          ro code  0x1005'66e0      0x24  aci_events.o [3]
+  i.aci_gap_numeric_comparison_value_event
+                          ro code  0x1005'6704       0x2  aci_events.o [3]
+  i.cb_aci_gap_pairing_complete_event
+                          ro code  0x1005'6708      0x24  aci_events.o [3]
+  i.cb_aci_gatt_proc_complete_event
+                          ro code  0x1005'672c      0x24  aci_events.o [3]
+  i.cb_aci_l2cap_connection_update_resp_event
+                          ro code  0x1005'6750      0x24  aci_events.o [3]
+  i.cb_aci_l2cap_proc_timeout_event
+                          ro code  0x1005'6774      0x24  aci_events.o [3]
+  i.aci_l2cap_proc_timeout_event
+                          ro code  0x1005'6798       0x2  aci_events.o [3]
+  i.cb_hci_disconnection_complete_event
+                          ro code  0x1005'679c      0x24  aci_events.o [3]
+  i.cb_hci_encryption_change_event
+                          ro code  0x1005'67c0      0x24  aci_events.o [3]
+  i.hci_encryption_change_event
+                          ro code  0x1005'67e4       0x2  aci_events.o [3]
+  i.cb_hci_encryption_key_refresh_complete_event
+                          ro code  0x1005'67e8      0x24  aci_events.o [3]
+  i.hci_encryption_key_refresh_complete_event
+                          ro code  0x1005'680c       0x2  aci_events.o [3]
+  i.cb_hci_le_advertising_report_event
+                          ro code  0x1005'6810      0x24  aci_events.o [3]
+  i.hci_le_advertising_report_event
+                          ro code  0x1005'6834       0x2  aci_events.o [3]
+  i.cb_hci_le_direct_advertising_report_event
+                          ro code  0x1005'6838      0x24  aci_events.o [3]
+  i.hci_le_direct_advertising_report_event
+                          ro code  0x1005'685c       0x2  aci_events.o [3]
+  .iar.init_table         const    0x1005'6860      0x80  - Linker created -
+  i.cb_aci_att_exec_write_resp_event
+                          ro code  0x1005'68e0      0x20  aci_events.o [3]
+  i.aci_att_exec_write_resp_event
+                          ro code  0x1005'6900       0x2  aci_events.o [3]
+  i.cb_aci_gap_addr_not_resolved_event
+                          ro code  0x1005'6904      0x20  aci_events.o [3]
+  i.aci_gap_addr_not_resolved_event
+                          ro code  0x1005'6924       0x2  aci_events.o [3]
+  i.cb_aci_gap_authorization_req_event
+                          ro code  0x1005'6928      0x20  aci_events.o [3]
+  i.aci_gap_authorization_req_event
+                          ro code  0x1005'6948       0x2  aci_events.o [3]
+  i.cb_aci_gap_device_found_event
+                          ro code  0x1005'694c      0x20  aci_events.o [3]
+  i.aci_gap_device_found_event
+                          ro code  0x1005'696c       0x2  aci_events.o [3]
+  i.cb_aci_gap_pass_key_req_event
+                          ro code  0x1005'6970      0x20  aci_events.o [3]
+  i.aci_gap_pass_key_req_event
+                          ro code  0x1005'6990       0x2  aci_events.o [3]
+  i.cb_aci_gatt_proc_timeout_event
+                          ro code  0x1005'6994      0x20  aci_events.o [3]
+  i.aci_gatt_proc_timeout_event
+                          ro code  0x1005'69b4       0x2  aci_events.o [3]
+  .text                   ro code  0x1005'69b8      0x1e  cmain.o [6]
+  .text                   ro code  0x1005'69d6       0x8  exit.o [2]
+  .text                   ro code  0x1005'69e0       0xa  cexit.o [6]
+  .text                   ro code  0x1005'69ea      0x1e  putchar.o [2]
+  i.int_cb_hci_le_advertising_report_event
+                          ro code  0x1005'6a08      0x1e  aci_events.o [3]
+  i.int_cb_hci_le_direct_advertising_report_event
+                          ro code  0x1005'6a26      0x1e  aci_events.o [3]
+  .text                   ro code  0x1005'6a44      0x1c  BlueNRG1_it.o [1]
+  .text                   ro code  0x1005'6a60      0x10  clock.o [1]
+  i.cb_aci_gap_bond_lost_event
+                          ro code  0x1005'6a70      0x1c  aci_events.o [3]
+  i.aci_gap_bond_lost_event
+                          ro code  0x1005'6a8c       0x2  aci_events.o [3]
+  i.cb_aci_gap_limited_discoverable_event
+                          ro code  0x1005'6a90      0x1c  aci_events.o [3]
+  i.aci_gap_limited_discoverable_event
+                          ro code  0x1005'6aac       0x2  aci_events.o [3]
+  i.cb_aci_gap_slave_security_initiated_event
+                          ro code  0x1005'6ab0      0x1c  aci_events.o [3]
+  i.aci_gap_slave_security_initiated_event
+                          ro code  0x1005'6acc       0x2  aci_events.o [3]
+  i.int_cb_hci_encryption_change_event
+                          ro code  0x1005'6ace      0x1a  aci_events.o [3]
+  i.int_cb_hci_encryption_key_refresh_complete_event
+                          ro code  0x1005'6ae8      0x1a  aci_events.o [3]
+  i.int_cb_hci_le_generate_dhkey_complete_event
+                          ro code  0x1005'6b02      0x1a  aci_events.o [3]
+  i.int_cb_hci_le_read_local_p256_public_key_complete_event
+                          ro code  0x1005'6b1c      0x1a  aci_events.o [3]
+  .constdata              const    0x1005'6b38      0x19  securitymgr.o [3]
+  .text                   ro code  0x1005'6b52      0x16  xprout.o [2]
+  i.cb_aci_gatt_prepare_write_permit_req_event
+                          ro code  0x1005'6b68      0x16  aci_events.o [3]
+  i.aci_gatt_prepare_write_permit_req_event
+                          ro code  0x1005'6b7e       0x2  aci_events.o [3]
+  i.cb_aci_l2cap_command_reject_event
+                          ro code  0x1005'6b80      0x16  aci_events.o [3]
+  i.aci_l2cap_command_reject_event
+                          ro code  0x1005'6b96       0x2  aci_events.o [3]
+  i.cb_hci_rx_acl_data_event
+                          ro code  0x1005'6b98      0x16  aci_events.o [3]
+  i.hci_rx_acl_data_event
+                          ro code  0x1005'6bae       0x4  aci_events.o [3]
+  i.cb_aci_gatt_write_permit_req_event
+                          ro code  0x1005'6bb2      0x12  aci_events.o [3]
+  i.aci_gatt_write_permit_req_event
+                          ro code  0x1005'6bc4       0x2  aci_events.o [3]
+  .constdata              const    0x1005'6bc8      0x10  rom_ll_timehandling.o [3]
+  .constdata              const    0x1005'6bd8      0x10  smp_algo_sap.o [3]
+  .constdata              const    0x1005'6be8      0x10  att.o [3]
+  i.cb_aci_gatt_read_multi_permit_req_event
+                          ro code  0x1005'6bf8      0x10  aci_events.o [3]
+  i.aci_gatt_read_multi_permit_req_event
+                          ro code  0x1005'6c08       0x2  aci_events.o [3]
+  i.cb_aci_gatt_read_permit_req_event
+                          ro code  0x1005'6c0a      0x10  aci_events.o [3]
+  i.aci_gatt_read_permit_req_event
+                          ro code  0x1005'6c1a       0x2  aci_events.o [3]
+  i.cb_aci_hal_fw_error_event
+                          ro code  0x1005'6c1c      0x10  aci_events.o [3]
+  i.int_cb_hci_le_data_length_change_event
+                          ro code  0x1005'6c2c      0x10  aci_events.o [3]
+  i.cb_aci_gatt_tx_pool_available_event
+                          ro code  0x1005'6c3c       0xe  aci_events.o [3]
+  .rodata                 const    0x1005'6c4c       0xc  SDK_EVAL_Config.o [1]
+  .text                   ro code  0x1005'6c58       0xc  cstartup_M.o [6]
+  i.int_cb_hci_le_long_term_key_request_event
+                          ro code  0x1005'6c64       0xc  aci_events.o [3]
+  i.Gatt_Read_Charac_By_Uuid_Cb
+                          ro code  0x1005'6c70       0xa  gatt_client.o [3]
+  i.cb_aci_gatt_server_confirmation_event
+                          ro code  0x1005'6c7a       0xa  aci_events.o [3]
+  i.aci_gatt_server_confirmation_event
+                          ro code  0x1005'6c84       0x2  aci_events.o [3]
+  i.cb_hci_number_of_completed_packets_event
+                          ro code  0x1005'6c86       0xa  aci_events.o [3]
+  i.hci_number_of_completed_packets_event
+                          ro code  0x1005'6c90       0x2  aci_events.o [3]
+  .rodata                 const    0x1005'6c94       0x4  SDK_EVAL_Config.o [1]
+  .rodata                 const    0x1005'6c98       0x4  SDK_EVAL_Config.o [1]
+  .rodata                 const    0x1005'6c9c       0x4  SDK_EVAL_Config.o [1]
+  .rodata                 const    0x1005'6ca0       0x4  SDK_EVAL_Config.o [1]
+  .rodata                 const    0x1005'6ca4       0x0  zero_init3.o [6]
+  .rodata                 const    0x1005'6ca4       0x0  packbits_init_single.o [6]
+  Initializer bytes       const    0x1005'6ca4      0x31  <for P3-1>
+  Initializer bytes       const    0x1005'6cd5       0xa  <for BLUE-1>
+  Initializer bytes       const    0x1005'6cdf       0x5  <for app_base_block-1>
+                                 - 0x1005'6ce4  0x1'6c24
+
+"A0":                                              0x838
+  BLOCK_STACKLIB_FLASH_DATA
+                                   0x1006'7000     0x838  <Block>
+    .noinit.stacklib_flash_data
+                          uninit   0x1006'7000     0x800  BLE_MS_Formula_main.o [1]
+    .noinit.stacklib_stored_device_id_data
+                          uninit   0x1006'7800      0x38  BLE_MS_Formula_main.o [1]
+                                 - 0x1006'7838     0x838
+
+"A4":                                                0x4
+  ota_sw_activation_block
+                                   0x2000'0004       0x4  <Block>
+    .ota_sw_activation    uninit   0x2000'0004       0x4  system_bluenrg1.o [1]
+                                 - 0x2000'0008       0x4
+
+"A5":                                                0x4
+  savedMSP_block                   0x2000'0008       0x4  <Block>
+    .savedMSP             zero     0x2000'0008       0x4  system_bluenrg1.o [1]
+                                 - 0x2000'000c       0x4
+
+"A6":                                                0x4
+  wakeupFromSleepFlag_block
+                                   0x2000'000c       0x4  <Block>
+    .wakeupFromSleepFlag  zero     0x2000'000c       0x1  system_bluenrg1.o [1]
+                                 - 0x2000'0010       0x4
+
+"A7":                                                0x4
+  app_base_block                   0x2000'0010       0x4  <Block>
+    app_base_block-1               0x2000'0010       0x4  <Init block>
+      .app_base           inited   0x2000'0010       0x4  system_bluenrg1.o [1]
+                                 - 0x2000'0014       0x4
+
+"A8":                                                0x4
+  flash_sw_lock_block              0x2000'0014       0x4  <Block>
+    .flash_sw_lock        zero     0x2000'0014       0x4  system_bluenrg1.o [1]
+                                 - 0x2000'0018       0x4
+
+"A9":                                                0x4
+  rfTimeout_block                  0x2000'0018       0x4  <Block>
+    .rfTimeout            zero     0x2000'0018       0x4  system_bluenrg1.o [1]
+                                 - 0x2000'001c       0x4
+
+"A10":                                               0x8
+  BOR_config_block                 0x2000'001c       0x8  <Block>
+    .BOR_config           zero     0x2000'001c       0x8  system_bluenrg1.o [1]
+                                 - 0x2000'0024       0x8
+
+"P3", part 1 of 5:                                   0x8
+  .bss                    zero     0x2000'0024       0x8  app_common.o [1]
+                                 - 0x2000'002c       0x8
+
+"A11":                                               0x4
+  Blue_Flag_Ram_block              0x2000'0030       0x4  <Block>
+    .__blueflag_RAM       zero     0x2000'0030       0x4  system_bluenrg1.o [1]
+                                 - 0x2000'0034       0x4
+
+"A12":                                              0x28
+  Crash_Info_block                 0x2000'0034      0x28  <Block>
+    .__crash_RAM          uninit   0x2000'0034      0x28  miscutil.o [1]
+                                 - 0x2000'005c      0x28
+
+"P3", part 2 of 5:                                  0x60
+  P3-1                             0x2000'005c      0x60  <Init block>
+    .data                 inited   0x2000'005c       0xc  slave.o [1]
+    .data                 inited   0x2000'0068      0x48  ll_isr.o [3]
+    .data                 inited   0x2000'00b0       0x4  smp_common.o [3]
+    .data                 inited   0x2000'00b4       0x4  mem_alloc.o [3]
+    .data                 inited   0x2000'00b8       0x2  ll_routines_master.o [3]
+    .data                 inited   0x2000'00ba       0x2  pka.o [3]
+                                 - 0x2000'00bc      0x60
+
+"P3", part 3 of 5:                                   0x4
+  .bss                    zero     0x2000'00bc       0x4  app_common.o [1]
+                                 - 0x2000'00c0       0x4
+
+"A1":                                              0x20c
+  BLUE                             0x2000'00c0     0x20c  <Block>
+    BLUE-1                         0x2000'00c0     0x20c  <Init block>
+      .bss.__blue_RAM     inited   0x2000'00c0     0x20c  system_bluenrg1.o [1]
+                                 - 0x2000'02cc     0x20c
+
+"P3", part 4 of 5:                                 0x19c
+  .bss                    zero     0x2000'02cc     0x100  cassert.o [1]
+  .bss                    zero     0x2000'03cc      0x34  mem_alloc.o [3]
+  .bss                    zero     0x2000'0400      0x20  slave.o [1]
+  .bss                    zero     0x2000'0420      0x20  system_bluenrg1.o [1]
+  .bss                    zero     0x2000'0440      0x10  ll_privacy.o [3]
+  .bss                    zero     0x2000'0450       0x4  clock.o [1]
+  .bss                    zero     0x2000'0454       0x4  system_bluenrg1.o [1]
+  .bss                    zero     0x2000'0458       0x4  system_bluenrg1.o [1]
+  .bss                    zero     0x2000'045c       0x4  system_bluenrg1.o [1]
+  .bss                    zero     0x2000'0460       0x4  xfail_s.o [2]
+  .bss                    zero     0x2000'0464       0x1  BlueNRG1_pka.o [1]
+  .bss                    zero     0x2000'0465       0x1  SDK_EVAL_Config.o [1]
+  .bss                    zero     0x2000'0466       0x1  slave.o [1]
+                                 - 0x2000'0467     0x19b
+
+"P3", part 5 of 5:                                0x26b0
+  .noinit                 uninit   0x2000'0468    0x26b0  BLE_MS_Formula_main.o [1]
+                                 - 0x2000'2b18    0x26b0
+
+"A13":                                             0xc00
+  CSTACK                           0x2000'5400     0xc00  <Block>
+    CSTACK                uninit   0x2000'5400     0xc00  <Block tail>
+                                 - 0x2000'6000     0xc00
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+  0x1005'6ce4  0x1006'6fff  0x1'031c
+  0x2000'0000  0x2000'0003       0x4
+  0x2000'002c  0x2000'002f       0x4
+  0x2000'2b18  0x2000'53ff    0x28e8
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    9 destination ranges, total size 0x1c0:
+          0x2000'0008    0x4
+          0x2000'000c    0x1
+          0x2000'0014    0x4
+          0x2000'0018    0x4
+          0x2000'001c    0x8
+          0x2000'0024    0x8
+          0x2000'0030    0x4
+          0x2000'00bc    0x4
+          0x2000'02cc  0x19b
+
+Copy/packbits (__iar_packbits_init_single3)
+    1 source range, total size 0xa (1% of destination):
+          0x1005'6cd5    0xa
+    1 destination range, total size 0x20c:
+          0x2000'00c0  0x20c
+
+Copy/packbits (__iar_packbits_init_single3)
+    1 source range, total size 0x5 (125% of destination):
+          0x1005'6cdf    0x5
+    1 destination range, total size 0x4:
+          0x2000'0010    0x4
+
+Copy/packbits (__iar_packbits_init_single3)
+    1 source range, total size 0x31 (51% of destination):
+          0x1005'6ca4   0x31
+    1 destination range, total size 0x60:
+          0x2000'005c   0x60
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                       ro code  ro data  rw data
+    ------                       -------  -------  -------
+command line/config:
+    ------------------------------------------------------
+    Total:
+
+D:\work\2020\14_IIC\BlueNRG-1_2 DK 3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj: [1]
+    BLE_MS_Formula_main.o            152      104   12'008
+    BlueNRG1_flash.o                  80
+    BlueNRG1_gpio.o                  172
+    BlueNRG1_it.o                     28
+    BlueNRG1_pka.o                   372                 1
+    BlueNRG1_sysCtrl.o               212
+    BlueNRG1_uart.o                  432
+    SDK_EVAL_Com.o                   234
+    SDK_EVAL_Config.o                 20       28        1
+    SDK_EVAL_Led.o                   128
+    app_common.o                     360                12
+    cassert.o                         92               256
+    clock.o                           16                 4
+    context_switch.o                 156
+    miscutil.o                       122                40
+    osal.o                            40
+    slave.o                        1'376      890       45
+    stack_user_cfg.o                 344
+    system_bluenrg1.o                950      207      601
+    ------------------------------------------------------
+    Total:                         5'286    1'229   12'968
+
+dl6M_tln.a: [2]
+    abort.o                           10
+    exit.o                             8
+    printf.o                          40
+    putchar.o                         30
+    vsprintf.o                        52
+    xfail_s.o                         72                 4
+    xprintffull_nomb.o             4'180      106
+    xprout.o                          22
+    xsprout.o                         10
+    ------------------------------------------------------
+    Total:                         4'424      106        4
+
+libbluenrg1_stack.a: [3]
+    aci_events.o                   3'092      284
+    acl.o                            472
+    acl_list.o                       268
+    advance_wakeup_time.o          1'676
+    aes128cmac.o                     184
+    att.o                          5'796       16
+    bluenrg_gap_aci.o                214
+    bluenrg_gatt_aci.o               196
+    bluenrg_hal_aci.o                 16
+    bluenrg_main_func.o            1'012
+    bluenrg_main_func_speed.o         88
+    device_id_data.o                 296
+    gap.o                          2'310
+    gatt_client.o                  1'402
+    gatt_server.o                  8'062
+    hal.o                            752
+    hci.o                          1'204
+    host_timer.o                     890
+    isr_postproc.o                   500
+    isr_routines.o                   792
+    l2cap.o                        1'856
+    ll_isr.o                       7'336       62       72
+    ll_privacy.o                   4'648                16
+    ll_routines.o                    434
+    ll_routines_master.o           3'516        1        2
+    ll_routines_support.o            292
+    mem_alloc.o                      804        2       56
+    mem_buff.o                     1'122
+    multi_master_time.o            3'192
+    nvm.o                             76
+    pka.o                            208       66        2
+    pm.o                             690
+    rom_att.o                        534
+    rom_gap.o                        708
+    rom_gap_rom.o                    156
+    rom_gatt_server.o                146
+    rom_list.o                       114
+    rom_ll_isr_postproc.o            330
+    rom_ll_isr_routines.o          1'400
+    rom_ll_ll_routines.o           3'008
+    rom_ll_ll_routines_master.o      242
+    rom_ll_routines_support.o        178
+    rom_ll_timehandling.o            316       16
+    routines_support.o             1'370
+    sdb.o                          2'522
+    securitymgr.o                  5'978       25
+    smp_algo_sap.o                 1'332       16
+    smp_common.o                   3'484        2        4
+    smp_scv42_caf.o                1'554       96
+    smp_scv42_sap.o                  210
+    utils.o                           76
+    ------------------------------------------------------
+    Total:                        77'054      586      152
+
+libcrypto.a: [4]
+    crypto.o                       1'998      296
+    ------------------------------------------------------
+    Total:                         1'998      296
+
+m6M_tl.a: [5]
+    DblAddSub.o                      424
+    DblCmpGe.o                        50
+    DblCmpLe.o                        50
+    DblDiv.o                         194
+    DblMul.o                         388
+    DblToI32.o                        82
+    IxxToDbl.o                        52
+    ------------------------------------------------------
+    Total:                         1'240
+
+rt6M_tl.a: [6]
+    ABImemcpy.o                       78
+    ABImemmove.o                      32
+    ABImemset.o                       82
+    I32DivModFast.o                  224
+    I64DivMod.o                      106
+    I64DivZer.o                        2
+    IntDivZer.o                        2
+    cexit.o                           10
+    cmain.o                           30
+    cstartup_M.o                      12
+    data_init.o                       40
+    memchr.o                          22
+    memcmp.o                          30
+    packbits_init_single.o            60
+    strchr.o                          18
+    strlen.o                          14
+    uread4.o                          22
+    zero_init3.o                      60
+    ------------------------------------------------------
+    Total:                           844
+
+shb_l.a: [7]
+    exit.o                            20
+    ------------------------------------------------------
+    Total:                            20
+
+    Gaps                             185       16
+    Linker created                            128    3'072
+----------------------------------------------------------
+    Grand Total:                  91'051    2'361   16'196
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address    Size  Type      Object
+-----                       -------    ----  ----      ------
+.iar.init_table$$Base   0x1005'6860           --   Gb  - Linker created -
+.iar.init_table$$Limit  0x1005'68e0           --   Gb  - Linker created -
+?main                   0x1005'69b9          Code  Gb  cmain.o [6]
+AES128ECB_Wrapper       0x1004'5e79    0x7e  Code  Gb  aes128cmac.o [3]
+AES_CMAC_Encrypt        0x1004'80a5    0x3a  Code  Gb  aes128cmac.o [3]
+AES_CMAC_Encrypt_Append
+                        0x1004'8e51   0x280  Code  Gb  crypto.o [4]
+AES_CMAC_Encrypt_Finish
+                        0x1004'90d5    0x68  Code  Gb  crypto.o [4]
+AES_CMAC_Encrypt_Init   0x1004'8e1d    0x34  Code  Gb  crypto.o [4]
+AES_general_SW_enc      0x1004'726d   0x258  Code  Gb  crypto.o [4]
+AES_general_enc         0x1004'96d1     0x8  Code  Lc  crypto.o [4]
+AES_keyschedule_enc     0x1004'7235    0x36  Code  Gb  crypto.o [4]
+AES_keyschedule_enc_LL  0x1004'8485   0x14c  Code  Lc  crypto.o [4]
+AESstdInit              0x1004'9619    0xb2  Code  Lc  crypto.o [4]
+APP_Tick                0x1004'a917    0x22  Code  Gb  slave.o [1]
+ATT_fill_error_resp     0x1004'efc5    0x26  Code  Gb  att.o [3]
+ATT_fill_type_val_entry
+                        0x1005'0c73    0x34  Code  Lc  att.o [3]
+ATT_validate_prepare_req
+                        0x1005'0ec1    0xa2  Code  Lc  att.o [3]
+Accu_Handles_Requiring_Auth
+                        0x1005'0cf9    0x6e  Code  Gb  rom_att.o [3]
+Accu_UuidTypes_Requiring_Auth
+                        0x1004'ee71    0xea  Code  Gb  rom_att.o [3]
+Acl_Init                0x1005'4f3d    0x1a  Code  Gb  acl.o [3]
+Acl_Rcv_Pkt_Handler     0x1004'5a45    0x36  Code  Gb  acl.o [3]
+Acl_Transmit_Data       0x1004'948d    0x5e  Code  Gb  acl.o [3]
+Acl_Tx_Cmpl_Pkt_Handler
+                        0x1004'5859    0x3e  Code  Gb  acl.o [3]
+Att_Check_Perms         0x1004'c6af    0x50  Code  Gb  att.o [3]
+Att_Send_Read_Blob_Req_Pdu
+                        0x1005'37ff    0x48  Code  Gb  rom_att.o [3]
+Att_Send_Read_By_Typ_Req_Pdu
+                        0x1004'7755    0x76  Code  Gb  rom_att.o [3]
+BLEPLAT_PKA_Get_Current_Operation
+                        0x1004'6859    0x10  Code  Gb  pka.o [3]
+BLEPLAT_PKA_Start_P256_DHKey_Generation
+                        0x1004'9269    0x4a  Code  Gb  pka.o [3]
+BLEPLAT_PKA_Start_P256_Public_Key_Generation
+                        0x1004'7dad    0x62  Code  Gb  pka.o [3]
+BLEPLAT_get_part_info   0x1004'de85    0x1e  Code  Gb  miscutil.o [1]
+BLOCK_STACKLIB_FLASH_DATA$$Base
+                        0x1006'7000           --   Gb  - Linker created -
+BLOCK_STACKLIB_FLASH_DATA$$Limit
+                        0x1006'7838           --   Gb  - Linker created -
+BLUE$$Base              0x2000'00c0           --   Gb  - Linker created -
+BLUE$$Limit             0x2000'02cc           --   Gb  - Linker created -
+BOR_ConfigSave          0x1004'dacf    0x3c  Code  Gb  system_bluenrg1.o [1]
+BOR_config              0x2000'001c     0x8  Data  Gb  system_bluenrg1.o [1]
+BOR_config_block$$Base  0x2000'001c           --   Gb  - Linker created -
+BOR_config_block$$Limit
+                        0x2000'0024           --   Gb  - Linker created -
+BTLE_StackTick          0x1005'46f9    0x7c  Code  Gb  bluenrg_main_func.o [3]
+BlueNRG_Stack_Init_params
+                        0x1005'59c8    0x34  Data  Gb  BLE_MS_Formula_main.o [1]
+BlueNRG_Stack_Initialization
+                        0x1005'460d    0x3e  Code  Gb  bluenrg_main_func.o [3]
+BlueNRG_Stack_Initialize_ConfigData
+                        0x1005'4bd5    0x5a  Code  Lc  bluenrg_main_func.o [3]
+BlueNRG_Stack_Initialize_Layers
+                        0x1005'4c39    0x78  Code  Lc  bluenrg_main_func.o [3]
+BlueNRG_Stack_Initialize_RAM_check
+                        0x1005'4831    0x74  Code  Lc  bluenrg_main_func.o [3]
+BlueNRG_Stack_Perform_Crystal_Check
+                        0x1005'4a1d    0xb2  Code  Lc  bluenrg_main_func.o [3]
+BlueNRG_Start_Crystal_Measurement
+                        0x1005'4dc1    0x12  Code  Lc  bluenrg_main_func.o [3]
+Blue_Flag_Ram_block$$Base
+                        0x2000'0030           --   Gb  - Linker created -
+Blue_Flag_Ram_block$$Limit
+                        0x2000'0034           --   Gb  - Linker created -
+Blue_Handler            0x1005'6a59     0x8  Code  Gb  BlueNRG1_it.o [1]
+Blue_Init_Global        0x1005'3395    0x90  Code  Gb  routines_support.o [3]
+Blue_Set_Radio_Config_Data
+                        0x1005'346d    0x1c  Code  Gb  rom_ll_routines_support.o [3]
+Build_Notif_Or_Ind      0x1004'c70d    0x3e  Code  Gb  gatt_server.o [3]
+COMPrintf               0x1004'ac3f    0x32  Code  Gb  cassert.o [1]
+CSTACK$$Base            0x2000'5400           --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'6000           --   Gb  - Linker created -
+CS_contextRestore       0x1004'def7          Code  Gb  context_switch.o [1]
+CS_contextSave          0x1004'dea5          Code  Gb  context_switch.o [1]
+CheckSecForSignedWrite  0x1005'0fdd    0x2c  Code  Gb  att.o [3]
+Check_Encry_Key_Size    0x1004'c30d    0x18  Code  Gb  rom_gatt_server.o [3]
+Check_For_Service_Change
+                        0x1004'e58d   0x33a  Code  Gb  gatt_server.o [3]
+Check_Permission        0x1004'ce61    0xa0  Code  Gb  att.o [3]
+Check_and_find_gatt_client
+                        0x1004'773d    0x18  Code  Lc  gatt_client.o [3]
+Controller_Process_Q    0x1005'4a01    0x1c  Code  Gb  hci.o [3]
+Crash_Info_block$$Base  0x2000'0034           --   Gb  - Linker created -
+Crash_Info_block$$Limit
+                        0x2000'005c           --   Gb  - Linker created -
+Data_Len_Update_Offline_Processing_ucfg
+                        0x1005'4d75     0x2  Code  Wk  ll_routines.o [3]
+Delay_With_NOP_Cycles   0x1005'21cd     0xe  Code  Gb  utils.o [3]
+DeviceConfiguration     0x1004'db45    0xfc  Code  Gb  system_bluenrg1.o [1]
+Disconnection_Offline_Processing
+                        0x1005'4d79    0x44  Code  Gb  ll_routines.o [3]
+Dynamic_allocator       0x1004'f041   0x256  Code  Gb  mem_alloc.o [3]
+Dynamic_allocator_noRet
+                        0x1005'4b29     0x2  Code  Gb  mem_alloc.o [3]
+Erase_Sector            0x1005'2141     0xe  Code  Lc  sdb.o [3]
+Events_Process_Q        0x1005'4369   0x102  Code  Gb  aci_events.o [3]
+Events_Process_init     0x1005'509d    0x48  Code  Gb  aci_events.o [3]
+Exchg_Mtu_Resp          0x1004'fc59    0xac  Code  Gb  att.o [3]
+Exec_Write_Resp         0x1005'097d   0x1b6  Code  Gb  att.o [3]
+FLASH_ErasePage         0x1004'ce11    0x22  Code  Gb  BlueNRG1_flash.o [1]
+FLASH_ProgramWord       0x1004'ce33    0x22  Code  Gb  BlueNRG1_flash.o [1]
+Find_Attr_Index         0x1004'e951    0x46  Code  Gb  gatt_server.o [3]
+Find_By_Type_Val_Resp   0x1004'fef5   0x1e2  Code  Gb  att.o [3]
+Find_Gatt_Client        0x1004'8869    0x38  Code  Gb  gatt_client.o [3]
+Find_Info_Resp          0x1004'fd0d   0x1e8  Code  Gb  att.o [3]
+Find_Timed_Out_Connection
+                        0x1005'4235    0x1c  Code  Gb  gatt_server.o [3]
+Flash_Write_Flagged     0x1005'1739    0x32  Code  Gb  nvm.o [3]
+GAP_Connection_Complete_Handler
+                        0x1005'59fd    0x64  Code  Gb  gap.o [3]
+GAP_DiscProcTimeoutcb   0x1004'4a85    0x42  Code  Gb  gap.o [3]
+GAP_DiscProcTimeoutcb_ucfg
+                        0x1004'3801     0x8  Code  Gb  stack_user_cfg.o [1]
+GAP_Init                0x1004'b8e1   0x1e8  Code  Gb  gap.o [3]
+GAP_Init_Context        0x1005'4ff1     0xe  Code  Gb  gap.o [3]
+GAP_Internal_Evt_Handler
+                        0x1005'3851    0x36  Code  Gb  gap.o [3]
+GAP_LL_Event_Handler_ISR
+                        0x1005'5a65    0x62  Code  Gb  gap.o [3]
+GAP_LimDiscTimeoutcb    0x1005'4085    0x28  Code  Gb  gap.o [3]
+GAP_Notify_Add_Charac   0x1004'c29d    0x6a  Code  Gb  rom_gap_rom.o [3]
+GAP_Privacy1v2          0x1004'cfa1   0x1d2  Code  Gb  rom_gap.o [3]
+GAP_PrivateAddrTimercb  0x1005'40b1    0x3e  Code  Gb  rom_gap.o [3]
+GAP_Process_Q           0x1005'4ae1    0x3a  Code  Gb  gap.o [3]
+GAP_Set_Discoverable_Mode
+                        0x1004'bec9    0x38  Code  Gb  gap.o [3]
+GAP_Started_Gatt_Proc   0x1005'3619    0x26  Code  Gb  gap.o [3]
+GAP_Terminate_Link      0x1005'4b21     0x8  Code  Gb  rom_gap_rom.o [3]
+GAP_check_and_set_role  0x1004'4e79     0xe  Code  Gb  gap.o [3]
+GAP_check_and_set_role_ucfg
+                        0x1004'3821     0x8  Code  Gb  stack_user_cfg.o [1]
+GAP_discover_peer_name  0x1004'4e89    0x3c  Code  Gb  gap.o [3]
+GAP_discover_peer_name_ucfg
+                        0x1004'3829     0x8  Code  Gb  stack_user_cfg.o [1]
+GAP_enable_controller_privacy
+                        0x1004'49b9    0x3a  Code  Gb  gap.o [3]
+GAP_enable_controller_privacy_ucfg
+                        0x1004'37ed     0x8  Code  Gb  stack_user_cfg.o [1]
+GATT_Connection_Complete_Handler
+                        0x1005'5dfd    0x40  Code  Gb  gatt_server.o [3]
+GATT_Num_Charac_Present
+                        0x1004'cbc9    0x3a  Code  Gb  rom_gatt_server.o [3]
+GATT_Send_Packet        0x1004'7809    0x24  Code  Gb  gatt_server.o [3]
+GATT_Server_Set_Flag    0x1004'c4d5    0x12  Code  Lc  gatt_server.o [3]
+GATT_TimeOut_Handler    0x1005'40f9    0x1a  Code  Gb  gatt_server.o [3]
+GPIO_Handler            0x1005'6a55     0x2  Code  Gb  BlueNRG1_it.o [1]
+GPIO_Init               0x1005'4785    0x94  Code  Gb  BlueNRG1_gpio.o [1]
+GPIO_WriteBit           0x1005'4819     0xe  Code  Gb  BlueNRG1_gpio.o [1]
+GapIsPrivacySupported   0x1005'2891     0xe  Code  Gb  rom_gap.o [3]
+Gatt_Add_Charac_Desc    0x1004'c325   0x15a  Code  Gb  gatt_server.o [3]
+Gatt_Add_Characteristic
+                        0x1004'b295   0x32a  Code  Gb  gatt_server.o [3]
+Gatt_Add_Descriptor     0x1004'cc65   0x14a  Code  Gb  gatt_server.o [3]
+Gatt_Add_Service        0x1004'af51   0x150  Code  Gb  gatt_server.o [3]
+Gatt_Check_Not_Error_Resp
+                        0x1005'3645    0x52  Code  Lc  gatt_client.o [3]
+Gatt_Find_Srv_From_Handle
+                        0x1005'0d69    0x24  Code  Gb  gatt_server.o [3]
+Gatt_Find_Srv_Owner_Of_Handle
+                        0x1004'eff9    0x40  Code  Gb  gatt_server.o [3]
+Gatt_Find_Timed_Out_Connection_Index
+                        0x1004'f575    0x32  Code  Gb  gatt_server.o [3]
+Gatt_Flush_Pending_AclPacket_Lists
+                        0x1005'1c3f    0x34  Code  Lc  gatt_server.o [3]
+Gatt_Process_Q          0x1005'1775   0x192  Code  Gb  gatt_server.o [3]
+Gatt_Read_Charac_By_Uuid
+                        0x1004'629d    0x7a  Code  Gb  gatt_client.o [3]
+Gatt_Read_Charac_By_Uuid_Cb
+                        0x1005'6c71     0xa  Code  Lc  gatt_client.o [3]
+Gatt_Reset_To_Closed_State
+                        0x1005'1911    0xf4  Code  Lc  gatt_server.o [3]
+Gatt_Server_Db_Check    0x1004'c1c9    0x2e  Code  Gb  gatt_server.o [3]
+Gatt_Server_Init        0x1004'b74d   0x17e  Code  Gb  gatt_server.o [3]
+Gatt_Server_L2C_Handler
+                        0x1004'f2bd   0x214  Code  Gb  gatt_server.o [3]
+Gatt_Server_L2C_Handler_ISR
+                        0x1005'5c95    0x44  Code  Gb  gatt_server.o [3]
+Gatt_Store_Server_Database_And_Reset_CCCD
+                        0x1005'1c75   0x15e  Code  Lc  gatt_server.o [3]
+Gatt_Super_Handler_Task7
+                        0x1005'3491   0x188  Code  Lc  gatt_client.o [3]
+Gatt_Update_Charac_Value
+                        0x1004'c4ed    0x62  Code  Gb  gatt_server.o [3]
+Gatt_Update_Charac_Value_Ext
+                        0x1004'badd   0x382  Code  Gb  gatt_server.o [3]
+Gatt_fetch_handle       0x1004'e915    0x3c  Code  Gb  gatt_server.o [3]
+Gatt_search_handle      0x1004'c691    0x1e  Code  Gb  gatt_server.o [3]
+Gatt_search_service_handle
+                        0x1004'c25d    0x26  Code  Gb  gatt_server.o [3]
+Generate_Non_Resolvable_Private_Address
+                        0x1004'd58d    0x82  Code  Gb  rom_gap.o [3]
+Get_GAP_Handle          0x1004'c28d     0xa  Code  Gb  rom_gap_rom.o [3]
+Get_LedGpioPin          0x1005'4679    0x3c  Code  Gb  SDK_EVAL_Led.o [1]
+Get_Random_Addr         0x1004'bf79    0x12  Code  Gb  hci.o [3]
+Get_StaticRandAddr      0x1004'c67d    0x10  Code  Gb  rom_gap_rom.o [3]
+HAL_Flash_Store_Data    0x1004'cdbd    0x4e  Code  Gb  hal.o [3]
+HAL_Generate_Random_Bytes_To
+                        0x1004'63f9    0x20  Code  Gb  hal.o [3]
+HAL_GetPartInfo         0x1004'de29    0x48  Code  Gb  miscutil.o [1]
+HAL_Set_TX_Power_Level  0x1004'b709    0x3c  Code  Gb  hal.o [3]
+HAL_VTimerAcc_sysT32_ms
+                        0x1004'9539    0x20  Code  Gb  host_timer.o [3]
+HAL_VTimerGetCurrentTime_sysT32
+                        0x1004'5d39    0x12  Code  Gb  host_timer.o [3]
+HAL_Write_ConfigData    0x1004'b5ed   0x114  Code  Gb  hal.o [3]
+HCI_Init                0x1005'5005    0x72  Code  Gb  hci.o [3]
+Hal_Get_Random_Number   0x1004'3339    0x3a  Code  Gb  hal.o [3]
+Hal_Get_Random_Number32
+                        0x1004'5b07    0x12  Code  Gb  hal.o [3]
+HardFault_Handler       0x1005'6a47     0x2  Code  Gb  BlueNRG1_it.o [1]
+IDD_Initialize_Device_IDs
+                        0x1004'c555   0x116  Code  Gb  device_id_data.o [3]
+Ind_Service_Change_Charac
+                        0x1004'c215    0x3e  Code  Gb  gatt_server.o [3]
+Is_Address_Initialized  0x1004'bf95    0x18  Code  Gb  rom_ll_ll_routines.o [3]
+Is_Flash_Write_On_Going
+                        0x1004'f7d9     0xa  Code  Gb  nvm.o [3]
+L2C_Build_Command_Reject_Pdu
+                        0x1005'14b9    0x7c  Code  Gb  l2cap.o [3]
+L2C_Connection_Complete_Handler
+                        0x1005'5c49    0x4a  Code  Gb  l2cap.o [3]
+L2C_Connection_Complete_Signal_Handler
+                        0x1005'5e41    0x2a  Code  Gb  l2cap.o [3]
+L2C_Get_Connection_Info
+                        0x1005'1535    0x2e  Code  Lc  l2cap.o [3]
+L2C_Get_Connection_Info_Index
+                        0x1005'13f1    0x2c  Code  Lc  l2cap.o [3]
+L2C_Get_PDU_Len         0x1005'5489     0xe  Code  Gb  l2cap.o [3]
+L2C_Init                0x1005'4f5d    0x52  Code  Gb  l2cap.o [3]
+L2C_Mux_Acl_Packet      0x1005'5497    0x58  Code  Lc  l2cap.o [3]
+L2C_Rcv_Data            0x1005'534b    0xcc  Code  Lc  l2cap.o [3]
+L2C_Rcv_Event_Handler   0x1005'5f05    0x1e  Code  Gb  l2cap.o [3]
+L2C_Rcv_Event_Handler_ISR
+                        0x1005'5bf5    0x54  Code  Gb  l2cap.o [3]
+L2C_Reset_To_Closed_State
+                        0x1005'57d1    0x76  Code  Lc  l2cap.o [3]
+L2C_Send_Data           0x1004'88ef    0x4c  Code  Gb  l2cap.o [3]
+L2C_SigChan_Req_TimeOut_Handler
+                        0x1005'4115    0x5c  Code  Gb  l2cap.o [3]
+L2C_Signal_Channel_Handler
+                        0x1005'1241   0x1a6  Code  Gb  l2cap.o [3]
+L2C_Signal_Channel_Handler_ISR
+                        0x1005'5d21    0x24  Code  Gb  l2cap.o [3]
+L2C_discard_accumulated_acl_data
+                        0x1005'54f1    0x58  Code  Lc  l2cap.o [3]
+LL_Allow_Address_Setting
+                        0x1004'd4cb    0x42  Code  Gb  rom_ll_ll_routines.o [3]
+LL_Check_And_Set_Addresses
+                        0x1004'd67d   0x1ee  Code  Gb  rom_ll_ll_routines.o [3]
+LL_Data_Length_Change_Event_ucfg
+                        0x1004'fa59     0x4  Code  Wk  ll_routines.o [3]
+LL_Disconnect_Link      0x1005'4e65    0x34  Code  Gb  ll_routines.o [3]
+LL_Enable_Disable_Adv   0x1004'bfad   0x208  Code  Gb  rom_ll_ll_routines.o [3]
+LL_Enable_Disable_Scan  0x1004'5ef9   0x222  Code  Gb  ll_routines_master.o [3]
+LL_Encrypt_Plain_Data   0x1004'49fd    0x7a  Code  Gb  ll_routines_support.o [3]
+LL_Encrypt_Plain_Data_ucfg
+                        0x1004'37f5     0x8  Code  Gb  stack_user_cfg.o [1]
+LL_Get_Address          0x1004'8969    0x28  Code  Gb  rom_ll_ll_routines.o [3]
+LL_Get_AdvAddress       0x1004'd50d    0x3a  Code  Gb  rom_ll_ll_routines.o [3]
+LL_Get_Adv_Tx_Power_Level
+                        0x1004'd665    0x12  Code  Gb  rom_ll_routines_support.o [3]
+LL_Get_Random_data      0x1004'b5d1    0x1c  Code  Gb  rom_ll_routines_support.o [3]
+LL_Get_ScanAddress      0x1004'd54d    0x3a  Code  Gb  rom_ll_ll_routines.o [3]
+LL_Init                 0x1005'3209   0x178  Code  Gb  rom_ll_ll_routines.o [3]
+LL_LE_Clear_White_List  0x1005'342d    0x22  Code  Gb  ll_privacy.o [3]
+LL_LE_Set_Address_Resolution_Enable
+                        0x1004'7215    0x1c  Code  Gb  ll_privacy.o [3]
+LL_LE_Set_Resolvable_Private_Address_Timeout
+                        0x1004'5e0d    0x1e  Code  Gb  ll_privacy.o [3]
+LL_Send_ACL_Data        0x1004'96fd    0x4a  Code  Gb  rom_ll_ll_routines.o [3]
+LL_Send_Disconnection_Req
+                        0x1005'50e9    0x9a  Code  Gb  ll_routines.o [3]
+LL_Send_Length_Resp_ucfg
+                        0x1004'fa5d     0x4  Code  Wk  ll_routines.o [3]
+LL_SetAddressResolutionEnable
+                        0x1004'5e71     0x8  Code  Gb  routines_support.o [3]
+LL_Set_Adv_Data         0x1004'bf01    0x72  Code  Gb  rom_ll_ll_routines.o [3]
+LL_Set_Adv_PDU_Format   0x1004'c995    0xc8  Code  Gb  rom_ll_ll_routines.o [3]
+LL_Set_Adv_Params       0x1004'd321   0x146  Code  Gb  rom_ll_ll_routines.o [3]
+LL_Set_Advertising_Buffers
+                        0x1004'c90d    0x82  Code  Gb  rom_ll_ll_routines.o [3]
+LL_Set_DirectAddress    0x1004'd8fd    0x30  Code  Lc  rom_ll_ll_routines.o [3]
+LL_Set_LTK              0x1005'27f5    0x8c  Code  Gb  ll_routines_support.o [3]
+LL_Set_OwnAddress       0x1004'd935    0x1e  Code  Gb  rom_ll_ll_routines.o [3]
+LL_Sleep_Req            0x1004'2f81    0x4e  Code  Gb  bluenrg_main_func_speed.o [3]
+LL_Start_Encryption     0x1004'631d    0xd2  Code  Gb  rom_ll_ll_routines_master.o [3]
+LL_Update_Advertising_Buffers
+                        0x1004'3375    0x40  Code  Gb  rom_ll_ll_routines.o [3]
+LL_Update_Scanning_Initiating_Buffers
+                        0x1004'33bd    0x3a  Code  Gb  rom_ll_ll_routines.o [3]
+LL_receive_data         0x1004'20e9    0x8e  Code  Gb  isr_routines.o [3]
+LL_update_proc          0x1004'2341    0x92  Code  Gb  rom_ll_isr_routines.o [3]
+List_Circular_Get_Size  0x1004'c201    0x14  Code  Gb  rom_list.o [3]
+List_Circular_Insert_Tail
+                        0x1004'952b     0xe  Code  Gb  rom_list.o [3]
+List_Circular_Node_Present
+                        0x1004'974d    0x16  Code  Gb  rom_list.o [3]
+List_Circular_Remove_Head
+                        0x1004'9763    0x1a  Code  Gb  rom_list.o [3]
+List_Circular_Remove_Node
+                        0x1004'950b    0x20  Code  Gb  rom_list.o [3]
+Mem_Buff_Append         0x1005'5423    0x12  Code  Gb  mem_buff.o [3]
+Mem_Buff_Block_Copy     0x1004'2ead    0x48  Code  Gb  mem_buff.o [3]
+Mem_Buff_Block_Write    0x1004'59ed    0x56  Code  Gb  mem_buff.o [3]
+Mem_Buff_Clone          0x1005'1081    0x32  Code  Gb  mem_buff.o [3]
+Mem_Buff_Cmp            0x1005'1009    0x78  Code  Gb  mem_buff.o [3]
+Mem_Buff_Compact        0x1005'554d    0xba  Code  Gb  mem_buff.o [3]
+Mem_Buff_Get            0x1004'3455    0x2e  Code  Gb  mem_buff.o [3]
+Mem_Buff_Get_Chain_Count
+                        0x1004'88a5    0x14  Code  Gb  mem_buff.o [3]
+Mem_Buff_Get_Chain_Size
+                        0x1004'9141    0x14  Code  Gb  mem_buff.o [3]
+Mem_Buff_Init           0x1005'518d    0x6a  Code  Gb  mem_buff.o [3]
+Mem_Buff_Read           0x1004'8a07    0x62  Code  Gb  mem_buff.o [3]
+Mem_Buff_Release        0x1004'88b9    0x36  Code  Gb  mem_buff.o [3]
+Mem_Buff_Resize         0x1004'9155    0x8e  Code  Gb  mem_buff.o [3]
+Mem_Buff_Write          0x1004'899f    0x68  Code  Gb  mem_buff.o [3]
+Mem_assign              0x1004'f2a5    0x16  Code  Lc  mem_alloc.o [3]
+NMI_Handler             0x1005'6a45     0x2  Code  Gb  BlueNRG1_it.o [1]
+NVIC_SetPriority        0x1004'd9b9    0x34  Code  Lc  system_bluenrg1.o [1]
+Osal_MemCmp             0x1004'3f11     0x8  Code  Gb  osal.o [1]
+Osal_MemCpy             0x1004'3ef1     0xc  Code  Gb  osal.o [1]
+Osal_MemSet             0x1004'3efd    0x14  Code  Gb  osal.o [1]
+PKA_GetData             0x1004'67d9    0x2a  Code  Gb  BlueNRG1_pka.o [1]
+PKA_GetProcessStatus    0x1004'6711     0xc  Code  Gb  BlueNRG1_pka.o [1]
+PKA_Offline_Processing  0x1004'5021   0x15e  Code  Gb  hci.o [3]
+PKA_Offline_Processing_ucfg
+                        0x1004'3859     0x8  Code  Gb  stack_user_cfg.o [1]
+PKA_Reset               0x1004'66e5    0x16  Code  Gb  BlueNRG1_pka.o [1]
+PKA_SetData             0x1004'6751    0x88  Code  Gb  BlueNRG1_pka.o [1]
+PKA_SetData::BLE_P256_ABELIAN_ORDER_R_LE
+                        0x1004'6838    0x20  Data  Lc  BlueNRG1_pka.o [1]
+PKA_SetData::P256_P_LE  0x1004'6818    0x20  Data  Lc  BlueNRG1_pka.o [1]
+PKA_SetDataError        0x2000'0464     0x1  Data  Lc  BlueNRG1_pka.o [1]
+PKA_StartProcessing     0x1004'66fb    0x16  Code  Gb  BlueNRG1_pka.o [1]
+PKA_VerifyProcess       0x1004'671d    0x1a  Code  Gb  BlueNRG1_pka.o [1]
+PM_Check_And_Set        0x1004'3405    0x4c  Code  Lc  pm.o [3]
+PM_Clone_Pckt           0x1005'0e9f    0x22  Code  Gb  pm.o [3]
+PM_Compact              0x1005'5435    0x50  Code  Gb  pm.o [3]
+PM_Copy_Pckt_Data       0x1004'7a61    0x12  Code  Gb  pm.o [3]
+PM_Eng_Config           0x1004'c485    0x14  Code  Gb  pm.o [3]
+PM_Extract_Pdu_MBuff    0x1005'5417     0xc  Code  Gb  pm.o [3]
+PM_Get_Available_Buffer
+                        0x1004'cb8d    0x36  Code  Gb  pm.o [3]
+PM_Get_Mem_Buff_Count   0x1004'94f1     0xa  Code  Gb  pm.o [3]
+PM_Get_Pckt             0x1004'2e69    0x40  Code  Gb  pm.o [3]
+PM_Init                 0x1005'4ed5    0x5e  Code  Gb  pm.o [3]
+PM_Pckt_Cmp             0x1005'0c69     0xa  Code  Gb  pm.o [3]
+PM_Release_Acl_Pckt     0x1004'77cd    0x36  Code  Gb  pm.o [3]
+PM_Resize_Pckt_Pdu_Size
+                        0x1004'80e1    0x68  Code  Gb  pm.o [3]
+PM_Write_Pckt_Data      0x1004'7a15    0x12  Code  Gb  pm.o [3]
+PRIVWHIT_u8AddAddrInList
+                        0x1004'6ed5   0x1da  Code  Gb  ll_privacy.o [3]
+PRIVWHIT_u8RemoveAddrInList
+                        0x1004'70c5   0x118  Code  Gb  ll_privacy.o [3]
+PRIVWHIT_u8SearchAddrInList
+                        0x1004'6e51    0x76  Code  Gb  ll_privacy.o [3]
+PRIVWHIT_vInit_Struct   0x1005'4cbd    0xa8  Code  Gb  ll_privacy.o [3]
+PRIV_SearchAddrInRPAList
+                        0x1004'5c91    0x48  Code  Gb  ll_privacy.o [3]
+PRIV_SearchAddrInScratchList
+                        0x1004'5b31    0x4a  Code  Gb  ll_privacy.o [3]
+PRIV_SearchAddrInWhiteList
+                        0x1004'5ce1    0x52  Code  Gb  ll_privacy.o [3]
+PRIV_controller_privacy_csr_ucfg
+                        0x1004'37fd     0x4  Code  Gb  stack_user_cfg.o [1]
+PRIV_u32ProcessAdvPacket
+                        0x1004'3f99   0x5a6  Code  Gb  ll_privacy.o [3]
+PRIV_u32ProcessAdvPacket_ucfg
+                        0x1004'37a5     0x8  Code  Gb  stack_user_cfg.o [1]
+PRIV_u8OfflineProcessing
+                        0x1004'4545   0x114  Code  Gb  ll_privacy.o [3]
+PRIV_u8OfflineProcessing_ucfg
+                        0x1004'37ad     0x8  Code  Gb  stack_user_cfg.o [1]
+PRIV_u8ResolvePrivateAddress
+                        0x1004'5b81   0x102  Code  Gb  ll_privacy.o [3]
+PRIV_u8ResolvePrivateAddressUnit
+                        0x1004'5d4d    0x30  Code  Gb  ll_privacy.o [3]
+PRIV_vGeneratePrivateAddress
+                        0x1004'3f37    0x62  Code  Gb  ll_privacy.o [3]
+PRIV_vGeneratePrivateAddress_ucfg
+                        0x1004'379d     0x8  Code  Gb  stack_user_cfg.o [1]
+PRIV_vGenerate_hci_le_direct_advertising_report_event
+                        0x1004'483d   0x16e  Code  Gb  ll_privacy.o [3]
+PRIV_vGenerate_hci_le_direct_advertising_report_event_ucfg
+                        0x1004'37d3    0x1a  Code  Gb  stack_user_cfg.o [1]
+PRIV_vGenerate_hci_le_enhanced_connection_complete_event
+                        0x1004'465d   0x1d2  Code  Gb  ll_privacy.o [3]
+PRIV_vGenerate_hci_le_enhanced_connection_complete_event_ucfg
+                        0x1004'37b5    0x1e  Code  Gb  stack_user_cfg.o [1]
+PendSV_Handler          0x1005'6a4b     0x2  Code  Gb  BlueNRG1_it.o [1]
+Pm_Resize_Host_Acl_Pckt
+                        0x1004'c6ff     0xe  Code  Lc  gatt_server.o [3]
+Pm_Resize_Host_Acl_Pckt
+                        0x1004'efeb     0xe  Code  Lc  att.o [3]
+Prepare_Write_Resp      0x1005'0805   0x170  Code  Gb  att.o [3]
+Process_Peer_Client_Data
+                        0x1004'fa61   0x1f0  Code  Gb  gatt_server.o [3]
+Process_Peer_Server_Data
+                        0x1005'1a71   0x164  Code  Gb  gatt_server.o [3]
+RAL_Isr                 0x1004'f5ad   0x1f4  Code  Gb  ll_isr.o [3]
+Read_Blob_Resp          0x1005'020f   0x140  Code  Gb  att.o [3]
+Read_By_Grp_Type_Resp   0x1005'04e5   0x1d8  Code  Gb  att.o [3]
+Read_By_Type_Resp       0x1004'eb9d   0x2c6  Code  Gb  att.o [3]
+Read_Multi_Resp         0x1005'0351   0x18c  Code  Gb  att.o [3]
+Read_Resp               0x1005'00e5   0x12a  Code  Gb  att.o [3]
+Reclassify_All_Channels
+                        0x1004'4db9    0xb8  Code  Gb  ll_routines_master.o [3]
+Reclassify_All_Channels_ucfg
+                        0x1004'3819     0x8  Code  Gb  stack_user_cfg.o [1]
+Region$$Table$$Base     0x1005'6860           --   Gb  - Linker created -
+Region$$Table$$Limit    0x1005'68e0           --   Gb  - Linker created -
+SDB_Add_Record          0x1005'3085   0x180  Code  Gb  sdb.o [3]
+SDB_Find_Matching_LTK   0x1005'2755    0x9a  Code  Gb  sdb.o [3]
+SDB_Find_Record         0x1004'e9a1    0xbe  Code  Gb  sdb.o [3]
+SDB_Get_Number_Of_Valid_Records
+                        0x1004'cc05    0x40  Code  Gb  sdb.o [3]
+SDB_flash_write_client_data
+                        0x1005'1f25    0xb2  Code  Gb  sdb.o [3]
+SDB_get_security_data_record
+                        0x1005'28a5    0xd8  Code  Gb  sdb.o [3]
+SDB_read_peer_bonded_data
+                        0x1004'e8d9    0x3c  Code  Gb  sdb.o [3]
+SET_BORconfigStatus     0x1004'db0b    0x32  Code  Gb  system_bluenrg1.o [1]
+SMA_Diversify           0x1004'd959    0x28  Code  Gb  smp_algo_sap.o [3]
+SMA_Generate_CSRK       0x1005'2ec1    0x20  Code  Gb  smp_algo_sap.o [3]
+SMA_Generate_IRK        0x1004'd879    0x20  Code  Gb  smp_algo_sap.o [3]
+SMA_LP_s1_Generate_STK  0x1004'7a83    0x26  Code  Gb  smp_algo_sap.o [3]
+SMA_SC_Gen_f4_Confirm   0x1004'6a63    0x50  Code  Gb  smp_algo_sap.o [3]
+SMA_SC_Gen_f5_Keys      0x1004'817d    0xa4  Code  Gb  smp_algo_sap.o [3]
+SMA_SC_Gen_f6_Check_Val
+                        0x1004'91e3    0x84  Code  Gb  smp_algo_sap.o [3]
+SMA_SC_Gen_g2_NumComp_Val
+                        0x1004'6ab3    0x58  Code  Gb  smp_algo_sap.o [3]
+SMA_generate_EDIV_recovery_DIV
+                        0x1005'26e1    0x6c  Code  Gb  smp_algo_sap.o [3]
+SMP_Init                0x1005'4fb5    0x36  Code  Gb  smp_common.o [3]
+SMP_MI_PairingRequest_Send
+                        0x1004'7b2d   0x146  Code  Gb  securitymgr.o [3]
+SMP_Process_Q           0x1005'21dd   0x18e  Code  Gb  securitymgr.o [3]
+SMP_Protocol_Timer_cb   0x1005'4175    0x40  Code  Gb  smp_common.o [3]
+SMP_acl_data_hndl       0x1005'5221    0xee  Code  Gb  smp_common.o [3]
+SMP_check_encryption_key_size
+                        0x1004'd4ab    0x20  Code  Gb  smp_common.o [3]
+SMP_check_is_device_bonded
+                        0x1005'1a29    0x48  Code  Gb  smp_common.o [3]
+SMP_connection_complete_handler
+                        0x1005'573d    0x8a  Code  Lc  smp_common.o [3]
+SMP_forget_device_by_conn_handle
+                        0x1005'1a0d    0x1c  Code  Gb  smp_common.o [3]
+SMP_get_link_status     0x1004'd47d    0x2e  Code  Gb  smp_common.o [3]
+SMP_get_remote_device_list_item
+                        0x1004'8ae5    0x42  Code  Gb  smp_common.o [3]
+SMP_hci_disconnection_complete_evt_hndl
+                        0x1005'5ce1    0x3a  Code  Gb  smp_common.o [3]
+SMP_hci_encryption_change_evt_hndl
+                        0x1005'3c61   0x116  Code  Gb  smp_common.o [3]
+SMP_hci_le_connection_complete_evt_hndl
+                        0x1005'5d7d    0x2e  Code  Gb  smp_common.o [3]
+SMP_hci_le_enhanced_connection_complete_evt_hndl
+                        0x1005'5dab    0x52  Code  Gb  smp_common.o [3]
+SMP_hci_le_long_term_key_request_evt_hndl
+                        0x1005'5d45    0x38  Code  Gb  smp_common.o [3]
+SMP_repeated_attacks_timer_cb
+                        0x1005'41b9    0x6e  Code  Gb  smp_common.o [3]
+SMP_reset_timer         0x1004'7aed    0x40  Code  Gb  smp_common.o [3]
+SMP_sc_force_debug_key_usage
+                        0x1004'c49d    0x22  Code  Gb  smp_scv42_sap.o [3]
+SMP_validate_signed_packet
+                        0x1005'0f63    0x7a  Code  Gb  smp_common.o [3]
+SM_Generate_Resolvable_Private_Address
+                        0x1004'd615    0x4e  Code  Gb  smp_algo_sap.o [3]
+SM_Resolve_Private_Address
+                        0x1004'eb51    0x22  Code  Gb  smp_algo_sap.o [3]
+SVC_Handler             0x1005'6a49     0x2  Code  Gb  BlueNRG1_it.o [1]
+Sbox                    0x1005'3b38   0x100  Data  Gb  crypto.o [4]
+SdkEvalComUartInit      0x1005'4537    0x8c  Code  Gb  SDK_EVAL_Com.o [1]
+SdkEvalGetVersion       0x1005'4515     0x6  Code  Gb  SDK_EVAL_Config.o [1]
+SdkEvalIdentification   0x1005'450d     0x8  Code  Gb  SDK_EVAL_Config.o [1]
+SdkEvalLedInit          0x1005'46b9    0x32  Code  Gb  SDK_EVAL_Led.o [1]
+SdkEvalLedOn            0x1005'46eb     0xe  Code  Gb  SDK_EVAL_Led.o [1]
+SdkEvalUart_Send_Data   0x1005'4521    0x16  Code  Lc  SDK_EVAL_Com.o [1]
+Select_Next_Notification_Client
+                        0x1004'cf01    0x4c  Code  Gb  gatt_server.o [3]
+Send_Notif_Or_Ind       0x1004'c74b    0x4c  Code  Gb  gatt_server.o [3]
+Set_Host_Timer_value    0x1005'4035    0x48  Code  Gb  host_timer.o [3]
+Set_RF_FrontEnd         0x1004'da87    0x48  Code  Gb  system_bluenrg1.o [1]
+Start_Gatt_Timer        0x1004'f551    0x20  Code  Gb  rom_gatt_server.o [3]
+Stop_Gatt_Timer         0x1004'f4d9    0x1c  Code  Gb  rom_gatt_server.o [3]
+SysCount_Handler        0x1005'6a61     0xa  Code  Gb  clock.o [1]
+SysCtrl_GetWakeupResetReason
+                        0x1004'dd69    0xb0  Code  Gb  BlueNRG1_sysCtrl.o [1]
+SysCtrl_PeripheralClockCmd
+                        0x1004'dd55    0x14  Code  Gb  BlueNRG1_sysCtrl.o [1]
+SysTick_Handler         0x1005'6a4d     0x8  Code  Gb  BlueNRG1_it.o [1]
+SystemInit              0x1004'dc5d    0xae  Code  Gb  system_bluenrg1.o [1]
+TimerCallback           0x1005'3fb9    0x7c  Code  Lc  host_timer.o [3]
+Timer_ExpiryCallback    0x1004'f7c5    0x10  Code  Gb  host_timer.o [3]
+Timer_Init              0x1005'4ea1    0x30  Code  Gb  host_timer.o [3]
+Timer_ProcessQ          0x1005'3e9d   0x112  Code  Gb  host_timer.o [3]
+Timer_StartOneShot      0x1004'8ac1    0x22  Code  Gb  host_timer.o [3]
+Timer_StartOneShot_sysTime32
+                        0x1004'955d    0x70  Code  Gb  host_timer.o [3]
+Timer_StopOneShot       0x1004'8a69    0x52  Code  Gb  host_timer.o [3]
+Timer_sysTime32_convMachineTime
+                        0x1004'71f1    0x1e  Code  Gb  host_timer.o [3]
+UART_Cmd                0x1004'b0b1    0x18  Code  Gb  BlueNRG1_uart.o [1]
+UART_GetFlagStatus      0x1004'b205    0x10  Code  Gb  BlueNRG1_uart.o [1]
+UART_Handler            0x1005'6a57     0x2  Code  Gb  BlueNRG1_it.o [1]
+UART_Init               0x1004'b0c9   0x132  Code  Gb  BlueNRG1_uart.o [1]
+UART_RxFifoIrqLevelConfig
+                        0x1004'b221     0xe  Code  Gb  BlueNRG1_uart.o [1]
+UART_SendData           0x1004'b1fb     0xa  Code  Gb  BlueNRG1_uart.o [1]
+WindowWiden1            0x1004'3535     0xa  Code  Gb  rom_ll_timehandling.o [3]
+WindowWiden2            0x1004'3689    0x10  Code  Gb  rom_ll_timehandling.o [3]
+Write_Client_Data       0x1005'1569   0x1a8  Code  Lc  sdb.o [3]
+Write_Cmd               0x1005'0b3d   0x12c  Code  Gb  att.o [3]
+Write_Resp              0x1005'06c9   0x13c  Code  Gb  att.o [3]
+_BlueNRG_Stack_Init_params
+                        0x2000'03cc    0x34  Data  Gb  mem_alloc.o [3]
+_BlueNRG_Stack_Initialization
+                        0x1005'48ad    0xd0  Code  Gb  bluenrg_main_func.o [3]
+_GAP_Parse_Advertising_Report
+                        0x1005'5acd    0x60  Code  Lc  gap.o [3]
+_LitobFullNoMb          0x1004'0f51   0x120  Code  Lc  xprintffull_nomb.o [2]
+_PrintfFullNoMb         0x1004'00c1   0xe90  Code  Gb  xprintffull_nomb.o [2]
+_Prout                  0x1005'6b53    0x16  Code  Gb  xprout.o [2]
+_PutcharFullNoMb        0x1004'10bd    0x22  Code  Lc  xprintffull_nomb.o [2]
+_PutcharsFullNoMb       0x1004'10df    0x36  Code  Lc  xprintffull_nomb.o [2]
+_SProut                 0x1004'1197     0xa  Code  Gb  xsprout.o [2]
+__ARM_common_memcpy1_6  0x1004'e571    0x1a  Code  Gb  ll_isr.o [3]
+__ARM_common_switch8    0x1004'cc49    0x1a  Code  Gb  rom_ll_routines_support.o [3]
+__aeabi_cdcmple         0x1004'1207          Code  Gb  DblCmpLe.o [5]
+__aeabi_cdrcmple        0x1004'1239          Code  Gb  DblCmpGe.o [5]
+__aeabi_d2iz            0x1004'126d          Code  Gb  DblToI32.o [5]
+__aeabi_d2uiz           0x1004'1291          Code  Gb  DblToI32.o [5]
+__aeabi_ddiv            0x1004'157d          Code  Gb  DblDiv.o [5]
+__aeabi_dmul            0x1004'163f          Code  Gb  DblMul.o [5]
+__aeabi_dsub            0x1004'13af          Code  Gb  DblAddSub.o [5]
+__aeabi_i2d             0x1004'12e1          Code  Gb  IxxToDbl.o [5]
+__aeabi_idiv            0x1004'14c9          Code  Gb  I32DivModFast.o [6]
+__aeabi_idiv0           0x1004'1839          Code  Gb  IntDivZer.o [6]
+__aeabi_idivmod         0x1004'14c9          Code  Gb  I32DivModFast.o [6]
+__aeabi_ldiv0           0x1004'183d          Code  Gb  I64DivZer.o [6]
+__aeabi_memclr4         0x1004'5ab5          Code  Gb  ABImemset.o [6]
+__aeabi_memclr8         0x1004'5ab5          Code  Gb  ABImemset.o [6]
+__aeabi_memcpy          0x1004'11ed          Code  Gb  ABImemcpy.o [6]
+__aeabi_memcpy4         0x1004'11b9          Code  Gb  ABImemcpy.o [6]
+__aeabi_memcpy8         0x1004'11b9          Code  Gb  ABImemcpy.o [6]
+__aeabi_memmove         0x1004'3485          Code  Gb  ABImemmove.o [6]
+__aeabi_memmove4        0x1004'3485          Code  Gb  ABImemmove.o [6]
+__aeabi_memmove8        0x1004'3485          Code  Gb  ABImemmove.o [6]
+__aeabi_memset          0x1004'5a95          Code  Gb  ABImemset.o [6]
+__aeabi_ui2d            0x1004'12c1          Code  Gb  IxxToDbl.o [5]
+__aeabi_uidiv           0x1004'14cf          Code  Gb  I32DivModFast.o [6]
+__aeabi_uidivmod        0x1004'14cf          Code  Gb  I32DivModFast.o [6]
+__aeabi_uldivmod        0x1004'17c3          Code  Gb  I64DivMod.o [6]
+__aeabi_uread4          0x1004'5b19          Code  Gb  uread4.o [6]
+__blue_RAM              0x2000'00c0   0x20c  Data  Gb  system_bluenrg1.o [1]
+__blueflag_RAM          0x2000'0030     0x4  Data  Gb  system_bluenrg1.o [1]
+__cmain                 0x1005'69b9          Code  Gb  cmain.o [6]
+__exit                  0x1004'1841    0x14  Code  Gb  exit.o [7]
+__iar_Fail_s            0x1004'1141    0x22  Code  Gb  xfail_s.o [2]
+__iar_Memchr            0x1004'11a1          Code  Gb  memchr.o [6]
+__iar_Memcpy            0x1004'11f9          Code  Gb  ABImemcpy.o [6]
+__iar_Memset4_word      0x1004'5ab9          Code  Gb  ABImemset.o [6]
+__iar_Memset_word       0x1004'5aa1          Code  Gb  ABImemset.o [6]
+__iar_Strchr            0x1004'1115          Code  Gb  strchr.o [6]
+__iar_d2uiz             0x1004'1295          Code  Gb  DblToI32.o [5]
+__iar_data_init3        0x1005'6531    0x28  Code  Gb  data_init.o [6]
+__iar_packbits_init_single3
+                        0x1005'6071    0x3c  Code  Gb  packbits_init_single.o [6]
+__iar_program_start     0x1005'6c59          Code  Gb  cstartup_M.o [6]
+__iar_zero_init3        0x1005'6035    0x3c  Code  Gb  zero_init3.o [6]
+__low_level_init        0x1004'd9ed    0x9a  Code  Gb  system_bluenrg1.o [1]
+__vector_table          0x1004'0000    0xc0  Data  Gb  system_bluenrg1.o [1]
+__write                 0x1005'45d5    0x36  Code  Gb  SDK_EVAL_Com.o [1]
+_aci_gap_set_discoverable_param_check
+                        0x1004'be6d    0x52  Code  Lc  bluenrg_gap_aci.o [3]
+_call_main              0x1005'69c5          Code  Gb  cmain.o [6]
+_exit                   0x1005'69e1          Code  Gb  cexit.o [6]
+_gap_set_discoverable_connectable
+                        0x1004'c799   0x170  Code  Gb  gap.o [3]
+_load_uuid              0x1004'af29    0x26  Code  Lc  bluenrg_gatt_aci.o [3]
+_main                   0x1005'69d3          Code  Gb  cmain.o [6]
+abort                   0x1004'182d     0xa  Code  Gb  abort.o [2]
+aci_att_exchange_mtu_resp_event
+                        0x1004'aa2d    0x10  Code  Gb  slave.o [1]
+aci_att_read_blob_resp_event_push
+                        0x1005'3781    0x70  Code  Lc  gatt_client.o [3]
+aci_att_read_multiple_resp_event_push
+                        0x1005'370d    0x6e  Code  Lc  gatt_client.o [3]
+aci_att_read_resp_event_push
+                        0x1005'3699    0x70  Code  Lc  gatt_client.o [3]
+aci_event_fifo_push     0x1004'5959    0x24  Code  Gb  aci_events.o [3]
+aci_event_fifo_push_header
+                        0x1004'589d    0xb6  Code  Gb  aci_events.o [3]
+aci_gap_authorization_req_event_push
+                        0x1005'3031    0x50  Code  Lc  smp_common.o [3]
+aci_gap_init            0x1004'acd7    0x30  Code  Gb  bluenrg_gap_aci.o [3]
+aci_gap_limited_discoverable_event_push
+                        0x1004'cf51    0x4a  Code  Lc  gap.o [3]
+aci_gap_numeric_comparison_value_event_push
+                        0x1004'6b21    0x54  Code  Lc  securitymgr.o [3]
+aci_gap_pairing_complete_event
+                        0x1004'a979    0x20  Code  Gb  slave.o [1]
+aci_gap_pairing_complete_event::__func__
+                        0x1004'ab80    0x20  Data  Lc  slave.o [1]
+aci_gap_pairing_complete_event_push
+                        0x1004'8dc1    0x58  Code  Lc  smp_common.o [3]
+aci_gap_proc_complete_event_push
+                        0x1004'6135    0x70  Code  Lc  gap.o [3]
+aci_gap_set_discoverable
+                        0x1004'ad29    0x42  Code  Gb  bluenrg_gap_aci.o [3]
+aci_gap_terminate       0x1005'477d     0x8  Code  Gb  bluenrg_gap_aci.o [3]
+aci_gatt_add_char       0x1004'ac79    0x3e  Code  Gb  bluenrg_gatt_aci.o [3]
+aci_gatt_add_service    0x1004'abe5    0x36  Code  Gb  bluenrg_gatt_aci.o [3]
+aci_gatt_attribute_modified_event
+                        0x1004'a9e9    0x44  Code  Gb  slave.o [1]
+aci_gatt_attribute_modified_event_push
+                        0x1005'0e01    0x74  Code  Lc  att.o [3]
+aci_gatt_disc_read_char_by_uuid_resp_event_push
+                        0x1005'388d    0x80  Code  Lc  gatt_client.o [3]
+aci_gatt_error_resp_event_push
+                        0x1005'3969    0x72  Code  Lc  gatt_client.o [3]
+aci_gatt_indication_event_push
+                        0x1005'1de5    0x8a  Code  Lc  gatt_server.o [3]
+aci_gatt_init           0x1004'accf     0x8  Code  Gb  bluenrg_gatt_aci.o [3]
+aci_gatt_notification_event_push
+                        0x1005'1e75    0x8a  Code  Lc  gatt_server.o [3]
+aci_gatt_proc_complete_event
+                        0x1004'aa3d     0xa  Code  Gb  slave.o [1]
+aci_gatt_proc_complete_event_push
+                        0x1005'3911    0x52  Code  Lc  gatt_client.o [3]
+aci_gatt_read_multi_permit_req_event_push
+                        0x1004'ef5d    0x62  Code  Lc  att.o [3]
+aci_gatt_read_permit_req_event_push
+                        0x1005'0ca9    0x4a  Code  Lc  att.o [3]
+aci_gatt_tx_pool_available_event
+                        0x1004'aa47     0x2  Code  Gb  slave.o [1]
+aci_gatt_update_char_value_ext
+                        0x1004'ad07    0x22  Code  Gb  bluenrg_gatt_aci.o [3]
+aci_gatt_write_permit_req_event_push
+                        0x1005'0d95    0x68  Code  Lc  att.o [3]
+aci_hal_fw_error_event  0x1005'44d9    0x18  Code  Gb  BLE_MS_Formula_main.o [1]
+aci_hal_fw_error_event_push
+                        0x1004'f4f5    0x56  Code  Lc  gatt_server.o [3]
+aci_hal_set_tx_power_level
+                        0x1004'acc7     0x8  Code  Gb  bluenrg_hal_aci.o [3]
+aci_hal_write_config_data
+                        0x1004'acbf     0x8  Code  Gb  bluenrg_hal_aci.o [3]
+aci_l2cap_connection_update_req_event_push
+                        0x1005'1421    0x92  Code  Lc  l2cap.o [3]
+aci_l2cap_connection_update_resp_event
+                        0x1004'aa49    0x1e  Code  Gb  slave.o [1]
+aci_l2cap_connection_update_resp_event::__func__
+                        0x1005'62cc    0x28  Data  Lc  slave.o [1]
+acl_list_first          0x1004'95d1     0x4  Code  Gb  acl_list.o [3]
+acl_list_full_on_packt  0x1005'0e79    0x26  Code  Gb  acl_list.o [3]
+acl_list_init           0x1004'c4c3    0x10  Code  Gb  acl_list.o [3]
+acl_list_insert_head    0x1005'1c19    0x26  Code  Gb  acl_list.o [3]
+acl_list_insert_tail    0x1004'893b    0x2c  Code  Gb  acl_list.o [3]
+acl_list_is_empty       0x1005'1bdd     0xe  Code  Gb  acl_list.o [3]
+acl_list_remove         0x1004'95d5    0x44  Code  Gb  acl_list.o [3]
+acl_list_remove_head    0x1005'1beb    0x2e  Code  Gb  acl_list.o [3]
+adapt_slot              0x1004'85d5   0x256  Code  Lc  multi_master_time.o [3]
+addr_u32_from_u8        0x1004'6e31    0x1e  Code  Lc  rom_ll_isr_routines.o [3]
+addr_u32_from_u8        0x1004'd981    0x20  Code  Lc  rom_ll_ll_routines.o [3]
+advParamsCheckAndSet    0x1004'd195    0x84  Code  Gb  gap.o [3]
+adv_data                0x2000'005c     0xc  Data  Lc  slave.o [1]
+advance_slave_timing_MultiSlave
+                        0x1004'2fd9   0x2c2  Code  Gb  multi_master_time.o [3]
+advance_transmit        0x1005'39e1   0x14a  Code  Gb  routines_support.o [3]
+advance_wakeup_timer    0x1004'279d   0x67a  Code  Gb  advance_wakeup_time.o [3]
+anchor_replace          0x1004'61a9    0x46  Code  Gb  multi_master_time.o [3]
+app_alive_tick          0x1004'ad81    0x3a  Code  Gb  app_common.o [1]
+app_alive_tick::last_time
+                        0x2000'00bc     0x4  Data  Lc  app_common.o [1]
+app_base                0x2000'0010     0x4  Data  Gb  system_bluenrg1.o [1]
+app_base_block$$Base    0x2000'0010           --   Gb  - Linker created -
+app_base_block$$Limit   0x2000'0014           --   Gb  - Linker created -
+bleBaseUuid             0x1005'6be8    0x10  Data  Gb  att.o [3]
+ble_HAL_Init            0x1005'5081    0x14  Code  Gb  hal.o [3]
+cancel_connect_master   0x1004'4acd    0xe8  Code  Gb  rom_ll_isr_routines.o [3]
+cancel_connect_master_ucfg
+                        0x1004'3809     0x8  Code  Gb  stack_user_cfg.o [1]
+cancel_current_master   0x1004'23f5   0x1a0  Code  Gb  multi_master_time.o [3]
+cancel_master           0x1004'32bd    0x74  Code  Gb  rom_ll_isr_routines.o [3]
+cancel_slave            0x1004'36a9    0xbc  Code  Gb  isr_routines.o [3]
+cb_aci_att_exchange_mtu_resp_event
+                        0x1005'65cd    0x1e  Code  Gb  aci_events.o [3]
+cb_aci_att_exec_write_resp_event
+                        0x1005'68e1    0x1a  Code  Gb  aci_events.o [3]
+cb_aci_att_find_by_type_value_resp_event
+                        0x1005'65f1    0x20  Code  Gb  aci_events.o [3]
+cb_aci_att_find_info_resp_event
+                        0x1005'62f5    0x22  Code  Gb  aci_events.o [3]
+cb_aci_att_prepare_write_resp_event
+                        0x1005'6215    0x26  Code  Gb  aci_events.o [3]
+cb_aci_att_read_blob_resp_event
+                        0x1005'6619    0x20  Code  Gb  aci_events.o [3]
+cb_aci_att_read_by_group_type_resp_event
+                        0x1005'6321    0x22  Code  Gb  aci_events.o [3]
+cb_aci_att_read_by_type_resp_event
+                        0x1005'634d    0x22  Code  Gb  aci_events.o [3]
+cb_aci_att_read_multiple_resp_event
+                        0x1005'6641    0x20  Code  Gb  aci_events.o [3]
+cb_aci_att_read_resp_event
+                        0x1005'6669    0x20  Code  Gb  aci_events.o [3]
+cb_aci_att_write_resp_event
+                        0x1005'6691    0x20  Code  Gb  aci_events.o [3]
+cb_aci_gap_addr_not_resolved_event
+                        0x1005'6905    0x1a  Code  Gb  aci_events.o [3]
+cb_aci_gap_authorization_req_event
+                        0x1005'6929    0x1a  Code  Gb  aci_events.o [3]
+cb_aci_gap_bond_lost_event
+                        0x1005'6a71    0x18  Code  Gb  aci_events.o [3]
+cb_aci_gap_device_found_event
+                        0x1005'694d    0x1c  Code  Gb  aci_events.o [3]
+cb_aci_gap_keypress_notification_event
+                        0x1005'66b9    0x1e  Code  Gb  aci_events.o [3]
+cb_aci_gap_limited_discoverable_event
+                        0x1005'6a91    0x18  Code  Gb  aci_events.o [3]
+cb_aci_gap_numeric_comparison_value_event
+                        0x1005'66e1    0x1e  Code  Gb  aci_events.o [3]
+cb_aci_gap_pairing_complete_event
+                        0x1005'6709    0x20  Code  Gb  aci_events.o [3]
+cb_aci_gap_pass_key_req_event
+                        0x1005'6971    0x1a  Code  Gb  aci_events.o [3]
+cb_aci_gap_proc_complete_event
+                        0x1005'6379    0x22  Code  Gb  aci_events.o [3]
+cb_aci_gap_slave_security_initiated_event
+                        0x1005'6ab1    0x18  Code  Gb  aci_events.o [3]
+cb_aci_gatt_attribute_modified_event
+                        0x1005'6245    0x26  Code  Gb  aci_events.o [3]
+cb_aci_gatt_disc_read_char_by_uuid_resp_event
+                        0x1005'63a5    0x22  Code  Gb  aci_events.o [3]
+cb_aci_gatt_error_resp_event
+                        0x1005'63d1    0x22  Code  Gb  aci_events.o [3]
+cb_aci_gatt_indication_event
+                        0x1005'63fd    0x22  Code  Gb  aci_events.o [3]
+cb_aci_gatt_notification_event
+                        0x1005'6429    0x22  Code  Gb  aci_events.o [3]
+cb_aci_gatt_prepare_write_permit_req_event
+                        0x1005'6b69    0x16  Code  Gb  aci_events.o [3]
+cb_aci_gatt_proc_complete_event
+                        0x1005'672d    0x1e  Code  Gb  aci_events.o [3]
+cb_aci_gatt_proc_timeout_event
+                        0x1005'6995    0x1a  Code  Gb  aci_events.o [3]
+cb_aci_gatt_read_multi_permit_req_event
+                        0x1005'6bf9    0x10  Code  Gb  aci_events.o [3]
+cb_aci_gatt_read_permit_req_event
+                        0x1005'6c0b    0x10  Code  Gb  aci_events.o [3]
+cb_aci_gatt_server_confirmation_event
+                        0x1005'6c7b     0xa  Code  Gb  aci_events.o [3]
+cb_aci_gatt_tx_pool_available_event
+                        0x1005'6c3d     0xe  Code  Gb  aci_events.o [3]
+cb_aci_gatt_write_permit_req_event
+                        0x1005'6bb3    0x12  Code  Gb  aci_events.o [3]
+cb_aci_hal_fw_error_event
+                        0x1005'6c1d    0x10  Code  Gb  aci_events.o [3]
+cb_aci_hal_scan_req_report_event
+                        0x1005'6455    0x22  Code  Gb  aci_events.o [3]
+cb_aci_l2cap_command_reject_event
+                        0x1005'6b81    0x16  Code  Gb  aci_events.o [3]
+cb_aci_l2cap_connection_update_req_event
+                        0x1005'60e5    0x2e  Code  Gb  aci_events.o [3]
+cb_aci_l2cap_connection_update_resp_event
+                        0x1005'6751    0x1e  Code  Gb  aci_events.o [3]
+cb_aci_l2cap_proc_timeout_event
+                        0x1005'6775    0x1e  Code  Gb  aci_events.o [3]
+cb_hci_data_buffer_overflow_event
+                        0x1004'5ae7     0x2  Code  Gb  aci_events.o [3]
+cb_hci_disconnection_complete_event
+                        0x1005'679d    0x20  Code  Gb  aci_events.o [3]
+cb_hci_encryption_change_event
+                        0x1005'67c1    0x20  Code  Gb  aci_events.o [3]
+cb_hci_encryption_key_refresh_complete_event
+                        0x1005'67e9    0x1e  Code  Gb  aci_events.o [3]
+cb_hci_le_advertising_report_event
+                        0x1005'6811    0x20  Code  Gb  aci_events.o [3]
+cb_hci_le_connection_complete_event
+                        0x1005'5f71    0x3e  Code  Gb  aci_events.o [3]
+cb_hci_le_connection_update_complete_event
+                        0x1005'6181    0x2c  Code  Gb  aci_events.o [3]
+cb_hci_le_data_length_change_event
+                        0x1005'61b5    0x2c  Code  Gb  aci_events.o [3]
+cb_hci_le_direct_advertising_report_event
+                        0x1005'6839    0x20  Code  Gb  aci_events.o [3]
+cb_hci_le_enhanced_connection_complete_event
+                        0x1005'5f25    0x48  Code  Gb  aci_events.o [3]
+cb_hci_le_generate_dhkey_complete_event
+                        0x1005'6481    0x22  Code  Gb  aci_events.o [3]
+cb_hci_le_long_term_key_request_event
+                        0x1005'64ad    0x24  Code  Gb  aci_events.o [3]
+cb_hci_le_read_local_p256_public_key_complete_event
+                        0x1005'64d9    0x22  Code  Gb  aci_events.o [3]
+cb_hci_le_read_remote_used_features_complete_event
+                        0x1005'6271    0x26  Code  Gb  aci_events.o [3]
+cb_hci_number_of_completed_packets_event
+                        0x1005'6c87     0xa  Code  Gb  aci_events.o [3]
+cb_hci_read_remote_version_information_complete_event
+                        0x1005'6505    0x24  Code  Gb  aci_events.o [3]
+cb_hci_rx_acl_data_event
+                        0x1005'6b99    0x16  Code  Gb  aci_events.o [3]
+char_copy               0x1004'20d7    0x12  Code  Gb  hal.o [3]
+convert_power           0x1004'd8d9    0x20  Code  Lc  rom_ll_routines_support.o [3]
+copy_4_u32              0x1004'2f19    0x12  Code  Gb  ll_isr.o [3]
+copy_swap_buffer        0x1004'8085    0x20  Code  Gb  utils.o [3]
+copy_tx_data_packet     0x1004'219d    0x7e  Code  Gb  ll_isr.o [3]
+crash_info_ram          0x2000'0034    0x28  Data  Gb  miscutil.o [1]
+csmem_sm_ctx_p          0x2000'00b0     0x4  Data  Gb  smp_common.o [3]
+data_length_extension_csr_ucfg
+                        0x1004'2059     0x4  Code  Wk  hci.o [3]
+device_initialization   0x1004'a7c5   0x152  Code  Gb  slave.o [1]
+dyn_alloc_a             0x2000'0468  0x26b0  Data  Gb  BLE_MS_Formula_main.o [1]
+encrypt                 0x1004'34a5    0x68  Code  Gb  ll_isr.o [3]
+evnt_callback_pfunc     0x1005'3d80    0xe8  Data  Gb  aci_events.o [3]
+exit                    0x1005'69d7     0x8  Code  Gb  exit.o [2]
+fifoBuf_getFreeHeader   0x1004'6dc5    0x6c  Code  Lc  aci_events.o [3]
+fifoCtrl_init           0x1005'5215     0xa  Code  Lc  aci_events.o [3]
+flash_sw_lock           0x2000'0014     0x4  Data  Gb  system_bluenrg1.o [1]
+flash_sw_lock_block$$Base
+                        0x2000'0014           --   Gb  - Linker created -
+flash_sw_lock_block$$Limit
+                        0x2000'0018           --   Gb  - Linker created -
+full_state_func_call_init
+                        0x1004'4ecd     0xc  Code  Gb  ll_isr.o [3]
+g_var_LinkPerp          0x2000'0074     0x4  Data  Gb  ll_isr.o [3]
+g_var_RcvData           0x2000'0084     0x4  Data  Gb  ll_isr.o [3]
+g_var_bluedata1         0x2000'0078     0x4  Data  Gb  ll_isr.o [3]
+g_var_close_connect_event_now
+                        0x2000'0068     0x1  Data  Gb  ll_isr.o [3]
+g_var_close_connect_now
+                        0x2000'0069     0x1  Data  Gb  ll_isr.o [3]
+g_var_index             0x2000'006c     0x1  Data  Gb  ll_isr.o [3]
+g_var_int_value         0x2000'0070     0x4  Data  Gb  ll_isr.o [3]
+g_var_linkslaveno       0x2000'006a     0x1  Data  Gb  ll_isr.o [3]
+g_var_scan_response_sent
+                        0x2000'006e     0x1  Data  Gb  ll_isr.o [3]
+g_var_sending_scan_response
+                        0x2000'006d     0x1  Data  Gb  ll_isr.o [3]
+g_var_sent_event        0x2000'0080     0x4  Data  Gb  ll_isr.o [3]
+g_var_state2            0x2000'006b     0x1  Data  Gb  ll_isr.o [3]
+g_var_txdata            0x2000'007c     0x4  Data  Gb  ll_isr.o [3]
+gapClearAllModeFlags    0x1004'd181    0x10  Code  Gb  gap.o [3]
+get_adv_addr            0x1004'61f5    0x14  Code  Gb  rom_ll_isr_routines.o [3]
+get_advertiser          0x1004'92b9    0x42  Code  Gb  multi_master_time.o [3]
+get_connection_no       0x1004'784d    0x84  Code  Gb  multi_master_time.o [3]
+get_next_free_slot      0x1004'7595    0x2e  Code  Gb  multi_master_time.o [3]
+get_scan_addr           0x1004'5a81    0x14  Code  Gb  rom_ll_isr_routines.o [3]
+get_scan_connection     0x1004'74d1    0x42  Code  Gb  multi_master_time.o [3]
+go_to_connect           0x1004'e2d9   0x278  Code  Gb  rom_ll_isr_routines.o [3]
+go_to_connect_master    0x1004'a48d   0x1ae  Code  Gb  isr_routines.o [3]
+hal_radio_activity_state_callback_check
+                        0x1004'8835    0x30  Code  Gb  hal.o [3]
+hal_radio_activity_state_init
+                        0x1005'51f9    0x18  Code  Gb  hal.o [3]
+hal_read_radio_activity_state
+                        0x1004'9449    0x3a  Code  Gb  hal.o [3]
+hci_acl_Process_Q       0x1005'4995    0x68  Code  Gb  hci.o [3]
+hci_disconnection_complete_event
+                        0x1004'a99d    0x46  Code  Gb  slave.o [1]
+hci_encryption_change_event_push
+                        0x1004'57fd    0x58  Code  Lc  ll_routines_master.o [3]
+hci_encryption_key_refresh_complete_event_push
+                        0x1004'57a5    0x54  Code  Lc  ll_routines_master.o [3]
+hci_hardware_error_event
+                        0x1005'44bd    0x10  Code  Gb  BLE_MS_Formula_main.o [1]
+hci_le_advertising_report_event_push
+                        0x1004'6209    0x8e  Code  Lc  ll_routines_master.o [3]
+hci_le_connection_complete_event
+                        0x1004'a939    0x16  Code  Gb  slave.o [1]
+hci_le_connection_complete_event_push
+                        0x1004'571d    0x84  Code  Lc  ll_routines_master.o [3]
+hci_le_connection_update_complete_event_push
+                        0x1004'5981    0x66  Code  Lc  ll_routines_master.o [3]
+hci_le_direct_advertising_report_event_push
+                        0x1004'5d81    0x86  Code  Lc  ll_privacy.o [3]
+hci_le_encrypt          0x1004'8995     0xa  Code  Gb  hci.o [3]
+hci_le_enhanced_connection_complete_event
+                        0x1004'a94f    0x28  Code  Gb  slave.o [1]
+hci_le_generate_dhkey_api
+                        0x1004'83ed    0x78  Code  Gb  hci.o [3]
+hci_le_long_term_key_request_reply
+                        0x1005'2407     0xe  Code  Gb  hci.o [3]
+hci_le_long_term_key_requested_negative_reply
+                        0x1005'23f9     0xe  Code  Gb  hci.o [3]
+hci_le_rand             0x1004'acb7     0x8  Code  Gb  hci.o [3]
+hci_le_read_local_p256_public_key_api
+                        0x1004'68cd    0x36  Code  Gb  hci.o [3]
+hci_le_set_advertise_enable
+                        0x1004'aee9    0x3c  Code  Gb  hci.o [3]
+hci_le_set_advertising_data
+                        0x1004'ad6b    0x16  Code  Gb  hci.o [3]
+hci_le_set_event_mask   0x1004'5e31    0x3a  Code  Gb  hci.o [3]
+hci_rx_acl_data         0x1005'58bd    0x66  Code  Gb  hci.o [3]
+hci_tx_acl_data_done    0x1005'5ec1    0x40  Code  Gb  hci.o [3]
+hot_table_radio_config  0x2000'0420    0x20  Data  Gb  system_bluenrg1.o [1]
+int16ToLe2Byte          0x1005'3847     0x8  Code  Lc  gatt_client.o [3]
+int32ToLe4Byte          0x1004'765d    0x10  Code  Lc  ll_routines_master.o [3]
+int32ToLe4Byte          0x1004'7a73    0x10  Code  Lc  securitymgr.o [3]
+int32ToLe4Byte          0x1004'94fb    0x10  Code  Lc  rom_ll_ll_routines.o [3]
+int32ToLe4Byte          0x1004'eb8d    0x10  Code  Lc  sdb.o [3]
+int_cb_hci_acl_data_ind_event
+                        0x1005'5ff5    0x3c  Code  Gb  acl.o [3]
+int_cb_hci_acl_data_tx_cmpl_event
+                        0x1005'5e6d    0x50  Code  Gb  acl.o [3]
+int_cb_hci_disconnection_complete_event
+                        0x1005'6559    0x26  Code  Gb  aci_events.o [3]
+int_cb_hci_encryption_change_event
+                        0x1005'6acf    0x1a  Code  Gb  aci_events.o [3]
+int_cb_hci_encryption_key_refresh_complete_event
+                        0x1005'6ae9    0x1a  Code  Gb  aci_events.o [3]
+int_cb_hci_le_advertising_report_event
+                        0x1005'6a09    0x1e  Code  Gb  aci_events.o [3]
+int_cb_hci_le_connection_complete_event
+                        0x1005'657f    0x26  Code  Gb  aci_events.o [3]
+int_cb_hci_le_data_length_change_event
+                        0x1005'6c2d    0x10  Code  Gb  aci_events.o [3]
+int_cb_hci_le_direct_advertising_report_event
+                        0x1005'6a27    0x1e  Code  Gb  aci_events.o [3]
+int_cb_hci_le_enhanced_connection_complete_event
+                        0x1005'65a5    0x26  Code  Gb  aci_events.o [3]
+int_cb_hci_le_generate_dhkey_complete_event
+                        0x1005'6b03    0x1a  Code  Gb  aci_events.o [3]
+int_cb_hci_le_long_term_key_request_event
+                        0x1005'6c65     0xc  Code  Gb  aci_events.o [3]
+int_cb_hci_le_read_local_p256_public_key_complete_event
+                        0x1005'6b1d    0x1a  Code  Gb  aci_events.o [3]
+int_evnt_callback_pfunc
+                        0x1005'3e68    0x34  Data  Gb  aci_events.o [3]
+is_Buffer_All_Set_To    0x1004'6b79    0x1e  Code  Gb  utils.o [3]
+is_slave                0x1004'2f41    0x2e  Code  Gb  multi_master_time.o [3]
+isr_Acl_Data_Indication_Queue_Full
+                        0x1004'2e49    0x1a  Code  Gb  acl.o [3]
+isr_Acl_Data_TX_Cmpl_Queue_Full
+                        0x1004'217d    0x1a  Code  Gb  acl.o [3]
+isr_advertise_state     0x1004'df41   0x38c  Code  Lc  ll_isr.o [3]
+isr_connect_master_state
+                        0x1004'977d   0x6ba  Code  Lc  ll_isr.o [3]
+isr_connect_slave_state
+                        0x1004'1855   0x7c4  Code  Lc  ll_isr.o [3]
+isr_event_handler       0x1004'38f5   0x5f4  Code  Gb  ll_routines_master.o [3]
+isr_event_handler_scan_data
+                        0x1004'4bbd   0x1f0  Code  Gb  ll_routines_master.o [3]
+isr_event_handler_scan_data_ucfg
+                        0x1004'3811     0x8  Code  Gb  stack_user_cfg.o [1]
+isr_postproc            0x1004'f865   0x1d4  Code  Gb  isr_postproc.o [3]
+isr_postproc1           0x1004'2221   0x106  Code  Gb  rom_ll_isr_postproc.o [3]
+isr_postproc_encrypt_data
+                        0x1004'2f2b    0x16  Code  Gb  rom_ll_isr_postproc.o [3]
+isr_scan_state          0x1004'9e55   0x630  Code  Lc  ll_isr.o [3]
+isr_test_rx_state       0x1005'611d    0x2c  Code  Lc  ll_isr.o [3]
+isr_test_tx_state       0x1005'5b31    0x5c  Code  Lc  ll_isr.o [3]
+isr_unknown_state       0x1005'62a1    0x26  Code  Lc  ll_isr.o [3]
+le2ByteToInt16          0x1004'2e29     0xa  Code  Lc  rom_ll_isr_routines.o [3]
+le2ByteToInt16          0x1005'37f5     0xa  Code  Lc  gatt_client.o [3]
+le4ByteToInt32          0x1004'7835    0x16  Code  Lc  rom_ll_ll_routines_master.o [3]
+le4ByteToInt32          0x1004'2e33    0x16  Code  Lc  rom_ll_isr_routines.o [3]
+le4ByteToInt32          0x1004'6b0b    0x16  Code  Lc  securitymgr.o [3]
+le4ByteToInt32          0x1004'd9a1    0x16  Code  Lc  rom_ll_ll_routines.o [3]
+ll_write_supported_data_ucfg
+                        0x1004'c4bf     0x4  Code  Wk  ll_routines.o [3]
+machine_time_trans      0x1004'2039    0x1c  Code  Gb  rom_ll_timehandling.o [3]
+main                    0x1005'4475    0x48  Code  Gb  BLE_MS_Formula_main.o [1]
+mem_alloc_ctx_init      0x1005'4b2d    0x9e  Code  Gb  mem_alloc.o [3]
+mem_alloc_ctx_p         0x2000'00b4     0x4  Data  Gb  mem_alloc.o [3]
+memchr                  0x1004'11a1          Code  Gb  memchr.o [6]
+memcmp                  0x1004'5ae9          Code  Gb  memcmp.o [6]
+microseconds_to_machine_time
+                        0x1004'32b5     0x8  Code  Gb  routines_support.o [3]
+modulo_37               0x1004'23d9    0x18  Code  Gb  rom_ll_routines_support.o [3]
+nsar_init               0x1005'3455    0x14  Code  Gb  multi_master_time.o [3]
+nsar_insertSlotListEntry
+                        0x1004'936d    0x18  Code  Lc  multi_master_time.o [3]
+nsar_searchBestFreeSlot
+                        0x1004'9389    0xbc  Code  Lc  multi_master_time.o [3]
+nsar_updateBestFreeSlot
+                        0x1004'96d9    0x22  Code  Lc  multi_master_time.o [3]
+nsar_updateSlotListEntry
+                        0x1004'9301    0x66  Code  Lc  multi_master_time.o [3]
+ota_sw_activation       0x2000'0004     0x4  Data  Gb  system_bluenrg1.o [1]
+ota_sw_activation_block$$Base
+                        0x2000'0004           --   Gb  - Linker created -
+ota_sw_activation_block$$Limit
+                        0x2000'0008           --   Gb  - Linker created -
+print_arr               0x1004'ae43    0x1c  Code  Gb  app_common.o [1]
+print_arr_short         0x1004'ae5f    0x36  Code  Gb  app_common.o [1]
+printf                  0x1005'4651    0x28  Code  Gb  printf.o [2]
+printf_buffer           0x2000'02cc   0x100  Data  Lc  cassert.o [1]
+putchar                 0x1005'69eb    0x1e  Code  Gb  putchar.o [2]
+rcon                    0x1005'3c38    0x28  Data  Gb  crypto.o [4]
+read_rssi               0x1004'f7e9    0x72  Code  Gb  ll_routines.o [3]
+request_scan_slot       0x1004'75c9    0x8a  Code  Gb  multi_master_time.o [3]
+rev_memcmp              0x1004'6737    0x16  Code  Lc  BlueNRG1_pka.o [1]
+rfTimeout               0x2000'0018     0x4  Data  Gb  system_bluenrg1.o [1]
+rfTimeout_block$$Base   0x2000'0018           --   Gb  - Linker created -
+rfTimeout_block$$Limit  0x2000'001c           --   Gb  - Linker created -
+s_SdkEvalVersion        0x2000'0465     0x1  Data  Lc  SDK_EVAL_Config.o [1]
+s_UartRxModeVersion     0x1005'6ca0     0x4  Data  Gb  SDK_EVAL_Config.o [1]
+s_UartRxPinVersion      0x1005'6c9c     0x4  Data  Gb  SDK_EVAL_Config.o [1]
+s_UartTxModeVersion     0x1005'6c98     0x4  Data  Gb  SDK_EVAL_Config.o [1]
+s_UartTxPinVersion      0x1005'6c94     0x4  Data  Gb  SDK_EVAL_Config.o [1]
+s_ble_state             0x2000'0466     0x1  Data  Lc  slave.o [1]
+s_ins                   0x2000'0400    0x20  Data  Lc  slave.o [1]
+s_vectnGpioPinVersion   0x1005'6c4c     0xc  Data  Gb  SDK_EVAL_Config.o [1]
+savedICSR               0x2000'0454     0x4  Data  Gb  system_bluenrg1.o [1]
+savedMSP                0x2000'0008     0x4  Data  Gb  system_bluenrg1.o [1]
+savedMSP_block$$Base    0x2000'0008           --   Gb  - Linker created -
+savedMSP_block$$Limit   0x2000'000c           --   Gb  - Linker created -
+savedNVIC_ISPR          0x2000'045c     0x4  Data  Gb  system_bluenrg1.o [1]
+savedSHCSR              0x2000'0458     0x4  Data  Gb  system_bluenrg1.o [1]
+scale                   0x1004'1071    0x44  Code  Lc  xprintffull_nomb.o [2]
+scan_connection_or_advertiser
+                        0x1004'8469    0x1a  Code  Lc  ll_privacy.o [3]
+schedule_advertise_slot
+                        0x1004'ca61    0xa8  Code  Gb  multi_master_time.o [3]
+sdb_delete              0x1005'1fdd   0x160  Code  Lc  sdb.o [3]
+sdb_find_client_data    0x1004'ea65    0xc4  Code  Lc  sdb.o [3]
+sdb_get_gatt_db_start_address
+                        0x1004'eb75    0x12  Code  Lc  sdb.o [3]
+sdb_invalidate_record   0x1005'1719    0x1a  Code  Lc  sdb.o [3]
+sdb_read_record         0x1004'eb2d    0x20  Code  Lc  sdb.o [3]
+sdb_read_record_validity
+                        0x1004'd46d     0xc  Code  Lc  sdb.o [3]
+sdb_write_record        0x1005'2151    0x78  Code  Lc  sdb.o [3]
+sec_hand                0x2000'0460     0x4  Data  Lc  xfail_s.o [2]
+secure_connections_csr_ucfg
+                        0x1004'3881     0x4  Code  Gb  stack_user_cfg.o [1]
+setGapAdvData           0x1004'd21d    0xfe  Code  Gb  gap.o [3]
+set_database            0x1004'a685    0xee  Code  Gb  slave.o [1]
+set_freq                0x1005'4ddd    0x6c  Code  Gb  rom_ll_timehandling.o [3]
+set_sca                 0x1004'3519    0x18  Code  Gb  rom_ll_timehandling.o [3]
+set_string              0x1004'2331    0x10  Code  Gb  hal.o [3]
+slave_advance           0x1004'259d   0x1f8  Code  Gb  routines_support.o [3]
+sma_CMAC_generate_tag   0x1005'10d1    0xc6  Code  Gb  smp_algo_sap.o [3]
+sma_Calculate_Hash      0x1004'd8a1    0x36  Code  Lc  smp_algo_sap.o [3]
+sma_generate_subkeys    0x1005'1197    0x7e  Code  Lc  smp_algo_sap.o [3]
+sma_left_shift          0x1005'1215    0x2c  Code  Lc  smp_algo_sap.o [3]
+smp_Build_AuthReq_Field
+                        0x1004'8b75    0x18  Code  Lc  securitymgr.o [3]
+smp_Build_Pairing_ReqResp_Packet
+                        0x1004'8b8d    0x34  Code  Lc  securitymgr.o [3]
+smp_Check_Incoming_Pairing_Parameters
+                        0x1004'7c79    0x30  Code  Lc  securitymgr.o [3]
+smp_Determine_Key_Association_Method
+                        0x1004'8bc5    0x94  Code  Lc  securitymgr.o [3]
+smp_Execute_Actions_wrt_Current_State
+                        0x1005'2415   0x186  Code  Lc  securitymgr.o [3]
+smp_Execute_Actions_wrt_Current_State_MI_excerpt
+                        0x1004'4f6d    0x4e  Code  Gb  securitymgr.o [3]
+smp_Execute_Actions_wrt_Current_State_MI_excerpt_ucfg
+                        0x1004'3841     0x8  Code  Gb  stack_user_cfg.o [1]
+smp_Execute_Actions_wrt_Current_State_sc_MI_excerpt_phase2as2
+                        0x1004'500d    0x12  Code  Gb  securitymgr.o [3]
+smp_Execute_Actions_wrt_Current_State_sc_MI_excerpt_phase2as2_ucfg
+                        0x1004'3851     0x8  Code  Gb  stack_user_cfg.o [1]
+smp_Execute_Actions_wrt_Current_State_sc_excerpt_phase2as2
+                        0x1004'55f1    0x58  Code  Gb  securitymgr.o [3]
+smp_Execute_Actions_wrt_Current_State_sc_excerpt_phase2as2_ucfg
+                        0x1004'38dd     0x8  Code  Gb  stack_user_cfg.o [1]
+smp_Execute_Actions_wrt_Current_State_sc_excerpt_phase_1_to_2
+                        0x1004'5585    0x64  Code  Gb  securitymgr.o [3]
+smp_Execute_Actions_wrt_Current_State_sc_excerpt_phase_1_to_2_ucfg
+                        0x1004'38d5     0x8  Code  Gb  stack_user_cfg.o [1]
+smp_Get_Long_Term_Key   0x1005'2379    0x7a  Code  Lc  securitymgr.o [3]
+smp_Get_Pairing_Parameters_From_Peer_Packet
+                        0x1004'7cad    0x84  Code  Lc  securitymgr.o [3]
+smp_Keys_Distribution_Complete
+                        0x1005'5319    0x32  Code  Lc  smp_common.o [3]
+smp_Keys_Distribution_Send
+                        0x1005'297d   0x118  Code  Lc  securitymgr.o [3]
+smp_LP_MI_Compute_c1_Confirm_Value
+                        0x1004'78d5   0x13c  Code  Lc  securitymgr.o [3]
+smp_LP_SR_Compute_c1_Confirm_Value
+                        0x1004'7f35   0x14c  Code  Lc  securitymgr.o [3]
+smp_MI_Start_Encryption
+                        0x1004'4ee5    0x88  Code  Gb  securitymgr.o [3]
+smp_MI_Start_Encryption_ucfg
+                        0x1004'3839     0x8  Code  Gb  stack_user_cfg.o [1]
+smp_Process_Rx_Packet_Exception_Cases_sc_excerpt
+                        0x1004'5695    0x84  Code  Gb  securitymgr.o [3]
+smp_Process_Rx_Packet_Exception_Cases_sc_excerpt_ucfg
+                        0x1004'38ed     0x8  Code  Gb  stack_user_cfg.o [1]
+smp_Process_Rx_Packet_wrt_Current_State
+                        0x1005'25a1   0x128  Code  Lc  securitymgr.o [3]
+smp_Process_Rx_Packet_wrt_Current_State_MI_excerpt
+                        0x1004'4fbb    0x52  Code  Gb  securitymgr.o [3]
+smp_Process_Rx_Packet_wrt_Current_State_MI_excerpt_ucfg
+                        0x1004'3849     0x8  Code  Gb  stack_user_cfg.o [1]
+smp_Process_Rx_Packet_wrt_Current_State_sc_excerpt
+                        0x1004'5649    0x4a  Code  Gb  securitymgr.o [3]
+smp_Process_Rx_Packet_wrt_Current_State_sc_excerpt_ucfg
+                        0x1004'38e5     0x8  Code  Gb  stack_user_cfg.o [1]
+smp_Set_Key_Association_Method
+                        0x1004'7d35    0x70  Code  Lc  securitymgr.o [3]
+smp____MI_PairingConfirm_Receive
+                        0x1004'668d    0x58  Code  Lc  securitymgr.o [3]
+smp____MI_PairingConfirm_Send
+                        0x1004'6419    0x66  Code  Lc  securitymgr.o [3]
+smp____MI_PairingRandom_Receive
+                        0x1004'64b9    0xde  Code  Lc  securitymgr.o [3]
+smp____MI_PairingResponse_Receive
+                        0x1004'6621    0x6c  Code  Lc  securitymgr.o [3]
+smp____MI_SecurityRequest_Receive
+                        0x1004'659d    0x7a  Code  Lc  securitymgr.o [3]
+smp____SC_Phase_2AS2_DHKeyCheck_Send
+                        0x1004'8391    0x56  Code  Lc  smp_scv42_caf.o [3]
+smp____SC_Phase_2AS2_Generate_DHKeyCheck
+                        0x1004'825d   0x12e  Code  Lc  smp_scv42_caf.o [3]
+smp____SC_Phase_2AS2__Set_Addresses
+                        0x1004'814d    0x30  Code  Lc  smp_scv42_caf.o [3]
+smp____SR_PairingConfirm_Receive
+                        0x1004'69e9    0x7a  Code  Lc  securitymgr.o [3]
+smp____SR_PairingRandom_Receive
+                        0x1005'2d65   0x11a  Code  Lc  securitymgr.o [3]
+smp____SR_PairingRequest_Receive
+                        0x1005'2be9   0x178  Code  Lc  securitymgr.o [3]
+smp_add_pairing_record_to_bonding_database
+                        0x1005'2ee9   0x144  Code  Gb  smp_common.o [3]
+smp_find_remote_device_index
+                        0x1004'7aa9    0x3a  Code  Gb  smp_common.o [3]
+smp_flush_rx_queues     0x1004'8c61    0x34  Code  Lc  smp_common.o [3]
+smp_get_CSRK            0x1005'10b3    0x1e  Code  Gb  smp_common.o [3]
+smp_get_local_identity_address
+                        0x1005'2e85    0x34  Code  Gb  smp_common.o [3]
+smp_keys_distribution_start
+                        0x1004'647f    0x38  Code  Gb  smp_common.o [3]
+smp_keys_receiving      0x1005'2b11    0xd6  Code  Gb  smp_common.o [3]
+smp_oob_check_is_remote_data_present
+                        0x1004'7eb1    0x36  Code  Gb  smp_common.o [3]
+smp_oob_get_remote_data_reference
+                        0x1004'7eed    0x44  Code  Gb  smp_common.o [3]
+smp_pairing_2octets_packet_send
+                        0x1004'7e19    0x34  Code  Gb  smp_common.o [3]
+smp_pairing_completed   0x1005'2a99    0x70  Code  Gb  smp_common.o [3]
+smp_pairing_failed_receive
+                        0x1005'26d1    0x10  Code  Gb  smp_common.o [3]
+smp_pairing_failed_send
+                        0x1004'6931    0x2a  Code  Gb  smp_common.o [3]
+smp_pairing_process_abort
+                        0x1004'7e4d    0x60  Code  Lc  smp_common.o [3]
+smp_repeated_attacks_protection
+                        0x1004'8cd1    0xda  Code  Gb  smp_common.o [3]
+smp_sc_MI_PairingConfirm_Send_sc_excerpt
+                        0x1004'53d9    0x2c  Code  Gb  securitymgr.o [3]
+smp_sc_MI_PairingConfirm_Send_sc_excerpt_ucfg
+                        0x1004'38ad     0x8  Code  Gb  stack_user_cfg.o [1]
+smp_sc_MI_PairingRandom_Receive_sc_excerpt1
+                        0x1004'5409    0x3e  Code  Gb  securitymgr.o [3]
+smp_sc_MI_PairingRandom_Receive_sc_excerpt1_ucfg
+                        0x1004'38b5     0x8  Code  Gb  stack_user_cfg.o [1]
+smp_sc_MI_PairingRandom_Receive_sc_excerpt2
+                        0x1004'544d    0x5e  Code  Gb  securitymgr.o [3]
+smp_sc_MI_PairingRandom_Receive_sc_excerpt2_ucfg
+                        0x1004'38bd     0x8  Code  Gb  stack_user_cfg.o [1]
+smp_sc_MI_PairingResponse_Receive_sc_excerpt
+                        0x1004'5349    0x2e  Code  Gb  securitymgr.o [3]
+smp_sc_MI_PairingResponse_Receive_sc_excerpt_ucfg
+                        0x1004'3895     0x8  Code  Gb  stack_user_cfg.o [1]
+smp_sc_MI_Pairing_Phase_2AS1_Start_sc_excerpt
+                        0x1004'537d    0x2c  Code  Gb  securitymgr.o [3]
+smp_sc_MI_Pairing_Phase_2AS1_Start_sc_excerpt_ucfg
+                        0x1004'389d     0x8  Code  Gb  stack_user_cfg.o [1]
+smp_sc_SR_PairingConfirm_Receive_sc_excerpt
+                        0x1004'54b5    0x2e  Code  Gb  securitymgr.o [3]
+smp_sc_SR_PairingConfirm_Receive_sc_excerpt_ucfg
+                        0x1004'38c5     0x8  Code  Gb  stack_user_cfg.o [1]
+smp_sc_SR_PairingRandom_Receive_sc_excerpt
+                        0x1004'54e9    0x92  Code  Gb  securitymgr.o [3]
+smp_sc_SR_PairingRandom_Receive_sc_excerpt_ucfg
+                        0x1004'38cd     0x8  Code  Gb  stack_user_cfg.o [1]
+smp_sc_SR_Pairing_Phase_2AS1_Start_sc_excerpt
+                        0x1004'53a9    0x30  Code  Gb  securitymgr.o [3]
+smp_sc_SR_Pairing_Phase_2AS1_Start_sc_excerpt_ucfg
+                        0x1004'38a5     0x8  Code  Gb  stack_user_cfg.o [1]
+smp_sc_check_for_ecc_pk_generation_request
+                        0x1004'51f5    0x2a  Code  Gb  smp_scv42_caf.o [3]
+smp_sc_check_for_ecc_pk_generation_request_ucfg
+                        0x1004'3871     0x8  Code  Gb  stack_user_cfg.o [1]
+smp_sc_continue_on_exclusive_sc_pairing
+                        0x1004'51bd    0x32  Code  Gb  smp_scv42_caf.o [3]
+smp_sc_continue_on_exclusive_sc_pairing_ucfg
+                        0x1004'3869     0x8  Code  Gb  stack_user_cfg.o [1]
+smp_sc_force_debug_private_key
+                        0x1004'686d    0x16  Code  Gb  smp_scv42_caf.o [3]
+smp_sc_hci_le_generate_dhkey_complete_evt_hndl
+                        0x1004'52d5    0x6a  Code  Gb  smp_scv42_sap.o [3]
+smp_sc_hci_le_generate_dhkey_complete_evt_hndl_ucfg
+                        0x1004'388d     0x8  Code  Gb  stack_user_cfg.o [1]
+smp_sc_hci_le_read_local_p256_public_key_complete_evt_hndl
+                        0x1004'5299    0x38  Code  Gb  smp_scv42_sap.o [3]
+smp_sc_hci_le_read_local_p256_public_key_complete_evt_hndl_ucfg
+                        0x1004'3885     0x8  Code  Gb  stack_user_cfg.o [1]
+smp_sc_init             0x1004'5185    0x30  Code  Gb  smp_scv42_caf.o [3]
+smp_sc_init_ucfg        0x1004'3861     0x8  Code  Gb  stack_user_cfg.o [1]
+smp_sc_is_another_sc_pairing_ongoing
+                        0x1004'688d    0x38  Code  Gb  smp_scv42_caf.o [3]
+smp_sc_is_debug_key_usage_forced
+                        0x1004'6921     0xc  Code  Gb  smp_scv42_caf.o [3]
+smp_sc_pairing_oob_confirm_receive_verify
+                        0x1004'695d    0x86  Code  Gb  smp_scv42_caf.o [3]
+smp_sc_pairing_public_key_receive
+                        0x1004'6d1d    0xa0  Code  Gb  smp_scv42_caf.o [3]
+smp_sc_pairing_public_key_send
+                        0x1004'6b99    0x68  Code  Gb  smp_scv42_caf.o [3]
+smp_sc_phase_2as2_dhkey_check_receive
+                        0x1004'6ca9    0x72  Code  Gb  smp_scv42_caf.o [3]
+smp_sc_phase_2as2_start
+                        0x1004'6c05    0x9e  Code  Gb  smp_scv42_caf.o [3]
+smp_sc_submit_ecc_pk_generation_request
+                        0x1004'6909    0x12  Code  Gb  smp_scv42_caf.o [3]
+smp_sc_update_statistics_on_pairing_complete
+                        0x1004'5225    0x6e  Code  Gb  smp_scv42_caf.o [3]
+smp_sc_update_statistics_on_pairing_complete_ucfg
+                        0x1004'3879     0x8  Code  Gb  stack_user_cfg.o [1]
+smp_search_blacklist    0x1004'8b31    0x3e  Code  Gb  smp_common.o [3]
+smp_send_packet         0x1004'7a29    0x32  Code  Gb  securitymgr.o [3]
+smp_update_statistics_on_pairing_complete
+                        0x1004'8c99    0x32  Code  Lc  smp_common.o [3]
+stacklib_flash_data     0x1006'7000   0x800  Data  Gb  BLE_MS_Formula_main.o [1]
+stacklib_stored_device_id_data
+                        0x1006'7800    0x38  Data  Gb  BLE_MS_Formula_main.o [1]
+start_timebase          0x1004'766d    0xc2  Code  Gb  multi_master_time.o [3]
+state_func_call_init_csr_ucfg
+                        0x1004'3831     0x8  Code  Gb  stack_user_cfg.o [1]
+store_data              0x1005'1f05    0x1e  Code  Gb  gatt_server.o [3]
+strchr                  0x1004'1115          Code  Gb  strchr.o [6]
+strlen                  0x1004'1189          Code  Gb  strlen.o [6]
+swap_slaves             0x1004'354d   0x132  Code  Gb  routines_support.o [3]
+swap_u16                0x1004'3f2d     0xa  Code  Lc  routines_support.o [3]
+swap_u16                0x1004'2f75     0xa  Code  Lc  multi_master_time.o [3]
+swap_u32                0x1004'3f23     0xa  Code  Lc  routines_support.o [3]
+swap_u8                 0x1004'3f19     0xa  Code  Lc  routines_support.o [3]
+sys_tick_count          0x2000'0450     0x4  Data  Lc  clock.o [1]
+system_time_trans       0x1004'32a5    0x10  Code  Gb  rom_ll_timehandling.o [3]
+system_time_trans_ext   0x1004'376d    0x2c  Code  Gb  rom_ll_timehandling.o [3]
+test_notify_tick        0x1004'adbd    0x86  Code  Gb  app_common.o [1]
+test_notify_tick::count
+                        0x2000'0024     0x2  Data  Lc  app_common.o [1]
+test_notify_tick::last_time
+                        0x2000'0028     0x4  Data  Lc  app_common.o [1]
+time_offset1            0x1004'353f     0xe  Code  Gb  rom_ll_timehandling.o [3]
+time_offset2            0x1004'3699     0xc  Code  Gb  rom_ll_timehandling.o [3]
+timebase_start_connect  0x1004'a64d    0x30  Code  Gb  multi_master_time.o [3]
+uart_write_str          0x1004'ac1d    0x22  Code  Gb  cassert.o [1]
+unpack_channel_map      0x1004'20a9    0x2e  Code  Gb  rom_ll_isr_routines.o [3]
+unpack_update_request   0x1004'2061    0x48  Code  Gb  rom_ll_isr_routines.o [3]
+vsprintf                0x1004'b261    0x34  Code  Gb  vsprintf.o [2]
+wait_for_aes_ready      0x1004'2ef5    0x24  Code  Lc  rom_ll_isr_postproc.o [3]
+wait_for_prescheduled_slot_cancellation
+                        0x1004'7519    0x6e  Code  Lc  ll_routines_master.o [3]
+wait_for_prescheduled_slot_cancellation
+                        0x1004'cb11    0x6e  Code  Lc  rom_ll_ll_routines.o [3]
+wakeupFromSleepFlag     0x2000'000c     0x1  Data  Gb  system_bluenrg1.o [1]
+wakeupFromSleepFlag_block$$Base
+                        0x2000'000c           --   Gb  - Linker created -
+wakeupFromSleepFlag_block$$Limit
+                        0x2000'0010           --   Gb  - Linker created -
+
+
+[1] = D:\work\2020\14_IIC\BlueNRG-1_2 DK 3.2.0\Project\BLE_Examples\BLE_MS_Formula\EWARM\BlueNRG-1\Slave\Obj
+[2] = dl6M_tln.a
+[3] = libbluenrg1_stack.a
+[4] = libcrypto.a
+[5] = m6M_tl.a
+[6] = rt6M_tl.a
+[7] = shb_l.a
+
+  91'051 bytes of readonly  code memory
+   2'361 bytes of readonly  data memory
+  16'196 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
